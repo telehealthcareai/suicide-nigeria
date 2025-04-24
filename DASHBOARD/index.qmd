@@ -1,11 +1,215 @@
 ---
 title: "Suicide in Nigeria"
-author: "Gift David"
+author: "by Gift David"
 format:
   dashboard:
-    logo: images/penguins.png
+    logo: assets/images/osl-color-horizontal.png
     nav-buttons:
       - icon: file
         title: report
         href: https://docs.google.com/document/d/15hE46jFvj5pnw4lbcJsg3NOOu0spqng-XktD4CuAUO4/edit?usp=sharing
 ---
+
+```{python}
+#| echo: false
+#| warning: false
+#| message: false
+#| results: 'hide'
+
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+import plotly.express as px
+
+```
+
+```{python}
+#| echo: false
+#| warning: false
+#| message: false
+
+
+# Load your data
+suicide_data = pd.read_csv("data/who_suicide_latest.csv")
+poverty_data = pd.read_csv("data/ndp_poverty.csv")
+unemployment_data = pd.read_csv("data/unemployed.csv")
+Nigerian_suicide_cases = suicide_data[suicide_data["GEO_NAME_SHORT"] == "Nigeria"]
+Total_unemployed = unemployment_data[unemployment_data["indicator"] == "Total Unemployed"]
+```
+# Overview
+
+```{python}
+Nigerian_suicide_cases.rename(columns={
+    "DIM_TIME": "Suicide_Year",
+    "DIM_SEX": "Gender",
+    "RATE_PER_100000_N": "Suicide_Rate_N",
+    "RATE_PER_100000_NL": "Lower_Rate_NL",
+    "RATE_PER_100000_NU": "Upper_Rate_NU"
+}, inplace=True)
+
+Total_unemployed.rename(columns={
+    "Value": "UE_Value",
+    "Date": "UE_Date",
+}, inplace=True)
+
+poverty_data.rename(columns={
+    "Value": "Pov_Value"
+}, inplace=True)
+
+male_suicide_rate = Nigerian_suicide_cases[Nigerian_suicide_cases["Gender"] == "MALE"]
+female_suicide_rate = Nigerian_suicide_cases[Nigerian_suicide_cases["Gender"] == "FEMALE"]
+overall_suicide_rate = Nigerian_suicide_cases[Nigerian_suicide_cases["Gender"] == "TOTAL"]
+mask = (Nigerian_suicide_cases["Suicide_Year"] >= 2000) & (Nigerian_suicide_cases["Suicide_Year"] <= 2019)
+
+```
+
+## Row
+
+```{python}
+#| content: valuebox
+#| title: "Male suicide rate per 100,000"
+#| icon: gender-male
+#| color: primary
+#| class: small
+
+male_rate = male_suicide_rate.loc[mask]
+total_male_rate = round(male_rate["Suicide_Rate_N"].mean(), 2)
+
+dict(
+icon="gener-male",
+color="white",
+value=total_male_rate
+)
+```
+
+```{python}
+#| content: valuebox
+#| title: "Female suicide rate per 100,000"
+
+female_rate = female_suicide_rate.loc[mask]
+total_female_rate = round(female_rate["Suicide_Rate_N"].mean(), 2)
+
+dict(icon="gender-female", color="#FFA725", value=total_female_rate)
+```
+
+```{python}
+#| content: valuebox
+
+#| title: "Over all suicide rate"
+
+total__rate = male_suicide_rate.loc[mask]
+total_ov_rate = round(overall_suicide_rate["Suicide_Rate_N"].mean(), 2)
+
+dict(icon="people", color="white",value=total_ov_rate)
+```
+
+
+
+
+## Row {font-size = 1px}
+```{python}
+#| title: Suicide Rate Comparisons by Gender (2000 - 2019)
+
+sns.barplot(
+    x="Gender",
+    y="Suicide_Rate_N",
+    data=Nigerian_suicide_cases,
+    order=["MALE", "FEMALE"],
+    palette="viridis"
+)
+plt.show()
+```
+```{python}
+#| echo: false
+#| warning: false
+#| message: false
+#| title: Suicide Mortality Trends in Nigeria (2000-2017)
+
+plt.figure(figsize=(12, 6))
+sns.lineplot(
+    data=male_suicide_rate,
+    x="Suicide_Year", y="Suicide_Rate_N",
+    marker="o", label="Male", color="#1f77b4"
+)
+sns.lineplot(
+    data=female_suicide_rate,
+    x="Suicide_Year", y="Suicide_Rate_N",
+    marker="o", label="Female", color="#ff7f0e"
+)
+sns.lineplot(
+    data=overall_suicide_rate,
+    x="Suicide_Year", y="Suicide_Rate_N",
+    marker="o", label="overall_suicide_rate", color="#2ca02c"
+)
+plt.fill_between(
+    male_suicide_rate["Suicide_Year"], male_suicide_rate["Lower_Rate_NL"], male_suicide_rate["Upper_Rate_NU"],
+    alpha=0.2, color="#1f77b4"
+)
+plt.fill_between(
+    female_suicide_rate["Suicide_Year"], female_suicide_rate["Lower_Rate_NL"], female_suicide_rate["Upper_Rate_NU"],
+    alpha=0.2, color="#ff7f0e"
+)
+
+plt.ylim(0, 12)
+plt.grid(alpha=0.3)
+plt.legend()
+plt.show()
+
+```
+
+## Suicide rate by age group {.tabset}
+```{python}
+#| title: Suicide Rates by Age Group
+
+age_categories = Nigerian_suicide_cases[Nigerian_suicide_cases["DIM_AGE"].notna()]
+
+plt.figure(figsize=(12, 6))
+sns.boxplot(
+    x="DIM_AGE",
+    y="Suicide_Rate_N",
+    data=age_categories,
+    palette="Set2"
+)
+
+plt.show()
+```
+
+```{python}
+#| title: Suicide Rate Comparisons by Gender (2000 - 2019)
+
+plt.bar(Nigerian_suicide_cases['Gender'], Nigerian_suicide_cases['Suicide_Rate_N'])
+plt.show()
+```
+
+
+```{python}
+#| title: Suicide Rate in Nigeria (with Uncertainty)
+
+# Error Bar
+Nigerian_suicide_cases = Nigerian_suicide_cases.sort_values('Suicide_Year')
+lower_errors = Nigerian_suicide_cases['Suicide_Rate_N'] - Nigerian_suicide_cases['Lower_Rate_NL']
+upper_errors = Nigerian_suicide_cases['Upper_Rate_NU'] - Nigerian_suicide_cases['Suicide_Rate_N']
+error = [lower_errors, upper_errors]
+
+# Create the error bar plot
+plt.figure(figsize=(10, 6))
+plt.errorbar(
+    Nigerian_suicide_cases['Suicide_Year'],
+    Nigerian_suicide_cases['Suicide_Rate_N'],
+    yerr=error,
+    fmt='o-',  # 'o' for marker, '-' for line
+    ecolor='gray',
+    capsize=4,
+    label='Suicide Rate with Uncertainty'
+)
+
+# Labeling
+plt.grid(True)
+plt.legend()
+plt.tight_layout()
+plt.show()
+
+```
+
+
+
