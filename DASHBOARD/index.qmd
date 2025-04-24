@@ -1,0 +1,11 @@
+---
+title: "Suicide in Nigeria"
+author: "Gift David"
+format:
+  dashboard:
+    logo: images/penguins.png
+    nav-buttons:
+      - icon: file
+        title: report
+        href: https://docs.google.com/document/d/15hE46jFvj5pnw4lbcJsg3NOOu0spqng-XktD4CuAUO4/edit?usp=sharing
+---
