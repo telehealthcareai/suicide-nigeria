@@ -20,41 +20,6 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-html { -webkit-text-size-adjust: 100%; }
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
@@ -71,10 +36,21 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-a37c72dd2dbac68997fcdc15a3622e78.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-1e438c382a17f6d88d3993662a872df6.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-a37c72dd2dbac68997fcdc15a3622e78.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-c1fac2584b48ed01fb6e278e36375074.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-c1fac2584b48ed01fb6e278e36375074.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-c1fac2584b48ed01fb6e278e36375074.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-c1fac2584b48ed01fb6e278e36375074.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-dashboard/quarto-dashboard.js"></script>
+<script src="../site_libs/quarto-dashboard/stickythead.js"></script>
+
+
+
+<script src="../site_libs/quarto-dashboard/web-components.js" type="module"></script>
+<script src="../site_libs/quarto-dashboard/components.js"></script>
+
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -107,10 +83,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
 
 
-<link rel="stylesheet" href="../styles.css">
 </head>
 
-<body class="nav-fixed quarto-light">
+<body class="quarto-dashboard nav-fixed dashboard-fill fullcontent quarto-light">
+
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -141,60 +117,36 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
       </div> <!-- /container-fluid -->
     </nav>
-</header>
+<header id="quarto-dashboard-header">
+<nav class="navbar navbar-expand-md slim" data-bs-theme="dark">
+  <div class="navbar-container container-fluid">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#dashboard-collapse" aria-controls="dashboard-collapse" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>    
+
+
+    <div class="navbar-brand-container">       
+
+      <div class="navbar-title">
+        <div class="navbar-title-text"><a href="#">Load data</a></div>
+        
+        
+      </div>
+    </div>
+<div id="dashboard-collapse" class="navbar-collapse collapse"><ul class="navbar-nav navbar-nav-scroll me-auto" role="tablist"><li class="nav-item" role="presentation"><a id="tab-prepare-data" class="nav-link active" data-bs-toggle="tab" role="tab" data-bs-target="#prepare-data" data-scrolling="false" href="#prepare-data" aria-controls="prepare-data" aria-selected="true"><span class="nav-link-text">PREPARE DATA</span></a></li><li class="nav-item" role="presentation"><a id="tab-visualizations" class="nav-link" data-bs-toggle="tab" role="tab" data-bs-target="#visualizations" data-scrolling="false" href="#visualizations" aria-controls="visualizations" aria-selected="false"><span class="nav-link-text">VISUALIZATIONS</span></a></li><li class="nav-item" role="presentation"><a id="tab-scatter-plot" class="nav-link" data-bs-toggle="tab" role="tab" data-bs-target="#scatter-plot" data-scrolling="false" href="#scatter-plot" aria-controls="scatter-plot" aria-selected="false"><span class="nav-link-text">scatter plot</span></a></li><li class="nav-item" role="presentation"><a id="tab-line-plot" class="nav-link" data-bs-toggle="tab" role="tab" data-bs-target="#line-plot" data-scrolling="false" href="#line-plot" aria-controls="line-plot" aria-selected="false"><span class="nav-link-text">line plot</span></a></li><li class="nav-item" role="presentation"><a id="tab-bar-chart" class="nav-link" data-bs-toggle="tab" role="tab" data-bs-target="#bar-chart" data-scrolling="false" href="#bar-chart" aria-controls="bar-chart" aria-selected="false"><span class="nav-link-text">bar chart</span></a></li></ul></div></div>
+</nav>
+</header></header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<div id="quarto-content" class="quarto-container page-layout-custom page-navbar quarto-dashboard-content bslib-gap-spacing html-fill-container bslib-page-fill quarto-dashboard-pages">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#prepare-data" id="toc-prepare-data" class="nav-link active" data-scroll-target="#prepare-data">PREPARE DATA</a></li>
-  <li><a href="#visualizations" id="toc-visualizations" class="nav-link" data-scroll-target="#visualizations">VISUALIZATIONS</a></li>
-  <li><a href="#scatter-plot" id="toc-scatter-plot" class="nav-link" data-scroll-target="#scatter-plot">scatter plot</a></li>
-  <li><a href="#line-plot" id="toc-line-plot" class="nav-link" data-scroll-target="#line-plot">line plot</a></li>
-  <li><a href="#bar-chart" id="toc-bar-chart" class="nav-link" data-scroll-target="#bar-chart">bar chart</a></li>
-  </ul>
-</nav>
-    </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">Load data</h1>
-</div>
-
-
-
-<div class="quarto-title-meta">
-
-    
-  
-    
-  </div>
-  
-
-
-</header>
-
-
-<div id="7c1df41d-6417-4daf-a407-23527f215545" class="cell" data-execution_count="5">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np </span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div id="dff91016-2ed1-453b-95c6-420a3429456a" class="cell" data-execution_count="7">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>unemployment_data <span class="op">=</span> pd.read_csv(<span class="st">"../data/unemployed.csv"</span>)</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>nigerian_suicide_cases <span class="op">=</span> pd.read_csv(<span class="st">"../data/nigerian_suicide_cases.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div id="4ece0525-38ce-4c14-a534-8cf0989465fc" class="cell" data-execution_count="8">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>unemployment_data.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="8">
-<div>
+<div class="bslib-grid-item html-fill-item tab-content bslib-grid" data-layout="fill" style="display: grid; grid-template-rows: minmax(3em, 1fr) minmax(3em, 1fr) minmax(3em, 1fr) minmax(3em, 1fr); grid-auto-columns: minmax(0, 1fr);">
+<div class="card cell bslib-card html-fill-container" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
+<div class="card-body html-fill-item html-fill-container">
+<div class="cell-output cell-output-display html-fill-item html-fill-container" data-execution_count="15">
+<div class="html-fill-item html-fill-container">
 
 
 <table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
@@ -261,10 +213,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-<div id="724cc171-9e66-44f9-9110-58a28555eb1d" class="cell" data-execution_count="9">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>nigerian_suicide_cases.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="9">
-<div>
+<bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
+    <template>Expand</template>
+    <span class="bslib-full-screen-enter badge rounded-pill">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" style="height:1em;width:1em;" aria-hidden="true" role="img"><path d="M20 5C20 4.4 19.6 4 19 4H13C12.4 4 12 3.6 12 3C12 2.4 12.4 2 13 2H21C21.6 2 22 2.4 22 3V11C22 11.6 21.6 12 21 12C20.4 12 20 11.6 20 11V5ZM4 19C4 19.6 4.4 20 5 20H11C11.6 20 12 20.4 12 21C12 21.6 11.6 22 11 22H3C2.4 22 2 21.6 2 21V13C2 12.4 2.4 12 3 12C3.6 12 4 12.4 4 13V19Z"></path></svg>
+    </span>
+</bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div>
+<div class="card cell bslib-card html-fill-container" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
+<div class="card-body html-fill-item html-fill-container">
+<div class="cell-output cell-output-display html-fill-item html-fill-container" data-execution_count="16">
+<div class="html-fill-item html-fill-container">
 
 
 <table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
@@ -397,37 +355,65 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-<div id="dc2aeabf-9e80-4a44-8c53-4f98327f0ab9" class="cell" data-execution_count="10">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="bu">len</span>(unemployment_data), <span class="bu">len</span>(nigerian_suicide_cases)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="10">
+<bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
+    <template>Expand</template>
+    <span class="bslib-full-screen-enter badge rounded-pill">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" style="height:1em;width:1em;" aria-hidden="true" role="img"><path d="M20 5C20 4.4 19.6 4 19 4H13C12.4 4 12 3.6 12 3C12 2.4 12.4 2 13 2H21C21.6 2 22 2.4 22 3V11C22 11.6 21.6 12 21 12C20.4 12 20 11.6 20 11V5ZM4 19C4 19.6 4.4 20 5 20H11C11.6 20 12 20.4 12 21C12 21.6 11.6 22 11 22H3C2.4 22 2 21.6 2 21V13C2 12.4 2.4 12 3 12C3.6 12 4 12.4 4 13V19Z"></path></svg>
+    </span>
+</bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div>
+<div class="card cell bslib-card html-fill-container" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
+<div class="card-body html-fill-item html-fill-container">
+<div class="cell-output cell-output-display html-fill-item html-fill-container" data-execution_count="17">
 <pre><code>(4563, 93)</code></pre>
 </div>
 </div>
-<section id="prepare-data" class="level1">
-<h1>PREPARE DATA</h1>
-<div id="e076219b-3b52-46a7-8786-d202d55e0e78" class="cell" data-execution_count="11">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>nigerian_suicide_cases.drop(columns<span class="op">=</span>[<span class="st">'Unnamed: 0'</span>], inplace<span class="op">=</span><span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div id="0f06c5df-17c9-4b07-9423-5401bce6e379" class="cell" data-execution_count="12">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>nigerian_suicide_cases[<span class="st">'Date'</span>] <span class="op">=</span> nigerian_suicide_cases[<span class="st">'DIM_TIME'</span>].copy()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div id="3c4b4611-6c9e-4db3-b166-522f1907ff61" class="cell" data-execution_count="19">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">sorted</span>(nigerian_suicide_cases[<span class="st">"DIM_TIME"</span>].unique()))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
+<bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
+    <template>Expand</template>
+    <span class="bslib-full-screen-enter badge rounded-pill">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" style="height:1em;width:1em;" aria-hidden="true" role="img"><path d="M20 5C20 4.4 19.6 4 19 4H13C12.4 4 12 3.6 12 3C12 2.4 12.4 2 13 2H21C21.6 2 22 2.4 22 3V11C22 11.6 21.6 12 21 12C20.4 12 20 11.6 20 11V5ZM4 19C4 19.6 4.4 20 5 20H11C11.6 20 12 20.4 12 21C12 21.6 11.6 22 11 22H3C2.4 22 2 21.6 2 21V13C2 12.4 2.4 12 3 12C3.6 12 4 12.4 4 13V19Z"></path></svg>
+    </span>
+</bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div>
+<div id="prepare-data" class="dashboard-page tab-pane show active html-fill-item html-fill-container" data-orientation="rows" aria-labelledby="tab-prepare-data">
+<div class="html-fill-item html-fill-container bslib-grid" style="display: grid; grid-template-rows: minmax(3em, 1fr) minmax(3em, 1fr) minmax(3em, 1fr) minmax(3em, 1fr) minmax(3em, 1fr) minmax(3em, 1fr) minmax(3em, 1fr) minmax(3em, 1fr) minmax(3em, 1fr) minmax(3em, 1fr) minmax(3em, 1fr); grid-auto-columns: minmax(0, 1fr);">
+<div class="card cell html-fill-item html-fill-container bslib-card" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
+<div class="card-body html-fill-item html-fill-container">
+<div class="cell-output cell-output-stdout html-fill-item html-fill-container">
 <pre><code>[2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019]</code></pre>
 </div>
 </div>
-<div id="63c8d12b-fde4-4a71-b623-b967d28694d5" class="cell" data-execution_count="21">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>unemployment_data[<span class="st">"indicator"</span>].unique()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="21">
-<pre><code>array(['Total Unemployed'], dtype=object)</code></pre>
+<bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
+    <template>Expand</template>
+    <span class="bslib-full-screen-enter badge rounded-pill">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" style="height:1em;width:1em;" aria-hidden="true" role="img"><path d="M20 5C20 4.4 19.6 4 19 4H13C12.4 4 12 3.6 12 3C12 2.4 12.4 2 13 2H21C21.6 2 22 2.4 22 3V11C22 11.6 21.6 12 21 12C20.4 12 20 11.6 20 11V5ZM4 19C4 19.6 4.4 20 5 20H11C11.6 20 12 20.4 12 21C12 21.6 11.6 22 11 22H3C2.4 22 2 21.6 2 21V13C2 12.4 2.4 12 3 12C3.6 12 4 12.4 4 13V19Z"></path></svg>
+    </span>
+</bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div>
+<div class="card cell html-fill-item html-fill-container bslib-card" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
+<div class="card-body html-fill-item html-fill-container">
+<div class="cell-output cell-output-display html-fill-item html-fill-container" data-execution_count="21">
+<pre><code>array(['LABOUR FORCE POPULATION (employment age and decided to work)',
+       'Work 40+ Hours, Full Time Employed',
+       'Work 20-39 Hours, Under Employed', 'Work 1-19 Hours, Unemployed',
+       'Work 0 Hours(Did Nothing), Unemployed', 'Total Unemployed',
+       'Old Nigeria', 'New Nigeria', 'International',
+       'Under Employement Rate', "Net Total people Employed ('000)",
+       "Net Part-time/ (Time-related underemployed) ('000)",
+       "Net Full Time Employed ('000)",
+       "Not in Labour Force ('000) (Employment age but decided not to work yet)",
+       "Labour Force Population ('000)", "Working Age Population ('000)",
+       'Total Number Employed (Full+Part time/Underemloyed)'],
+      dtype=object)</code></pre>
 </div>
 </div>
-<div id="3dad6395-c119-47bc-8856-8f6817dfaadc" class="cell" data-execution_count="24">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>unemployment_data <span class="op">=</span> (unemployment_data[unemployment_data[<span class="st">"indicator"</span>] <span class="op">==</span> <span class="st">"Total Unemployed"</span>]).sort_values(<span class="st">'Date'</span>).reset_index(drop<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>unemployment_data</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="24">
-<div>
+<bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
+    <template>Expand</template>
+    <span class="bslib-full-screen-enter badge rounded-pill">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" style="height:1em;width:1em;" aria-hidden="true" role="img"><path d="M20 5C20 4.4 19.6 4 19 4H13C12.4 4 12 3.6 12 3C12 2.4 12.4 2 13 2H21C21.6 2 22 2.4 22 3V11C22 11.6 21.6 12 21 12C20.4 12 20 11.6 20 11V5ZM4 19C4 19.6 4.4 20 5 20H11C11.6 20 12 20.4 12 21C12 21.6 11.6 22 11 22H3C2.4 22 2 21.6 2 21V13C2 12.4 2.4 12 3 12C3.6 12 4 12.4 4 13V19Z"></path></svg>
+    </span>
+</bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div>
+<div class="card cell html-fill-item html-fill-container bslib-card" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
+<div class="card-body html-fill-item html-fill-container">
+<div class="cell-output cell-output-display html-fill-item html-fill-container" data-execution_count="22">
+<div class="html-fill-item html-fill-container">
 
 
 <table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
@@ -456,22 +442,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td data-quarto-table-cell-role="th">1</td>
 <td>Nigeria</td>
 <td>Total Unemployed</td>
-<td>25-34</td>
-<td>Persons</td>
-<td>2010</td>
-<td>8.741977e+05</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">2</td>
-<td>Nigeria</td>
-<td>Total Unemployed</td>
 <td>Below primary</td>
 <td>Persons</td>
 <td>2010</td>
 <td>1.054442e+05</td>
 </tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">3</td>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
 <td>Nigeria</td>
 <td>Total Unemployed</td>
 <td>Primary</td>
@@ -479,14 +456,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td>2010</td>
 <td>8.116727e+05</td>
 </tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">4</td>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
 <td>Nigeria</td>
 <td>Total Unemployed</td>
 <td>Secondary</td>
 <td>Persons</td>
 <td>2010</td>
 <td>1.170617e+06</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>Nigeria</td>
+<td>Total Unemployed</td>
+<td>Post Secondary</td>
+<td>Persons</td>
+<td>2010</td>
+<td>3.938350e+05</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">...</td>
@@ -501,13 +487,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td data-quarto-table-cell-role="th">422</td>
 <td>Nigeria</td>
 <td>Total Unemployed</td>
+<td>Secondary</td>
+<td>Persons</td>
+<td>2020Q4</td>
+<td>9.863363e+06</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">423</td>
+<td>Nigeria</td>
+<td>Total Unemployed</td>
 <td>Rural</td>
 <td>Persons</td>
 <td>2020Q4</td>
 <td>1.490120e+07</td>
 </tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">423</td>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">424</td>
 <td>Nigeria</td>
 <td>Total Unemployed</td>
 <td>Post Secondary</td>
@@ -515,23 +510,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td>2020Q4</td>
 <td>4.611990e+06</td>
 </tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">424</td>
-<td>Nigeria</td>
-<td>Total Unemployed</td>
-<td>45-54</td>
-<td>Persons</td>
-<td>2020Q4</td>
-<td>3.379825e+06</td>
-</tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">425</td>
 <td>Nigeria</td>
 <td>Total Unemployed</td>
-<td>35-44</td>
+<td>Never Attended</td>
 <td>Persons</td>
 <td>2020Q4</td>
-<td>5.232420e+06</td>
+<td>5.860110e+06</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">426</td>
@@ -549,17 +535,28 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-<div id="3e51f759-6bd3-4ff4-a6ea-8f213effa350" class="cell" data-execution_count="23">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="bu">len</span>(unemployment_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="23">
+<bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
+    <template>Expand</template>
+    <span class="bslib-full-screen-enter badge rounded-pill">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" style="height:1em;width:1em;" aria-hidden="true" role="img"><path d="M20 5C20 4.4 19.6 4 19 4H13C12.4 4 12 3.6 12 3C12 2.4 12.4 2 13 2H21C21.6 2 22 2.4 22 3V11C22 11.6 21.6 12 21 12C20.4 12 20 11.6 20 11V5ZM4 19C4 19.6 4.4 20 5 20H11C11.6 20 12 20.4 12 21C12 21.6 11.6 22 11 22H3C2.4 22 2 21.6 2 21V13C2 12.4 2.4 12 3 12C3.6 12 4 12.4 4 13V19Z"></path></svg>
+    </span>
+</bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div>
+<div class="card cell html-fill-item html-fill-container bslib-card" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
+<div class="card-body html-fill-item html-fill-container">
+<div class="cell-output cell-output-display html-fill-item html-fill-container" data-execution_count="23">
 <pre><code>427</code></pre>
 </div>
 </div>
-<div id="3c9bca91-1b9e-44bd-ae0e-13d0d377b53e" class="cell" data-execution_count="25">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>sui_mask <span class="op">=</span> nigerian_suicide_cases[[<span class="st">'DIM_TIME'</span>,<span class="st">'RATE_PER_100000_N'</span>,<span class="st">'DIM_SEX'</span>,<span class="st">'DIM_AGE'</span>,<span class="st">'Date'</span>,<span class="st">'GEO_NAME_SHORT'</span>]]</span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>sui_mask</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="25">
-<div>
+<bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
+    <template>Expand</template>
+    <span class="bslib-full-screen-enter badge rounded-pill">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" style="height:1em;width:1em;" aria-hidden="true" role="img"><path d="M20 5C20 4.4 19.6 4 19 4H13C12.4 4 12 3.6 12 3C12 2.4 12.4 2 13 2H21C21.6 2 22 2.4 22 3V11C22 11.6 21.6 12 21 12C20.4 12 20 11.6 20 11V5ZM4 19C4 19.6 4.4 20 5 20H11C11.6 20 12 20.4 12 21C12 21.6 11.6 22 11 22H3C2.4 22 2 21.6 2 21V13C2 12.4 2.4 12 3 12C3.6 12 4 12.4 4 13V19Z"></path></svg>
+    </span>
+</bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div>
+<div class="card cell html-fill-item html-fill-container bslib-card" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
+<div class="card-body html-fill-item html-fill-container">
+<div class="cell-output cell-output-display html-fill-item html-fill-container" data-execution_count="24">
+<div class="html-fill-item html-fill-container">
 
 
 <table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
@@ -681,23 +678,29 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-<div id="7e13eb05-9b46-4e80-a990-c474e8bfcb3e" class="cell" data-execution_count="27">
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"unemployment_data Date dtype:"</span>, unemployment_data[<span class="st">'Date'</span>].dtype)</span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"sui_mask Date dtype:"</span>, sui_mask[<span class="st">'Date'</span>].dtype)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
+<bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
+    <template>Expand</template>
+    <span class="bslib-full-screen-enter badge rounded-pill">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" style="height:1em;width:1em;" aria-hidden="true" role="img"><path d="M20 5C20 4.4 19.6 4 19 4H13C12.4 4 12 3.6 12 3C12 2.4 12.4 2 13 2H21C21.6 2 22 2.4 22 3V11C22 11.6 21.6 12 21 12C20.4 12 20 11.6 20 11V5ZM4 19C4 19.6 4.4 20 5 20H11C11.6 20 12 20.4 12 21C12 21.6 11.6 22 11 22H3C2.4 22 2 21.6 2 21V13C2 12.4 2.4 12 3 12C3.6 12 4 12.4 4 13V19Z"></path></svg>
+    </span>
+</bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div>
+<div class="card cell html-fill-item html-fill-container bslib-card" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
+<div class="card-body html-fill-item html-fill-container">
+<div class="cell-output cell-output-stdout html-fill-item html-fill-container">
 <pre><code>unemployment_data Date dtype: object
 sui_mask Date dtype: int64</code></pre>
 </div>
 </div>
-<div id="0bf70b95-723c-4a6b-9eda-c2a8b2d4cedd" class="cell" data-execution_count="30">
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>unemployment_data.loc[:, <span class="st">'Date'</span>] <span class="op">=</span> unemployment_data[<span class="st">'Date'</span>].astype(<span class="bu">str</span>)</span>
-<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>sui_mask.loc[:, <span class="st">'Date'</span>] <span class="op">=</span> sui_mask[<span class="st">'Date'</span>].astype(<span class="bu">str</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div id="79224147-9370-4147-96f9-a97b07616ea0" class="cell" data-execution_count="31">
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>merged_su1 <span class="op">=</span> unemployment_data.merge(sui_mask, on<span class="op">=</span><span class="st">'Date'</span>, how<span class="op">=</span><span class="st">'inner'</span>)</span>
-<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>merged_su1</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="31">
-<div>
+<bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
+    <template>Expand</template>
+    <span class="bslib-full-screen-enter badge rounded-pill">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" style="height:1em;width:1em;" aria-hidden="true" role="img"><path d="M20 5C20 4.4 19.6 4 19 4H13C12.4 4 12 3.6 12 3C12 2.4 12.4 2 13 2H21C21.6 2 22 2.4 22 3V11C22 11.6 21.6 12 21 12C20.4 12 20 11.6 20 11V5ZM4 19C4 19.6 4.4 20 5 20H11C11.6 20 12 20.4 12 21C12 21.6 11.6 22 11 22H3C2.4 22 2 21.6 2 21V13C2 12.4 2.4 12 3 12C3.6 12 4 12.4 4 13V19Z"></path></svg>
+    </span>
+</bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div>
+<div class="card cell html-fill-item html-fill-container bslib-card" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
+<div class="card-body html-fill-item html-fill-container">
+<div class="cell-output cell-output-display html-fill-item html-fill-container" data-execution_count="27">
+<div class="html-fill-item html-fill-container">
 
 
 <table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
@@ -764,10 +767,10 @@ sui_mask Date dtype: int64</code></pre>
 <td data-quarto-table-cell-role="th">3</td>
 <td>Nigeria</td>
 <td>Total Unemployed</td>
-<td>25-34</td>
+<td>Below primary</td>
 <td>Persons</td>
 <td>2010</td>
-<td>8.741977e+05</td>
+<td>1.054442e+05</td>
 <td>2010</td>
 <td>6.36</td>
 <td>MALE</td>
@@ -778,10 +781,10 @@ sui_mask Date dtype: int64</code></pre>
 <td data-quarto-table-cell-role="th">4</td>
 <td>Nigeria</td>
 <td>Total Unemployed</td>
-<td>25-34</td>
+<td>Below primary</td>
 <td>Persons</td>
 <td>2010</td>
-<td>8.741977e+05</td>
+<td>1.054442e+05</td>
 <td>2010</td>
 <td>4.40</td>
 <td>TOTAL</td>
@@ -806,10 +809,10 @@ sui_mask Date dtype: int64</code></pre>
 <td data-quarto-table-cell-role="th">172</td>
 <td>Nigeria</td>
 <td>Total Unemployed</td>
-<td>Never Attended</td>
+<td>Urban</td>
 <td>Persons</td>
 <td>2013</td>
-<td>2.154951e+06</td>
+<td>2.278265e+06</td>
 <td>2013</td>
 <td>5.88</td>
 <td>MALE</td>
@@ -820,10 +823,10 @@ sui_mask Date dtype: int64</code></pre>
 <td data-quarto-table-cell-role="th">173</td>
 <td>Nigeria</td>
 <td>Total Unemployed</td>
-<td>Never Attended</td>
+<td>Urban</td>
 <td>Persons</td>
 <td>2013</td>
-<td>2.154951e+06</td>
+<td>2.278265e+06</td>
 <td>2013</td>
 <td>2.18</td>
 <td>FEMALE</td>
@@ -834,10 +837,10 @@ sui_mask Date dtype: int64</code></pre>
 <td data-quarto-table-cell-role="th">174</td>
 <td>Nigeria</td>
 <td>Total Unemployed</td>
-<td>All Groups</td>
+<td>15-24</td>
 <td>Persons</td>
 <td>2013</td>
-<td>7.078454e+06</td>
+<td>2.466218e+06</td>
 <td>2013</td>
 <td>4.05</td>
 <td>TOTAL</td>
@@ -848,10 +851,10 @@ sui_mask Date dtype: int64</code></pre>
 <td data-quarto-table-cell-role="th">175</td>
 <td>Nigeria</td>
 <td>Total Unemployed</td>
-<td>All Groups</td>
+<td>15-24</td>
 <td>Persons</td>
 <td>2013</td>
-<td>7.078454e+06</td>
+<td>2.466218e+06</td>
 <td>2013</td>
 <td>5.88</td>
 <td>MALE</td>
@@ -862,10 +865,10 @@ sui_mask Date dtype: int64</code></pre>
 <td data-quarto-table-cell-role="th">176</td>
 <td>Nigeria</td>
 <td>Total Unemployed</td>
-<td>All Groups</td>
+<td>15-24</td>
 <td>Persons</td>
 <td>2013</td>
-<td>7.078454e+06</td>
+<td>2.466218e+06</td>
 <td>2013</td>
 <td>2.18</td>
 <td>FEMALE</td>
@@ -879,11 +882,16 @@ sui_mask Date dtype: int64</code></pre>
 </div>
 </div>
 </div>
-<div id="b5555d3a-c9db-472d-ad59-ba218f6987fb" class="cell" data-execution_count="31">
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>merged_su1 <span class="op">=</span> unemployment_data.merge(sui_mask, on<span class="op">=</span><span class="st">'Date'</span>, how<span class="op">=</span><span class="st">'inner'</span>)</span>
-<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>merged_su1</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="31">
-<div>
+<bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
+    <template>Expand</template>
+    <span class="bslib-full-screen-enter badge rounded-pill">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" style="height:1em;width:1em;" aria-hidden="true" role="img"><path d="M20 5C20 4.4 19.6 4 19 4H13C12.4 4 12 3.6 12 3C12 2.4 12.4 2 13 2H21C21.6 2 22 2.4 22 3V11C22 11.6 21.6 12 21 12C20.4 12 20 11.6 20 11V5ZM4 19C4 19.6 4.4 20 5 20H11C11.6 20 12 20.4 12 21C12 21.6 11.6 22 11 22H3C2.4 22 2 21.6 2 21V13C2 12.4 2.4 12 3 12C3.6 12 4 12.4 4 13V19Z"></path></svg>
+    </span>
+</bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div>
+<div class="card cell html-fill-item html-fill-container bslib-card" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
+<div class="card-body html-fill-item html-fill-container">
+<div class="cell-output cell-output-display html-fill-item html-fill-container" data-execution_count="28">
+<div class="html-fill-item html-fill-container">
 
 
 <table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
@@ -950,10 +958,10 @@ sui_mask Date dtype: int64</code></pre>
 <td data-quarto-table-cell-role="th">3</td>
 <td>Nigeria</td>
 <td>Total Unemployed</td>
-<td>25-34</td>
+<td>Below primary</td>
 <td>Persons</td>
 <td>2010</td>
-<td>8.741977e+05</td>
+<td>1.054442e+05</td>
 <td>2010</td>
 <td>6.36</td>
 <td>MALE</td>
@@ -964,10 +972,10 @@ sui_mask Date dtype: int64</code></pre>
 <td data-quarto-table-cell-role="th">4</td>
 <td>Nigeria</td>
 <td>Total Unemployed</td>
-<td>25-34</td>
+<td>Below primary</td>
 <td>Persons</td>
 <td>2010</td>
-<td>8.741977e+05</td>
+<td>1.054442e+05</td>
 <td>2010</td>
 <td>4.40</td>
 <td>TOTAL</td>
@@ -992,10 +1000,10 @@ sui_mask Date dtype: int64</code></pre>
 <td data-quarto-table-cell-role="th">172</td>
 <td>Nigeria</td>
 <td>Total Unemployed</td>
-<td>Never Attended</td>
+<td>Urban</td>
 <td>Persons</td>
 <td>2013</td>
-<td>2.154951e+06</td>
+<td>2.278265e+06</td>
 <td>2013</td>
 <td>5.88</td>
 <td>MALE</td>
@@ -1006,10 +1014,10 @@ sui_mask Date dtype: int64</code></pre>
 <td data-quarto-table-cell-role="th">173</td>
 <td>Nigeria</td>
 <td>Total Unemployed</td>
-<td>Never Attended</td>
+<td>Urban</td>
 <td>Persons</td>
 <td>2013</td>
-<td>2.154951e+06</td>
+<td>2.278265e+06</td>
 <td>2013</td>
 <td>2.18</td>
 <td>FEMALE</td>
@@ -1020,10 +1028,10 @@ sui_mask Date dtype: int64</code></pre>
 <td data-quarto-table-cell-role="th">174</td>
 <td>Nigeria</td>
 <td>Total Unemployed</td>
-<td>All Groups</td>
+<td>15-24</td>
 <td>Persons</td>
 <td>2013</td>
-<td>7.078454e+06</td>
+<td>2.466218e+06</td>
 <td>2013</td>
 <td>4.05</td>
 <td>TOTAL</td>
@@ -1034,10 +1042,10 @@ sui_mask Date dtype: int64</code></pre>
 <td data-quarto-table-cell-role="th">175</td>
 <td>Nigeria</td>
 <td>Total Unemployed</td>
-<td>All Groups</td>
+<td>15-24</td>
 <td>Persons</td>
 <td>2013</td>
-<td>7.078454e+06</td>
+<td>2.466218e+06</td>
 <td>2013</td>
 <td>5.88</td>
 <td>MALE</td>
@@ -1048,10 +1056,10 @@ sui_mask Date dtype: int64</code></pre>
 <td data-quarto-table-cell-role="th">176</td>
 <td>Nigeria</td>
 <td>Total Unemployed</td>
-<td>All Groups</td>
+<td>15-24</td>
 <td>Persons</td>
 <td>2013</td>
-<td>7.078454e+06</td>
+<td>2.466218e+06</td>
 <td>2013</td>
 <td>2.18</td>
 <td>FEMALE</td>
@@ -1065,16 +1073,27 @@ sui_mask Date dtype: int64</code></pre>
 </div>
 </div>
 </div>
-<div id="79372313-24f8-4a56-80f3-9822cab0eadf" class="cell" data-execution_count="33">
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Merged rows:"</span>, <span class="bu">len</span>(merged_su1))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
+<bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
+    <template>Expand</template>
+    <span class="bslib-full-screen-enter badge rounded-pill">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" style="height:1em;width:1em;" aria-hidden="true" role="img"><path d="M20 5C20 4.4 19.6 4 19 4H13C12.4 4 12 3.6 12 3C12 2.4 12.4 2 13 2H21C21.6 2 22 2.4 22 3V11C22 11.6 21.6 12 21 12C20.4 12 20 11.6 20 11V5ZM4 19C4 19.6 4.4 20 5 20H11C11.6 20 12 20.4 12 21C12 21.6 11.6 22 11 22H3C2.4 22 2 21.6 2 21V13C2 12.4 2.4 12 3 12C3.6 12 4 12.4 4 13V19Z"></path></svg>
+    </span>
+</bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div>
+<div class="card cell html-fill-item html-fill-container bslib-card" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
+<div class="card-body html-fill-item html-fill-container">
+<div class="cell-output cell-output-stdout html-fill-item html-fill-container">
 <pre><code>Merged rows: 177</code></pre>
 </div>
 </div>
-<div id="2c6810d2-aa60-48d9-bac1-60245ce3f2af" class="cell" data-execution_count="34">
-<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(merged_su1[<span class="st">'Date'</span>].unique())</span>
-<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(merged_su1.isnull().<span class="bu">sum</span>())  </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
+<bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
+    <template>Expand</template>
+    <span class="bslib-full-screen-enter badge rounded-pill">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" style="height:1em;width:1em;" aria-hidden="true" role="img"><path d="M20 5C20 4.4 19.6 4 19 4H13C12.4 4 12 3.6 12 3C12 2.4 12.4 2 13 2H21C21.6 2 22 2.4 22 3V11C22 11.6 21.6 12 21 12C20.4 12 20 11.6 20 11V5ZM4 19C4 19.6 4.4 20 5 20H11C11.6 20 12 20.4 12 21C12 21.6 11.6 22 11 22H3C2.4 22 2 21.6 2 21V13C2 12.4 2.4 12 3 12C3.6 12 4 12.4 4 13V19Z"></path></svg>
+    </span>
+</bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div>
+<div class="card cell html-fill-item html-fill-container bslib-card" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
+<div class="card-body html-fill-item html-fill-container">
+<div class="cell-output cell-output-stdout html-fill-item html-fill-container">
 <pre><code>['2010' '2011' '2012' '2013']
 country              0
 indicator            0
@@ -1090,14 +1109,15 @@ GEO_NAME_SHORT       0
 dtype: int64</code></pre>
 </div>
 </div>
-<div id="6d6497dc-ae46-4a5d-9990-4b20cbd25f20" class="cell" data-execution_count="49">
-<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Check columns and data types</span></span>
-<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(merged_su1.columns.tolist())</span>
-<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(merged_su1[[<span class="st">'Value'</span>, <span class="st">'RATE_PER_100000_N'</span>, <span class="st">'Date'</span>, <span class="st">'DIM_SEX'</span>, <span class="st">'GEO_NAME_SHORT'</span>]].describe())</span>
-<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Check for missing values</span></span>
-<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(merged_su1[[<span class="st">'Value'</span>, <span class="st">'RATE_PER_100000_N'</span>]].isnull().<span class="bu">sum</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
+<bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
+    <template>Expand</template>
+    <span class="bslib-full-screen-enter badge rounded-pill">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" style="height:1em;width:1em;" aria-hidden="true" role="img"><path d="M20 5C20 4.4 19.6 4 19 4H13C12.4 4 12 3.6 12 3C12 2.4 12.4 2 13 2H21C21.6 2 22 2.4 22 3V11C22 11.6 21.6 12 21 12C20.4 12 20 11.6 20 11V5ZM4 19C4 19.6 4.4 20 5 20H11C11.6 20 12 20.4 12 21C12 21.6 11.6 22 11 22H3C2.4 22 2 21.6 2 21V13C2 12.4 2.4 12 3 12C3.6 12 4 12.4 4 13V19Z"></path></svg>
+    </span>
+</bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div>
+<div class="card cell html-fill-item html-fill-container bslib-card" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
+<div class="card-body html-fill-item html-fill-container">
+<div class="cell-output cell-output-stdout html-fill-item html-fill-container">
 <pre><code>['country', 'indicator', 'group', 'Unit', 'Date', 'Value', 'DIM_TIME', 'RATE_PER_100000_N', 'DIM_SEX', 'DIM_AGE', 'GEO_NAME_SHORT']
               Value  RATE_PER_100000_N
 count  1.770000e+02         177.000000
@@ -1113,328 +1133,434 @@ RATE_PER_100000_N    0
 dtype: int64</code></pre>
 </div>
 </div>
-</section>
-<section id="visualizations" class="level1">
-<h1>VISUALIZATIONS</h1>
-</section>
-<section id="scatter-plot" class="level1">
-<h1>scatter plot</h1>
-<div id="f822a412-764e-4818-85ea-d4c0e58b29ba" class="cell" data-execution_count="37">
-<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">6</span>))</span>
-<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a>sns.scatterplot(</span>
-<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a>    data<span class="op">=</span>merged_su1, </span>
-<span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a>    x<span class="op">=</span><span class="st">'Value'</span>, </span>
-<span id="cb28-7"><a href="#cb28-7" aria-hidden="true" tabindex="-1"></a>    y<span class="op">=</span><span class="st">'RATE_PER_100000_N'</span>,</span>
-<span id="cb28-8"><a href="#cb28-8" aria-hidden="true" tabindex="-1"></a>    hue<span class="op">=</span><span class="st">'Date'</span>,      </span>
-<span id="cb28-9"><a href="#cb28-9" aria-hidden="true" tabindex="-1"></a>    style<span class="op">=</span><span class="st">'DIM_SEX'</span>, </span>
-<span id="cb28-10"><a href="#cb28-10" aria-hidden="true" tabindex="-1"></a>    s<span class="op">=</span><span class="dv">100</span>           </span>
-<span id="cb28-11"><a href="#cb28-11" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb28-12"><a href="#cb28-12" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">"Unemployment vs. Suicide Rates (per 100k)"</span>, fontsize<span class="op">=</span><span class="dv">14</span>)</span>
-<span id="cb28-13"><a href="#cb28-13" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">"Unemployment Rate (%)"</span>)</span>
-<span id="cb28-14"><a href="#cb28-14" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">"Suicide Rate (per 100k)"</span>)</span>
-<span id="cb28-15"><a href="#cb28-15" aria-hidden="true" tabindex="-1"></a>plt.grid(alpha<span class="op">=</span><span class="fl">0.3</span>)</span>
-<span id="cb28-16"><a href="#cb28-16" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="merged_suicide-unemployment_files/figure-html/cell-25-output-1.png" class="img-fluid figure-img"></p>
-</figure>
+<bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
+    <template>Expand</template>
+    <span class="bslib-full-screen-enter badge rounded-pill">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" style="height:1em;width:1em;" aria-hidden="true" role="img"><path d="M20 5C20 4.4 19.6 4 19 4H13C12.4 4 12 3.6 12 3C12 2.4 12.4 2 13 2H21C21.6 2 22 2.4 22 3V11C22 11.6 21.6 12 21 12C20.4 12 20 11.6 20 11V5ZM4 19C4 19.6 4.4 20 5 20H11C11.6 20 12 20.4 12 21C12 21.6 11.6 22 11 22H3C2.4 22 2 21.6 2 21V13C2 12.4 2.4 12 3 12C3.6 12 4 12.4 4 13V19Z"></path></svg>
+    </span>
+</bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div>
 </div>
 </div>
+<div id="visualizations" class="dashboard-page tab-pane grid-skip html-fill-item html-fill-container" data-orientation="rows" aria-labelledby="tab-visualizations">
+
 </div>
-</section>
-<section id="line-plot" class="level1">
-<h1>line plot</h1>
-<div id="404a71d2-2331-4c02-acd4-005ed8bd901a" class="cell" data-execution_count="38">
-<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">12</span>, <span class="dv">6</span>))</span>
-<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Aggregate data by Date (year)</span></span>
-<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a>trends <span class="op">=</span> merged_su1.groupby(<span class="st">'Date'</span>).agg({</span>
-<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Value'</span>: <span class="st">'mean'</span>,               <span class="co"># Mean unemployment</span></span>
-<span id="cb29-6"><a href="#cb29-6" aria-hidden="true" tabindex="-1"></a>    <span class="st">'RATE_PER_100000_N'</span>: <span class="st">'mean'</span>    <span class="co"># Mean suicide rate</span></span>
-<span id="cb29-7"><a href="#cb29-7" aria-hidden="true" tabindex="-1"></a>}).reset_index()</span>
-<span id="cb29-8"><a href="#cb29-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb29-9"><a href="#cb29-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot unemployment trend</span></span>
-<span id="cb29-10"><a href="#cb29-10" aria-hidden="true" tabindex="-1"></a>sns.lineplot(</span>
-<span id="cb29-11"><a href="#cb29-11" aria-hidden="true" tabindex="-1"></a>    data<span class="op">=</span>trends, </span>
-<span id="cb29-12"><a href="#cb29-12" aria-hidden="true" tabindex="-1"></a>    x<span class="op">=</span><span class="st">'Date'</span>, </span>
-<span id="cb29-13"><a href="#cb29-13" aria-hidden="true" tabindex="-1"></a>    y<span class="op">=</span><span class="st">'Value'</span>, </span>
-<span id="cb29-14"><a href="#cb29-14" aria-hidden="true" tabindex="-1"></a>    marker<span class="op">=</span><span class="st">'o'</span>, </span>
-<span id="cb29-15"><a href="#cb29-15" aria-hidden="true" tabindex="-1"></a>    label<span class="op">=</span><span class="st">'Unemployment Rate'</span>,</span>
-<span id="cb29-16"><a href="#cb29-16" aria-hidden="true" tabindex="-1"></a>    color<span class="op">=</span><span class="st">'blue'</span></span>
-<span id="cb29-17"><a href="#cb29-17" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb29-18"><a href="#cb29-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb29-19"><a href="#cb29-19" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot suicide rate trend (on secondary axis)</span></span>
-<span id="cb29-20"><a href="#cb29-20" aria-hidden="true" tabindex="-1"></a>plt.twinx()</span>
-<span id="cb29-21"><a href="#cb29-21" aria-hidden="true" tabindex="-1"></a>sns.lineplot(</span>
-<span id="cb29-22"><a href="#cb29-22" aria-hidden="true" tabindex="-1"></a>    data<span class="op">=</span>trends, </span>
-<span id="cb29-23"><a href="#cb29-23" aria-hidden="true" tabindex="-1"></a>    x<span class="op">=</span><span class="st">'Date'</span>, </span>
-<span id="cb29-24"><a href="#cb29-24" aria-hidden="true" tabindex="-1"></a>    y<span class="op">=</span><span class="st">'RATE_PER_100000_N'</span>, </span>
-<span id="cb29-25"><a href="#cb29-25" aria-hidden="true" tabindex="-1"></a>    marker<span class="op">=</span><span class="st">'s'</span>, </span>
-<span id="cb29-26"><a href="#cb29-26" aria-hidden="true" tabindex="-1"></a>    label<span class="op">=</span><span class="st">'Suicide Rate'</span>,</span>
-<span id="cb29-27"><a href="#cb29-27" aria-hidden="true" tabindex="-1"></a>    color<span class="op">=</span><span class="st">'red'</span></span>
-<span id="cb29-28"><a href="#cb29-28" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb29-29"><a href="#cb29-29" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb29-30"><a href="#cb29-30" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">"Unemployment and Suicide Rate Trends Over Time"</span>, fontsize<span class="op">=</span><span class="dv">14</span>)</span>
-<span id="cb29-31"><a href="#cb29-31" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">"Year"</span>)</span>
-<span id="cb29-32"><a href="#cb29-32" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">"Unemployment Rate (%)"</span>)</span>
-<span id="cb29-33"><a href="#cb29-33" aria-hidden="true" tabindex="-1"></a>plt.gca().get_yaxis().set_visible(<span class="va">False</span>)  <span class="co"># Hide duplicate Y-axis</span></span>
-<span id="cb29-34"><a href="#cb29-34" aria-hidden="true" tabindex="-1"></a>plt.legend(loc<span class="op">=</span><span class="st">'upper left'</span>)</span>
-<span id="cb29-35"><a href="#cb29-35" aria-hidden="true" tabindex="-1"></a>plt.grid(alpha<span class="op">=</span><span class="fl">0.3</span>)</span>
-<span id="cb29-36"><a href="#cb29-36" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>/opt/anaconda3/lib/python3.11/site-packages/seaborn/_oldcore.py:1119: FutureWarning: use_inf_as_na option is deprecated and will be removed in a future version. Convert inf values to NaN before operating instead.
-  with pd.option_context('mode.use_inf_as_na', True):
-/opt/anaconda3/lib/python3.11/site-packages/seaborn/_oldcore.py:1119: FutureWarning: use_inf_as_na option is deprecated and will be removed in a future version. Convert inf values to NaN before operating instead.
-  with pd.option_context('mode.use_inf_as_na', True):
-/opt/anaconda3/lib/python3.11/site-packages/seaborn/_oldcore.py:1119: FutureWarning: use_inf_as_na option is deprecated and will be removed in a future version. Convert inf values to NaN before operating instead.
-  with pd.option_context('mode.use_inf_as_na', True):
-/opt/anaconda3/lib/python3.11/site-packages/seaborn/_oldcore.py:1119: FutureWarning: use_inf_as_na option is deprecated and will be removed in a future version. Convert inf values to NaN before operating instead.
-  with pd.option_context('mode.use_inf_as_na', True):</code></pre>
-</div>
-<div class="cell-output cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="merged_suicide-unemployment_files/figure-html/cell-26-output-2.png" class="img-fluid figure-img"></p>
-</figure>
+<div id="scatter-plot" class="dashboard-page tab-pane grid-skip html-fill-item html-fill-container" data-orientation="rows" aria-labelledby="tab-scatter-plot">
+<div class="html-fill-item html-fill-container bslib-grid" style="display: grid; grid-template-rows: minmax(3em, 1fr); grid-auto-columns: minmax(0, 1fr);">
+<div class="card cell html-fill-item html-fill-container bslib-card" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
+<div class="card-body html-fill-item html-fill-container">
+<div class="cell-output cell-output-display html-fill-item html-fill-container">
+<img src="merged_suicide-unemployment_files/figure-html/cell-25-output-1.png" class="img-fluid quarto-dashboard-img-contain">
 </div>
 </div>
-</div>
-</section>
-<section id="bar-chart" class="level1">
-<h1>bar chart</h1>
-<div id="1bcb4a44-346b-401b-afb7-ab7145a4bc3c" class="cell" data-execution_count="42">
-<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>fig, axes <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">2</span>, figsize<span class="op">=</span>(<span class="dv">14</span>, <span class="dv">6</span>), sharex<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Unemployment</span></span>
-<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a>sns.barplot(</span>
-<span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a>    data<span class="op">=</span>merged_su1, </span>
-<span id="cb31-6"><a href="#cb31-6" aria-hidden="true" tabindex="-1"></a>    x<span class="op">=</span><span class="st">'DIM_SEX'</span>, </span>
-<span id="cb31-7"><a href="#cb31-7" aria-hidden="true" tabindex="-1"></a>    y<span class="op">=</span><span class="st">'Value'</span>, </span>
-<span id="cb31-8"><a href="#cb31-8" aria-hidden="true" tabindex="-1"></a>    hue<span class="op">=</span><span class="st">'Date'</span>, </span>
-<span id="cb31-9"><a href="#cb31-9" aria-hidden="true" tabindex="-1"></a>    palette<span class="op">=</span><span class="st">'Blues'</span>,</span>
-<span id="cb31-10"><a href="#cb31-10" aria-hidden="true" tabindex="-1"></a>    alpha<span class="op">=</span><span class="fl">0.7</span>,</span>
-<span id="cb31-11"><a href="#cb31-11" aria-hidden="true" tabindex="-1"></a>    ax<span class="op">=</span>axes[<span class="dv">0</span>]</span>
-<span id="cb31-12"><a href="#cb31-12" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb31-13"><a href="#cb31-13" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">0</span>].set_title(<span class="st">"Unemployment Rate by Gender"</span>)</span>
-<span id="cb31-14"><a href="#cb31-14" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">0</span>].set_ylabel(<span class="st">"Unemployment Rate (%)"</span>)</span>
-<span id="cb31-15"><a href="#cb31-15" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">0</span>].set_xlabel(<span class="st">"Gender"</span>)</span>
-<span id="cb31-16"><a href="#cb31-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-17"><a href="#cb31-17" aria-hidden="true" tabindex="-1"></a><span class="co"># Suicide Rate</span></span>
-<span id="cb31-18"><a href="#cb31-18" aria-hidden="true" tabindex="-1"></a>sns.barplot(</span>
-<span id="cb31-19"><a href="#cb31-19" aria-hidden="true" tabindex="-1"></a>    data<span class="op">=</span>merged_su1, </span>
-<span id="cb31-20"><a href="#cb31-20" aria-hidden="true" tabindex="-1"></a>    x<span class="op">=</span><span class="st">'DIM_SEX'</span>, </span>
-<span id="cb31-21"><a href="#cb31-21" aria-hidden="true" tabindex="-1"></a>    y<span class="op">=</span><span class="st">'RATE_PER_100000_N'</span>, </span>
-<span id="cb31-22"><a href="#cb31-22" aria-hidden="true" tabindex="-1"></a>    hue<span class="op">=</span><span class="st">'Date'</span>, </span>
-<span id="cb31-23"><a href="#cb31-23" aria-hidden="true" tabindex="-1"></a>    palette<span class="op">=</span><span class="st">'Reds'</span>,</span>
-<span id="cb31-24"><a href="#cb31-24" aria-hidden="true" tabindex="-1"></a>    alpha<span class="op">=</span><span class="fl">0.7</span>,</span>
-<span id="cb31-25"><a href="#cb31-25" aria-hidden="true" tabindex="-1"></a>    ax<span class="op">=</span>axes[<span class="dv">1</span>]</span>
-<span id="cb31-26"><a href="#cb31-26" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb31-27"><a href="#cb31-27" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">1</span>].set_title(<span class="st">"Suicide Rate by Gender"</span>)</span>
-<span id="cb31-28"><a href="#cb31-28" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">1</span>].set_ylabel(<span class="st">"Suicide Rate per 100k"</span>)</span>
-<span id="cb31-29"><a href="#cb31-29" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">1</span>].set_xlabel(<span class="st">"Gender"</span>)</span>
-<span id="cb31-30"><a href="#cb31-30" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-31"><a href="#cb31-31" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
-<span id="cb31-32"><a href="#cb31-32" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="merged_suicide-unemployment_files/figure-html/cell-27-output-1.png" class="img-fluid figure-img"></p>
-</figure>
+<bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
+    <template>Expand</template>
+    <span class="bslib-full-screen-enter badge rounded-pill">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" style="height:1em;width:1em;" aria-hidden="true" role="img"><path d="M20 5C20 4.4 19.6 4 19 4H13C12.4 4 12 3.6 12 3C12 2.4 12.4 2 13 2H21C21.6 2 22 2.4 22 3V11C22 11.6 21.6 12 21 12C20.4 12 20 11.6 20 11V5ZM4 19C4 19.6 4.4 20 5 20H11C11.6 20 12 20.4 12 21C12 21.6 11.6 22 11 22H3C2.4 22 2 21.6 2 21V13C2 12.4 2.4 12 3 12C3.6 12 4 12.4 4 13V19Z"></path></svg>
+    </span>
+</bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div>
 </div>
 </div>
-</div>
-<div id="73528959-8947-486b-b857-ddb80dcb727b" class="cell" data-execution_count="44">
-<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Pivot table for heatmap</span></span>
-<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>heatmap_data <span class="op">=</span> merged_su1.pivot_table(</span>
-<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>    index<span class="op">=</span><span class="st">'GEO_NAME_SHORT'</span>, </span>
-<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a>    columns<span class="op">=</span><span class="st">'Date'</span>, </span>
-<span id="cb32-5"><a href="#cb32-5" aria-hidden="true" tabindex="-1"></a>    values<span class="op">=</span>[<span class="st">'Value'</span>, <span class="st">'RATE_PER_100000_N'</span>]</span>
-<span id="cb32-6"><a href="#cb32-6" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb32-7"><a href="#cb32-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb32-8"><a href="#cb32-8" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">12</span>, <span class="dv">8</span>))</span>
-<span id="cb32-9"><a href="#cb32-9" aria-hidden="true" tabindex="-1"></a>sns.heatmap(</span>
-<span id="cb32-10"><a href="#cb32-10" aria-hidden="true" tabindex="-1"></a>    heatmap_data[<span class="st">'Value'</span>],  <span class="co"># Unemployment data</span></span>
-<span id="cb32-11"><a href="#cb32-11" aria-hidden="true" tabindex="-1"></a>    annot<span class="op">=</span><span class="va">True</span>, </span>
-<span id="cb32-12"><a href="#cb32-12" aria-hidden="true" tabindex="-1"></a>    cmap<span class="op">=</span><span class="st">'Blues'</span>,</span>
-<span id="cb32-13"><a href="#cb32-13" aria-hidden="true" tabindex="-1"></a>    linewidths<span class="op">=</span><span class="fl">0.5</span></span>
-<span id="cb32-14"><a href="#cb32-14" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb32-15"><a href="#cb32-15" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">"Unemployment Rates by Country/Year"</span>, fontsize<span class="op">=</span><span class="dv">14</span>)</span>
-<span id="cb32-16"><a href="#cb32-16" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="merged_suicide-unemployment_files/figure-html/cell-28-output-1.png" class="img-fluid figure-img"></p>
-</figure>
+<div id="line-plot" class="dashboard-page tab-pane grid-skip html-fill-item html-fill-container" data-orientation="rows" aria-labelledby="tab-line-plot">
+<div class="html-fill-item html-fill-container bslib-grid" style="display: grid; grid-template-rows: minmax(3em, 1fr); grid-auto-columns: minmax(0, 1fr);">
+<div class="card cell html-fill-item html-fill-container bslib-card" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
+<div class="card-body html-fill-item html-fill-container">
+<div class="cell-output cell-output-display html-fill-item html-fill-container">
+<img src="merged_suicide-unemployment_files/figure-html/cell-26-output-1.png" class="img-fluid quarto-dashboard-img-contain">
 </div>
 </div>
-</div>
-<div id="0536d657-dd47-433b-b0fe-0dd0251eecbf" class="cell" data-execution_count="47">
-<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">12</span>, <span class="dv">6</span>))</span>
-<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Unemployment distribution</span></span>
-<span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a>plt.subplot(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">1</span>)</span>
-<span id="cb33-5"><a href="#cb33-5" aria-hidden="true" tabindex="-1"></a>sns.boxplot(data<span class="op">=</span>merged_su1, x<span class="op">=</span><span class="st">'Date'</span>, y<span class="op">=</span><span class="st">'Value'</span>, palette<span class="op">=</span><span class="st">'Blues'</span>)</span>
-<span id="cb33-6"><a href="#cb33-6" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">"Unemployment Rate Distribution by Year"</span>)</span>
-<span id="cb33-7"><a href="#cb33-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-8"><a href="#cb33-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Suicide rate distribution</span></span>
-<span id="cb33-9"><a href="#cb33-9" aria-hidden="true" tabindex="-1"></a>plt.subplot(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">2</span>)</span>
-<span id="cb33-10"><a href="#cb33-10" aria-hidden="true" tabindex="-1"></a>sns.boxplot(data<span class="op">=</span>merged_su1, x<span class="op">=</span><span class="st">'Date'</span>, y<span class="op">=</span><span class="st">'RATE_PER_100000_N'</span>, palette<span class="op">=</span><span class="st">'Reds'</span>)</span>
-<span id="cb33-11"><a href="#cb33-11" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">"Suicide Rate Distribution by Year"</span>)</span>
-<span id="cb33-12"><a href="#cb33-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-13"><a href="#cb33-13" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
-<span id="cb33-14"><a href="#cb33-14" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="merged_suicide-unemployment_files/figure-html/cell-29-output-1.png" class="img-fluid figure-img"></p>
-</figure>
+<bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
+    <template>Expand</template>
+    <span class="bslib-full-screen-enter badge rounded-pill">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" style="height:1em;width:1em;" aria-hidden="true" role="img"><path d="M20 5C20 4.4 19.6 4 19 4H13C12.4 4 12 3.6 12 3C12 2.4 12.4 2 13 2H21C21.6 2 22 2.4 22 3V11C22 11.6 21.6 12 21 12C20.4 12 20 11.6 20 11V5ZM4 19C4 19.6 4.4 20 5 20H11C11.6 20 12 20.4 12 21C12 21.6 11.6 22 11 22H3C2.4 22 2 21.6 2 21V13C2 12.4 2.4 12 3 12C3.6 12 4 12.4 4 13V19Z"></path></svg>
+    </span>
+</bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div>
 </div>
 </div>
+<div id="bar-chart" class="dashboard-page tab-pane grid-skip html-fill-item html-fill-container" data-orientation="rows" aria-labelledby="tab-bar-chart">
+<div class="html-fill-item html-fill-container bslib-grid" style="display: grid; grid-template-rows: minmax(3em, 1fr) minmax(3em, 1fr) minmax(3em, 1fr) minmax(3em, 1fr) minmax(3em, 1fr) minmax(3em, 1fr) minmax(3em, 1fr) minmax(3em, 1fr) minmax(3em, 1fr) minmax(3em, 1fr); grid-auto-columns: minmax(0, 1fr);">
+<div class="card cell html-fill-item html-fill-container bslib-card" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
+<div class="card-body html-fill-item html-fill-container">
+<div class="cell-output cell-output-display html-fill-item html-fill-container">
+<img src="merged_suicide-unemployment_files/figure-html/cell-27-output-1.png" class="img-fluid quarto-dashboard-img-contain">
 </div>
-<div id="ae88e58a-5251-41c1-8d94-f6c0ca0a0403" class="cell" data-execution_count="53">
-<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> scipy.stats <span class="im">as</span> stats</span>
-<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Pearson correlation (linear relationship)</span></span>
-<span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a>pearson_corr, p_value <span class="op">=</span> stats.pearsonr(merged_su1[<span class="st">'Value'</span>], merged_su1[<span class="st">'RATE_PER_100000_N'</span>])</span>
-<span id="cb34-5"><a href="#cb34-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Pearson Correlation: </span><span class="sc">{</span>pearson_corr<span class="sc">:.2f}</span><span class="ss">, p-value: </span><span class="sc">{</span>p_value<span class="sc">:.4f}</span><span class="ss">"</span>)</span>
-<span id="cb34-6"><a href="#cb34-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb34-7"><a href="#cb34-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Spearman correlation (non-linear/monotonic relationship)</span></span>
-<span id="cb34-8"><a href="#cb34-8" aria-hidden="true" tabindex="-1"></a>spearman_corr, p_value <span class="op">=</span> stats.spearmanr(merged_su1[<span class="st">'Value'</span>], merged_su1[<span class="st">'RATE_PER_100000_N'</span>])</span>
-<span id="cb34-9"><a href="#cb34-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Spearman Correlation: </span><span class="sc">{</span>spearman_corr<span class="sc">:.2f}</span><span class="ss">, p-value: </span><span class="sc">{</span>p_value<span class="sc">:.4f}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
+</div>
+<bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
+    <template>Expand</template>
+    <span class="bslib-full-screen-enter badge rounded-pill">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" style="height:1em;width:1em;" aria-hidden="true" role="img"><path d="M20 5C20 4.4 19.6 4 19 4H13C12.4 4 12 3.6 12 3C12 2.4 12.4 2 13 2H21C21.6 2 22 2.4 22 3V11C22 11.6 21.6 12 21 12C20.4 12 20 11.6 20 11V5ZM4 19C4 19.6 4.4 20 5 20H11C11.6 20 12 20.4 12 21C12 21.6 11.6 22 11 22H3C2.4 22 2 21.6 2 21V13C2 12.4 2.4 12 3 12C3.6 12 4 12.4 4 13V19Z"></path></svg>
+    </span>
+</bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div>
+<div class="card cell html-fill-item html-fill-container bslib-card" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
+<div class="card-body html-fill-item html-fill-container">
+<div class="cell-output cell-output-display html-fill-item html-fill-container">
+<img src="merged_suicide-unemployment_files/figure-html/cell-28-output-1.png" class="img-fluid quarto-dashboard-img-contain">
+</div>
+</div>
+<bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
+    <template>Expand</template>
+    <span class="bslib-full-screen-enter badge rounded-pill">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" style="height:1em;width:1em;" aria-hidden="true" role="img"><path d="M20 5C20 4.4 19.6 4 19 4H13C12.4 4 12 3.6 12 3C12 2.4 12.4 2 13 2H21C21.6 2 22 2.4 22 3V11C22 11.6 21.6 12 21 12C20.4 12 20 11.6 20 11V5ZM4 19C4 19.6 4.4 20 5 20H11C11.6 20 12 20.4 12 21C12 21.6 11.6 22 11 22H3C2.4 22 2 21.6 2 21V13C2 12.4 2.4 12 3 12C3.6 12 4 12.4 4 13V19Z"></path></svg>
+    </span>
+</bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div>
+<div class="card cell html-fill-item html-fill-container bslib-card" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
+<div class="card-body html-fill-item html-fill-container">
+<div class="cell-output cell-output-display html-fill-item html-fill-container">
+<img src="merged_suicide-unemployment_files/figure-html/cell-29-output-1.png" class="img-fluid quarto-dashboard-img-contain">
+</div>
+</div>
+<bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
+    <template>Expand</template>
+    <span class="bslib-full-screen-enter badge rounded-pill">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" style="height:1em;width:1em;" aria-hidden="true" role="img"><path d="M20 5C20 4.4 19.6 4 19 4H13C12.4 4 12 3.6 12 3C12 2.4 12.4 2 13 2H21C21.6 2 22 2.4 22 3V11C22 11.6 21.6 12 21 12C20.4 12 20 11.6 20 11V5ZM4 19C4 19.6 4.4 20 5 20H11C11.6 20 12 20.4 12 21C12 21.6 11.6 22 11 22H3C2.4 22 2 21.6 2 21V13C2 12.4 2.4 12 3 12C3.6 12 4 12.4 4 13V19Z"></path></svg>
+    </span>
+</bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div>
+<div class="card cell html-fill-item html-fill-container bslib-card" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
+<div class="card-body html-fill-item html-fill-container">
+<div class="cell-output cell-output-stdout html-fill-item html-fill-container">
 <pre><code>Pearson Correlation: -0.03, p-value: 0.7090
 Spearman Correlation: -0.10, p-value: 0.1673</code></pre>
 </div>
 </div>
-<div id="f91a366c-aac4-49d1-9c6b-36d61f2f1af9" class="cell" data-execution_count="55">
-<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">6</span>))</span>
-<span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a>sns.regplot(</span>
-<span id="cb36-5"><a href="#cb36-5" aria-hidden="true" tabindex="-1"></a>    data<span class="op">=</span>merged_su1,</span>
-<span id="cb36-6"><a href="#cb36-6" aria-hidden="true" tabindex="-1"></a>    x<span class="op">=</span><span class="st">'Value'</span>, </span>
-<span id="cb36-7"><a href="#cb36-7" aria-hidden="true" tabindex="-1"></a>    y<span class="op">=</span><span class="st">'RATE_PER_100000_N'</span>,</span>
-<span id="cb36-8"><a href="#cb36-8" aria-hidden="true" tabindex="-1"></a>    scatter_kws<span class="op">=</span>{<span class="st">'alpha'</span>: <span class="fl">0.5</span>},</span>
-<span id="cb36-9"><a href="#cb36-9" aria-hidden="true" tabindex="-1"></a>    line_kws<span class="op">=</span>{<span class="st">'color'</span>: <span class="st">'red'</span>}</span>
-<span id="cb36-10"><a href="#cb36-10" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb36-11"><a href="#cb36-11" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">"Unemployment vs. Suicide Rates (per 100k)"</span>, fontsize<span class="op">=</span><span class="dv">14</span>)</span>
-<span id="cb36-12"><a href="#cb36-12" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">"Unemployment Rate (%)"</span>)</span>
-<span id="cb36-13"><a href="#cb36-13" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">"Suicide Rate (per 100k)"</span>)</span>
-<span id="cb36-14"><a href="#cb36-14" aria-hidden="true" tabindex="-1"></a>plt.grid(alpha<span class="op">=</span><span class="fl">0.3</span>)</span>
-<span id="cb36-15"><a href="#cb36-15" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="merged_suicide-unemployment_files/figure-html/cell-31-output-1.png" class="img-fluid figure-img"></p>
-</figure>
+<bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
+    <template>Expand</template>
+    <span class="bslib-full-screen-enter badge rounded-pill">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" style="height:1em;width:1em;" aria-hidden="true" role="img"><path d="M20 5C20 4.4 19.6 4 19 4H13C12.4 4 12 3.6 12 3C12 2.4 12.4 2 13 2H21C21.6 2 22 2.4 22 3V11C22 11.6 21.6 12 21 12C20.4 12 20 11.6 20 11V5ZM4 19C4 19.6 4.4 20 5 20H11C11.6 20 12 20.4 12 21C12 21.6 11.6 22 11 22H3C2.4 22 2 21.6 2 21V13C2 12.4 2.4 12 3 12C3.6 12 4 12.4 4 13V19Z"></path></svg>
+    </span>
+</bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div>
+<div class="card cell html-fill-item html-fill-container bslib-card" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
+<div class="card-body html-fill-item html-fill-container">
+<div class="cell-output cell-output-display html-fill-item html-fill-container">
+<img src="merged_suicide-unemployment_files/figure-html/cell-31-output-1.png" class="img-fluid quarto-dashboard-img-contain">
 </div>
 </div>
-</div>
-<div id="57a80e57-8567-46f8-b29a-59600e36cb70" class="cell" data-execution_count="57">
-<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Example: By gender</span></span>
-<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">6</span>))</span>
-<span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a>sns.lmplot(</span>
-<span id="cb37-4"><a href="#cb37-4" aria-hidden="true" tabindex="-1"></a>    data<span class="op">=</span>merged_su1,</span>
-<span id="cb37-5"><a href="#cb37-5" aria-hidden="true" tabindex="-1"></a>    x<span class="op">=</span><span class="st">'Value'</span>,</span>
-<span id="cb37-6"><a href="#cb37-6" aria-hidden="true" tabindex="-1"></a>    y<span class="op">=</span><span class="st">'RATE_PER_100000_N'</span>,</span>
-<span id="cb37-7"><a href="#cb37-7" aria-hidden="true" tabindex="-1"></a>    hue<span class="op">=</span><span class="st">'DIM_SEX'</span>,  <span class="co"># Gender</span></span>
-<span id="cb37-8"><a href="#cb37-8" aria-hidden="true" tabindex="-1"></a>    col<span class="op">=</span><span class="st">'DIM_SEX'</span>,   <span class="co"># Separate plots for each gender</span></span>
-<span id="cb37-9"><a href="#cb37-9" aria-hidden="true" tabindex="-1"></a>    height<span class="op">=</span><span class="dv">5</span>,</span>
-<span id="cb37-10"><a href="#cb37-10" aria-hidden="true" tabindex="-1"></a>    aspect<span class="op">=</span><span class="dv">1</span></span>
-<span id="cb37-11"><a href="#cb37-11" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb37-12"><a href="#cb37-12" aria-hidden="true" tabindex="-1"></a>plt.suptitle(<span class="st">"Unemployment vs. Suicide Rates by Gender"</span>, y<span class="op">=</span><span class="fl">1.02</span>)</span>
-<span id="cb37-13"><a href="#cb37-13" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display">
+<bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
+    <template>Expand</template>
+    <span class="bslib-full-screen-enter badge rounded-pill">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" style="height:1em;width:1em;" aria-hidden="true" role="img"><path d="M20 5C20 4.4 19.6 4 19 4H13C12.4 4 12 3.6 12 3C12 2.4 12.4 2 13 2H21C21.6 2 22 2.4 22 3V11C22 11.6 21.6 12 21 12C20.4 12 20 11.6 20 11V5ZM4 19C4 19.6 4.4 20 5 20H11C11.6 20 12 20.4 12 21C12 21.6 11.6 22 11 22H3C2.4 22 2 21.6 2 21V13C2 12.4 2.4 12 3 12C3.6 12 4 12.4 4 13V19Z"></path></svg>
+    </span>
+</bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div>
+<div class="card cell html-fill-item html-fill-container bslib-card" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
+<div class="card-body html-fill-item html-fill-container">
+<div class="cell-output cell-output-display html-fill-item html-fill-container">
 <pre><code>&lt;Figure size 1000x600 with 0 Axes&gt;</code></pre>
 </div>
-<div class="cell-output cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="merged_suicide-unemployment_files/figure-html/cell-32-output-2.png" class="img-fluid figure-img"></p>
-</figure>
+<div class="cell-output cell-output-display html-fill-item html-fill-container">
+<img src="merged_suicide-unemployment_files/figure-html/cell-32-output-2.png" class="img-fluid quarto-dashboard-img-contain">
+</div>
+</div>
+<bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
+    <template>Expand</template>
+    <span class="bslib-full-screen-enter badge rounded-pill">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" style="height:1em;width:1em;" aria-hidden="true" role="img"><path d="M20 5C20 4.4 19.6 4 19 4H13C12.4 4 12 3.6 12 3C12 2.4 12.4 2 13 2H21C21.6 2 22 2.4 22 3V11C22 11.6 21.6 12 21 12C20.4 12 20 11.6 20 11V5ZM4 19C4 19.6 4.4 20 5 20H11C11.6 20 12 20.4 12 21C12 21.6 11.6 22 11 22H3C2.4 22 2 21.6 2 21V13C2 12.4 2.4 12 3 12C3.6 12 4 12.4 4 13V19Z"></path></svg>
+    </span>
+</bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div>
+<div class="card cell html-fill-item html-fill-container bslib-card" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
+<div class="card-body html-fill-item html-fill-container">
+<div class="cell-output cell-output-display html-fill-item html-fill-container">
+<img src="merged_suicide-unemployment_files/figure-html/cell-33-output-1.png" class="img-fluid quarto-dashboard-img-contain">
+</div>
+</div>
+<bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
+    <template>Expand</template>
+    <span class="bslib-full-screen-enter badge rounded-pill">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" style="height:1em;width:1em;" aria-hidden="true" role="img"><path d="M20 5C20 4.4 19.6 4 19 4H13C12.4 4 12 3.6 12 3C12 2.4 12.4 2 13 2H21C21.6 2 22 2.4 22 3V11C22 11.6 21.6 12 21 12C20.4 12 20 11.6 20 11V5ZM4 19C4 19.6 4.4 20 5 20H11C11.6 20 12 20.4 12 21C12 21.6 11.6 22 11 22H3C2.4 22 2 21.6 2 21V13C2 12.4 2.4 12 3 12C3.6 12 4 12.4 4 13V19Z"></path></svg>
+    </span>
+</bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div>
+<div class="card cell html-fill-item html-fill-container bslib-card" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
+<div class="card-body html-fill-item html-fill-container">
+<div class="cell-output cell-output-display html-fill-item html-fill-container">
+<img src="merged_suicide-unemployment_files/figure-html/cell-34-output-1.png" class="img-fluid quarto-dashboard-img-contain">
+</div>
+</div>
+<bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
+    <template>Expand</template>
+    <span class="bslib-full-screen-enter badge rounded-pill">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" style="height:1em;width:1em;" aria-hidden="true" role="img"><path d="M20 5C20 4.4 19.6 4 19 4H13C12.4 4 12 3.6 12 3C12 2.4 12.4 2 13 2H21C21.6 2 22 2.4 22 3V11C22 11.6 21.6 12 21 12C20.4 12 20 11.6 20 11V5ZM4 19C4 19.6 4.4 20 5 20H11C11.6 20 12 20.4 12 21C12 21.6 11.6 22 11 22H3C2.4 22 2 21.6 2 21V13C2 12.4 2.4 12 3 12C3.6 12 4 12.4 4 13V19Z"></path></svg>
+    </span>
+</bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div>
+<div class="card cell html-fill-item html-fill-container bslib-card" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
+<div class="card-body html-fill-item html-fill-container">
+<div class="cell-output cell-output-display html-fill-item html-fill-container" data-execution_count="44">
+<div class="html-fill-item html-fill-container">
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">country</th>
+<th data-quarto-table-cell-role="th">indicator</th>
+<th data-quarto-table-cell-role="th">group</th>
+<th data-quarto-table-cell-role="th">Unit</th>
+<th data-quarto-table-cell-role="th">Date</th>
+<th data-quarto-table-cell-role="th">Value</th>
+<th data-quarto-table-cell-role="th">Year</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>Nigeria</td>
+<td>Total Unemployed</td>
+<td>All Groups</td>
+<td>Persons</td>
+<td>2010</td>
+<td>3.318425e+06</td>
+<td>2010</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>Nigeria</td>
+<td>Total Unemployed</td>
+<td>Below primary</td>
+<td>Persons</td>
+<td>2010</td>
+<td>1.054442e+05</td>
+<td>2010</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>Nigeria</td>
+<td>Total Unemployed</td>
+<td>Primary</td>
+<td>Persons</td>
+<td>2010</td>
+<td>8.116727e+05</td>
+<td>2010</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>Nigeria</td>
+<td>Total Unemployed</td>
+<td>Secondary</td>
+<td>Persons</td>
+<td>2010</td>
+<td>1.170617e+06</td>
+<td>2010</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>Nigeria</td>
+<td>Total Unemployed</td>
+<td>Post Secondary</td>
+<td>Persons</td>
+<td>2010</td>
+<td>3.938350e+05</td>
+<td>2010</td>
+</tr>
+</tbody>
+</table>
+
 </div>
 </div>
 </div>
-<div id="a67e44b8-f57e-4f58-8c6b-d457c6660a76" class="cell" data-execution_count="58">
-<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
-<span id="cb39-4"><a href="#cb39-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb39-5"><a href="#cb39-5" aria-hidden="true" tabindex="-1"></a>latest_date <span class="op">=</span> unemployment_data[<span class="st">'Date'</span>].<span class="bu">max</span>()</span>
-<span id="cb39-6"><a href="#cb39-6" aria-hidden="true" tabindex="-1"></a>df_latest <span class="op">=</span> unemployment_data[unemployment_data[<span class="st">'Date'</span>] <span class="op">==</span> latest_date]</span>
-<span id="cb39-7"><a href="#cb39-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb39-8"><a href="#cb39-8" aria-hidden="true" tabindex="-1"></a><span class="co"># 3. Aggregate values by group</span></span>
-<span id="cb39-9"><a href="#cb39-9" aria-hidden="true" tabindex="-1"></a>pie_series <span class="op">=</span> df_latest.groupby(<span class="st">'group'</span>)[<span class="st">'Value'</span>].<span class="bu">sum</span>()</span>
-<span id="cb39-10"><a href="#cb39-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb39-11"><a href="#cb39-11" aria-hidden="true" tabindex="-1"></a><span class="co"># 4. Apply seaborn theme for styling</span></span>
-<span id="cb39-12"><a href="#cb39-12" aria-hidden="true" tabindex="-1"></a>sns.set_theme()</span>
-<span id="cb39-13"><a href="#cb39-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb39-14"><a href="#cb39-14" aria-hidden="true" tabindex="-1"></a><span class="co"># 5. Plot pie chart</span></span>
-<span id="cb39-15"><a href="#cb39-15" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="dv">8</span>))</span>
-<span id="cb39-16"><a href="#cb39-16" aria-hidden="true" tabindex="-1"></a>ax.pie(</span>
-<span id="cb39-17"><a href="#cb39-17" aria-hidden="true" tabindex="-1"></a>    pie_series,</span>
-<span id="cb39-18"><a href="#cb39-18" aria-hidden="true" tabindex="-1"></a>    labels<span class="op">=</span>pie_series.index,</span>
-<span id="cb39-19"><a href="#cb39-19" aria-hidden="true" tabindex="-1"></a>    autopct<span class="op">=</span><span class="st">'</span><span class="sc">%1.1f%%</span><span class="st">'</span></span>
-<span id="cb39-20"><a href="#cb39-20" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb39-21"><a href="#cb39-21" aria-hidden="true" tabindex="-1"></a>ax.set_title(<span class="ss">f"Distribution of Total Unemployed by Group</span><span class="ch">\n</span><span class="ss">as of </span><span class="sc">{</span>latest_date<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb39-22"><a href="#cb39-22" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
-<span id="cb39-23"><a href="#cb39-23" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="merged_suicide-unemployment_files/figure-html/cell-33-output-1.png" class="img-fluid figure-img"></p>
-</figure>
+<bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
+    <template>Expand</template>
+    <span class="bslib-full-screen-enter badge rounded-pill">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" style="height:1em;width:1em;" aria-hidden="true" role="img"><path d="M20 5C20 4.4 19.6 4 19 4H13C12.4 4 12 3.6 12 3C12 2.4 12.4 2 13 2H21C21.6 2 22 2.4 22 3V11C22 11.6 21.6 12 21 12C20.4 12 20 11.6 20 11V5ZM4 19C4 19.6 4.4 20 5 20H11C11.6 20 12 20.4 12 21C12 21.6 11.6 22 11 22H3C2.4 22 2 21.6 2 21V13C2 12.4 2.4 12 3 12C3.6 12 4 12.4 4 13V19Z"></path></svg>
+    </span>
+</bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div>
+<div class="card cell html-fill-item html-fill-container bslib-card" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
+<div class="card-body html-fill-item html-fill-container">
+<div class="cell-output cell-output-display html-fill-item html-fill-container" data-execution_count="45">
+<div class="html-fill-item html-fill-container">
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">country</th>
+<th data-quarto-table-cell-role="th">indicator</th>
+<th data-quarto-table-cell-role="th">group</th>
+<th data-quarto-table-cell-role="th">Unit</th>
+<th data-quarto-table-cell-role="th">Date</th>
+<th data-quarto-table-cell-role="th">Value</th>
+<th data-quarto-table-cell-role="th">DIM_TIME</th>
+<th data-quarto-table-cell-role="th">RATE_PER_100000_N</th>
+<th data-quarto-table-cell-role="th">DIM_SEX</th>
+<th data-quarto-table-cell-role="th">DIM_AGE</th>
+<th data-quarto-table-cell-role="th">GEO_NAME_SHORT</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>Nigeria</td>
+<td>Total Unemployed</td>
+<td>All Groups</td>
+<td>Persons</td>
+<td>2010</td>
+<td>3.318425e+06</td>
+<td>2010</td>
+<td>6.36</td>
+<td>MALE</td>
+<td>TOTAL</td>
+<td>Nigeria</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>Nigeria</td>
+<td>Total Unemployed</td>
+<td>All Groups</td>
+<td>Persons</td>
+<td>2010</td>
+<td>3.318425e+06</td>
+<td>2010</td>
+<td>4.40</td>
+<td>TOTAL</td>
+<td>TOTAL</td>
+<td>Nigeria</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>Nigeria</td>
+<td>Total Unemployed</td>
+<td>All Groups</td>
+<td>Persons</td>
+<td>2010</td>
+<td>3.318425e+06</td>
+<td>2010</td>
+<td>2.40</td>
+<td>FEMALE</td>
+<td>TOTAL</td>
+<td>Nigeria</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>Nigeria</td>
+<td>Total Unemployed</td>
+<td>Below primary</td>
+<td>Persons</td>
+<td>2010</td>
+<td>1.054442e+05</td>
+<td>2010</td>
+<td>6.36</td>
+<td>MALE</td>
+<td>TOTAL</td>
+<td>Nigeria</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>Nigeria</td>
+<td>Total Unemployed</td>
+<td>Below primary</td>
+<td>Persons</td>
+<td>2010</td>
+<td>1.054442e+05</td>
+<td>2010</td>
+<td>4.40</td>
+<td>TOTAL</td>
+<td>TOTAL</td>
+<td>Nigeria</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">172</td>
+<td>Nigeria</td>
+<td>Total Unemployed</td>
+<td>Urban</td>
+<td>Persons</td>
+<td>2013</td>
+<td>2.278265e+06</td>
+<td>2013</td>
+<td>5.88</td>
+<td>MALE</td>
+<td>TOTAL</td>
+<td>Nigeria</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">173</td>
+<td>Nigeria</td>
+<td>Total Unemployed</td>
+<td>Urban</td>
+<td>Persons</td>
+<td>2013</td>
+<td>2.278265e+06</td>
+<td>2013</td>
+<td>2.18</td>
+<td>FEMALE</td>
+<td>TOTAL</td>
+<td>Nigeria</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">174</td>
+<td>Nigeria</td>
+<td>Total Unemployed</td>
+<td>15-24</td>
+<td>Persons</td>
+<td>2013</td>
+<td>2.466218e+06</td>
+<td>2013</td>
+<td>4.05</td>
+<td>TOTAL</td>
+<td>TOTAL</td>
+<td>Nigeria</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">175</td>
+<td>Nigeria</td>
+<td>Total Unemployed</td>
+<td>15-24</td>
+<td>Persons</td>
+<td>2013</td>
+<td>2.466218e+06</td>
+<td>2013</td>
+<td>5.88</td>
+<td>MALE</td>
+<td>TOTAL</td>
+<td>Nigeria</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">176</td>
+<td>Nigeria</td>
+<td>Total Unemployed</td>
+<td>15-24</td>
+<td>Persons</td>
+<td>2013</td>
+<td>2.466218e+06</td>
+<td>2013</td>
+<td>2.18</td>
+<td>FEMALE</td>
+<td>TOTAL</td>
+<td>Nigeria</td>
+</tr>
+</tbody>
+</table>
+
+<p>177 rows × 11 columns</p>
 </div>
 </div>
 </div>
-<div id="3d67ea91-88cd-4f9d-9979-bf873384b63b" class="cell" data-execution_count="59">
-<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Assume df is your full DataFrame</span></span>
-<span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a>df_total <span class="op">=</span> unemployment_data[unemployment_data[<span class="st">'indicator'</span>] <span class="op">==</span> <span class="st">'Total Unemployed'</span>].copy()</span>
-<span id="cb40-4"><a href="#cb40-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb40-5"><a href="#cb40-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Extract Year if you haven’t already</span></span>
-<span id="cb40-6"><a href="#cb40-6" aria-hidden="true" tabindex="-1"></a>df_total[<span class="st">'Year'</span>] <span class="op">=</span> df_total[<span class="st">'Date'</span>].<span class="bu">str</span>.extract(<span class="vs">r'</span><span class="kw">(</span><span class="dv">\d</span><span class="op">{4}</span><span class="kw">)</span><span class="vs">'</span>).astype(<span class="bu">int</span>)</span>
-<span id="cb40-7"><a href="#cb40-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb40-8"><a href="#cb40-8" aria-hidden="true" tabindex="-1"></a>sns.set_theme()</span>
-<span id="cb40-9"><a href="#cb40-9" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">12</span>,<span class="dv">6</span>))</span>
-<span id="cb40-10"><a href="#cb40-10" aria-hidden="true" tabindex="-1"></a>sns.lineplot(</span>
-<span id="cb40-11"><a href="#cb40-11" aria-hidden="true" tabindex="-1"></a>    data<span class="op">=</span>df_total,</span>
-<span id="cb40-12"><a href="#cb40-12" aria-hidden="true" tabindex="-1"></a>    x<span class="op">=</span><span class="st">'Year'</span>,</span>
-<span id="cb40-13"><a href="#cb40-13" aria-hidden="true" tabindex="-1"></a>    y<span class="op">=</span><span class="st">'Value'</span>,</span>
-<span id="cb40-14"><a href="#cb40-14" aria-hidden="true" tabindex="-1"></a>    hue<span class="op">=</span><span class="st">'group'</span>,</span>
-<span id="cb40-15"><a href="#cb40-15" aria-hidden="true" tabindex="-1"></a>    marker<span class="op">=</span><span class="st">'o'</span></span>
-<span id="cb40-16"><a href="#cb40-16" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb40-17"><a href="#cb40-17" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">"Total Unemployed in Nigeria by Group"</span>)</span>
-<span id="cb40-18"><a href="#cb40-18" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">"Number of People"</span>)</span>
-<span id="cb40-19"><a href="#cb40-19" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
-<span id="cb40-20"><a href="#cb40-20" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>/opt/anaconda3/lib/python3.11/site-packages/seaborn/_oldcore.py:1119: FutureWarning: use_inf_as_na option is deprecated and will be removed in a future version. Convert inf values to NaN before operating instead.
-  with pd.option_context('mode.use_inf_as_na', True):
-/opt/anaconda3/lib/python3.11/site-packages/seaborn/_oldcore.py:1119: FutureWarning: use_inf_as_na option is deprecated and will be removed in a future version. Convert inf values to NaN before operating instead.
-  with pd.option_context('mode.use_inf_as_na', True):</code></pre>
-</div>
-<div class="cell-output cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="merged_suicide-unemployment_files/figure-html/cell-34-output-2.png" class="img-fluid figure-img"></p>
-</figure>
+<bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
+    <template>Expand</template>
+    <span class="bslib-full-screen-enter badge rounded-pill">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" style="height:1em;width:1em;" aria-hidden="true" role="img"><path d="M20 5C20 4.4 19.6 4 19 4H13C12.4 4 12 3.6 12 3C12 2.4 12.4 2 13 2H21C21.6 2 22 2.4 22 3V11C22 11.6 21.6 12 21 12C20.4 12 20 11.6 20 11V5ZM4 19C4 19.6 4.4 20 5 20H11C11.6 20 12 20.4 12 21C12 21.6 11.6 22 11 22H3C2.4 22 2 21.6 2 21V13C2 12.4 2.4 12 3 12C3.6 12 4 12.4 4 13V19Z"></path></svg>
+    </span>
+</bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div>
+
+
+<div id="3ade8a4a-fb1d-4a6c-8409-ac45482d5fc9" class="hidden html-fill-item html-fill-container">
+
 </div>
 </div>
 </div>
-<div id="304ffde6-49a7-4fee-86ad-2fa68cb3c99a" class="cell">
-<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(merged_su1[[<span class="st">'indicator'</span>, <span class="st">'Unit'</span>]].drop_duplicates())</span>
-<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Hypothetical: Replace 'Population' with actual population column</span></span>
-<span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a>merged_su1[<span class="st">'Value'</span>] <span class="op">=</span> (merged[<span class="st">'Value'</span>] <span class="op">/</span> merged[<span class="st">'Population'</span>]) <span class="op">*</span> <span class="dv">100000</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 
 
-</section>
-
-</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
@@ -1507,7 +1633,7 @@ Spearman Correlation: -0.10, p-value: 0.1673</code></pre>
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp("https:\/\/giftdavid101\.github\.io\/suicide-nigeria\/");
+        var filterRegex = new RegExp('/' + window.location.host + '/');
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
@@ -1836,6 +1962,14 @@ Spearman Correlation: -0.10, p-value: 0.1673</code></pre>
   </script>
 </div> <!-- /content -->
 
+<script type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (_event) {
+  if (window.bslib.Card) {
+    window.bslib.Card.initializeAllCards();
+  }
+}); 
+</script>
+  
 
 
 
