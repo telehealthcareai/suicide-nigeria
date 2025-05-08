@@ -167,59 +167,13 @@ plt.show()
 
 ```
 
-## Suicide rate by age group {.tabset}
-```{python}
-#| title: Suicide Rates by Age Group
-
-age_categories = Nigerian_suicide_cases[Nigerian_suicide_cases["DIM_AGE"].notna()]
-
-plt.figure(figsize=(12, 6))
-sns.boxplot(
-    x="DIM_AGE",
-    y="Suicide_Rate_N",
-    data=age_categories,
-    palette="Set2"
-)
-
-plt.show()
-```
-
-```{python}
-#| title: Suicide Rate Comparisons by Gender (2000 - 2019)
-
-plt.bar(Nigerian_suicide_cases['Gender'], Nigerian_suicide_cases['Suicide_Rate_N'])
-plt.show()
-```
 
 
-```{python}
-#| title: Suicide Rate in Nigeria (with Uncertainty)
 
-# Error Bar
-Nigerian_suicide_cases = Nigerian_suicide_cases.sort_values('Suicide_Year')
-lower_errors = Nigerian_suicide_cases['Suicide_Rate_N'] - Nigerian_suicide_cases['Lower_Rate_NL']
-upper_errors = Nigerian_suicide_cases['Upper_Rate_NU'] - Nigerian_suicide_cases['Suicide_Rate_N']
-error = [lower_errors, upper_errors]
 
-# Create the error bar plot
-plt.figure(figsize=(10, 6))
-plt.errorbar(
-    Nigerian_suicide_cases['Suicide_Year'],
-    Nigerian_suicide_cases['Suicide_Rate_N'],
-    yerr=error,
-    fmt='o-',  # 'o' for marker, '-' for line
-    ecolor='gray',
-    capsize=4,
-    label='Suicide Rate with Uncertainty'
-)
 
-# Labeling
-plt.grid(True)
-plt.legend()
-plt.tight_layout()
-plt.show()
 
-```
+
 
 
 
