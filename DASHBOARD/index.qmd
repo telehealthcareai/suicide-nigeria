@@ -77,18 +77,20 @@ mask = (Nigerian_suicide_cases["Suicide_Year"] >= 2000) & (Nigerian_suicide_case
 
 ```{python}
 #| content: valuebox
-#| title: "Male suicide rate per 100,000"
+#| title: "Male suicide rate per 100,000 for year 2019"
 #| icon: gender-male
 #| color: primary
 #| class: small
 
+male_alarming =Nigerian_suicide_cases.loc[Nigerian_suicide_cases["Suicide_Rate_N"].idxmax(), ["DIM_AGE", "Gender", "Suicide_Rate_N"]]
+male_2019 =  male_alarming['Suicide_Rate_N']
 male_rate = male_suicide_rate.loc[mask]
 total_male_rate = round(male_rate["Suicide_Rate_N"].mean(), 2)
 
 dict(
 icon="gener-male",
 color="white",
-value=total_male_rate
+value=male_2019
 )
 ```
 
@@ -115,9 +117,6 @@ total_ov_rate = round(overall_suicide_rate["Suicide_Rate_N"].mean(), 2)
 
 dict(icon="people", color="white",value=round(Average_suicide_value, 2))
 ```
-
-
-
 
 ## Row {font-size = 1px}
 ```{python}
