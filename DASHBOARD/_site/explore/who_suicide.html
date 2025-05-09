@@ -3613,56 +3613,29 @@ Name: count, dtype: int64</code></pre>
 grid-auto-rows: minmax(0, 1fr);">
 <div class="card cell bslib-card html-fill-container" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
 <div class="card-body html-fill-item html-fill-container">
-<div class="cell-output cell-output-error html-fill-item html-fill-container">
-<div class="ansi-escaped-output html-fill-item html-fill-container">
-<pre><span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">KeyError</span>                                  Traceback (most recent call last)
-File <span class="ansi-green-fg">/opt/anaconda3/lib/python3.11/site-packages/pandas/core/indexes/base.py:3791</span>, in <span class="ansi-cyan-fg">Index.get_loc</span><span class="ansi-blue-fg">(self, key)</span>
-<span class="ansi-green-fg ansi-bold">   3790</span> <span style="font-weight:bold;color:rgb(0,135,0)">try</span>:
-<span class="ansi-green-fg">-&gt; 3791</span>     <span style="font-weight:bold;color:rgb(0,135,0)">return</span> <span style="color:rgb(0,135,0)">self</span><span style="color:rgb(98,98,98)">.</span>_engine<span style="color:rgb(98,98,98)">.</span>get_loc(casted_key)
-<span class="ansi-green-fg ansi-bold">   3792</span> <span style="font-weight:bold;color:rgb(0,135,0)">except</span> <span style="font-weight:bold;color:rgb(215,95,95)">KeyError</span> <span style="font-weight:bold;color:rgb(0,135,0)">as</span> err:
+<div class="cell-output cell-output-stdout html-fill-item html-fill-container">
+<pre><code>Year: 2000, Suicide Rate: 3.49
+Year: 2001, Suicide Rate: 3.49
+Year: 2002, Suicide Rate: 3.49
+Year: 2003, Suicide Rate: 3.49
+Year: 2004, Suicide Rate: 3.49
+Year: 2005, Suicide Rate: 3.49
+Year: 2006, Suicide Rate: 3.49
+Year: 2007, Suicide Rate: 3.49
+Year: 2008, Suicide Rate: 3.49
+Year: 2009, Suicide Rate: 3.49
+Year: 2010, Suicide Rate: 3.49
+Year: 2011, Suicide Rate: 3.49
+Year: 2012, Suicide Rate: 3.49
+Year: 2013, Suicide Rate: 3.49
+Year: 2014, Suicide Rate: 3.49
+Year: 2015, Suicide Rate: 3.49
+Year: 2016, Suicide Rate: 3.49
+Year: 2017, Suicide Rate: 3.49
+Year: 2018, Suicide Rate: 3.49
+Year: 2019, Suicide Rate: 3.49
 
-File <span class="ansi-green-fg">index.pyx:152</span>, in <span class="ansi-cyan-fg">pandas._libs.index.IndexEngine.get_loc</span><span class="ansi-blue-fg">()</span>
-
-File <span class="ansi-green-fg">index.pyx:181</span>, in <span class="ansi-cyan-fg">pandas._libs.index.IndexEngine.get_loc</span><span class="ansi-blue-fg">()</span>
-
-File <span class="ansi-green-fg">pandas/_libs/hashtable_class_helper.pxi:7080</span>, in <span class="ansi-cyan-fg">pandas._libs.hashtable.PyObjectHashTable.get_item</span><span class="ansi-blue-fg">()</span>
-
-File <span class="ansi-green-fg">pandas/_libs/hashtable_class_helper.pxi:7088</span>, in <span class="ansi-cyan-fg">pandas._libs.hashtable.PyObjectHashTable.get_item</span><span class="ansi-blue-fg">()</span>
-
-<span class="ansi-red-fg">KeyError</span>: 'TOTAL'
-
-The above exception was the direct cause of the following exception:
-
-<span class="ansi-red-fg">KeyError</span>                                  Traceback (most recent call last)
-Cell <span class="ansi-green-fg">In[41], line 2</span>
-<span class="ansi-green-fg ansi-bold">      1</span> <span style="font-style:italic;color:rgb(95,135,135)">#Average suicide rate for both genders from 2000-2019</span>
-<span class="ansi-green-fg">----&gt; 2</span> suicide_rate_for_total_genders <span style="color:rgb(98,98,98)">=</span> Nigerian_suicide_cases[(Nigerian_suicide_cases[<span style="color:rgb(175,0,0)">"</span><span style="color:rgb(175,0,0)">TOTAL</span><span style="color:rgb(175,0,0)">"</span>]) <span style="color:rgb(98,98,98)">&amp;</span> (Nigerian_suicide_cases[<span style="color:rgb(175,0,0)">"</span><span style="color:rgb(175,0,0)">DIM_AGE</span><span style="color:rgb(175,0,0)">"</span>] <span style="color:rgb(98,98,98)">==</span> <span style="color:rgb(175,0,0)">"</span><span style="color:rgb(175,0,0)">TOTAL</span><span style="color:rgb(175,0,0)">"</span>)]
-<span class="ansi-green-fg ansi-bold">      4</span> <span style="font-style:italic;color:rgb(95,135,135)">#Loop and print suicide value for total gender for each year</span>
-<span class="ansi-green-fg ansi-bold">      5</span> <span style="font-weight:bold;color:rgb(0,135,0)">for</span> year <span style="font-weight:bold;color:rgb(175,0,255)">in</span> <span style="color:rgb(0,135,0)">sorted</span>(suicide_rate_for_total_genders[<span style="color:rgb(175,0,0)">"</span><span style="color:rgb(175,0,0)">Suicide_Year</span><span style="color:rgb(175,0,0)">"</span>]<span style="color:rgb(98,98,98)">.</span>unique()):
-
-File <span class="ansi-green-fg">/opt/anaconda3/lib/python3.11/site-packages/pandas/core/frame.py:3893</span>, in <span class="ansi-cyan-fg">DataFrame.__getitem__</span><span class="ansi-blue-fg">(self, key)</span>
-<span class="ansi-green-fg ansi-bold">   3891</span> <span style="font-weight:bold;color:rgb(0,135,0)">if</span> <span style="color:rgb(0,135,0)">self</span><span style="color:rgb(98,98,98)">.</span>columns<span style="color:rgb(98,98,98)">.</span>nlevels <span style="color:rgb(98,98,98)">&gt;</span> <span style="color:rgb(98,98,98)">1</span>:
-<span class="ansi-green-fg ansi-bold">   3892</span>     <span style="font-weight:bold;color:rgb(0,135,0)">return</span> <span style="color:rgb(0,135,0)">self</span><span style="color:rgb(98,98,98)">.</span>_getitem_multilevel(key)
-<span class="ansi-green-fg">-&gt; 3893</span> indexer <span style="color:rgb(98,98,98)">=</span> <span style="color:rgb(0,135,0)">self</span><span style="color:rgb(98,98,98)">.</span>columns<span style="color:rgb(98,98,98)">.</span>get_loc(key)
-<span class="ansi-green-fg ansi-bold">   3894</span> <span style="font-weight:bold;color:rgb(0,135,0)">if</span> is_integer(indexer):
-<span class="ansi-green-fg ansi-bold">   3895</span>     indexer <span style="color:rgb(98,98,98)">=</span> [indexer]
-
-File <span class="ansi-green-fg">/opt/anaconda3/lib/python3.11/site-packages/pandas/core/indexes/base.py:3798</span>, in <span class="ansi-cyan-fg">Index.get_loc</span><span class="ansi-blue-fg">(self, key)</span>
-<span class="ansi-green-fg ansi-bold">   3793</span>     <span style="font-weight:bold;color:rgb(0,135,0)">if</span> <span style="color:rgb(0,135,0)">isinstance</span>(casted_key, <span style="color:rgb(0,135,0)">slice</span>) <span style="font-weight:bold;color:rgb(175,0,255)">or</span> (
-<span class="ansi-green-fg ansi-bold">   3794</span>         <span style="color:rgb(0,135,0)">isinstance</span>(casted_key, abc<span style="color:rgb(98,98,98)">.</span>Iterable)
-<span class="ansi-green-fg ansi-bold">   3795</span>         <span style="font-weight:bold;color:rgb(175,0,255)">and</span> <span style="color:rgb(0,135,0)">any</span>(<span style="color:rgb(0,135,0)">isinstance</span>(x, <span style="color:rgb(0,135,0)">slice</span>) <span style="font-weight:bold;color:rgb(0,135,0)">for</span> x <span style="font-weight:bold;color:rgb(175,0,255)">in</span> casted_key)
-<span class="ansi-green-fg ansi-bold">   3796</span>     ):
-<span class="ansi-green-fg ansi-bold">   3797</span>         <span style="font-weight:bold;color:rgb(0,135,0)">raise</span> InvalidIndexError(key)
-<span class="ansi-green-fg">-&gt; 3798</span>     <span style="font-weight:bold;color:rgb(0,135,0)">raise</span> <span style="font-weight:bold;color:rgb(215,95,95)">KeyError</span>(key) <span style="font-weight:bold;color:rgb(0,135,0)">from</span> <span style="font-weight:bold;color:rgb(0,0,255)">err</span>
-<span class="ansi-green-fg ansi-bold">   3799</span> <span style="font-weight:bold;color:rgb(0,135,0)">except</span> <span style="font-weight:bold;color:rgb(215,95,95)">TypeError</span>:
-<span class="ansi-green-fg ansi-bold">   3800</span>     <span style="font-style:italic;color:rgb(95,135,135)"># If we have a listlike key, _check_indexing_error will raise</span>
-<span class="ansi-green-fg ansi-bold">   3801</span>     <span style="font-style:italic;color:rgb(95,135,135)">#  InvalidIndexError. Otherwise we fall through and re-raise</span>
-<span class="ansi-green-fg ansi-bold">   3802</span>     <span style="font-style:italic;color:rgb(95,135,135)">#  the TypeError.</span>
-<span class="ansi-green-fg ansi-bold">   3803</span>     <span style="color:rgb(0,135,0)">self</span><span style="color:rgb(98,98,98)">.</span>_check_indexing_error(key)
-
-<span class="ansi-red-fg">KeyError</span>: 'TOTAL'</pre>
-</div>
+Average Suicide Rate from (2000–2019): 4.32</code></pre>
 </div>
 </div>
 <bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
@@ -3765,7 +3738,7 @@ File <span class="ansi-green-fg">/opt/anaconda3/lib/python3.11/site-packages/pan
 <div class="card cell html-fill-item html-fill-container bslib-card" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
 <div class="card-body html-fill-item html-fill-container">
 <div class="cell-output cell-output-display html-fill-item html-fill-container">
-<img src="who_suicide_files/figure-html/cell-30-output-1.png" class="img-fluid quarto-dashboard-img-contain">
+<img src="who_suicide_files/figure-html/cell-29-output-1.png" class="img-fluid quarto-dashboard-img-contain">
 </div>
 </div>
 <bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
@@ -3777,7 +3750,7 @@ File <span class="ansi-green-fg">/opt/anaconda3/lib/python3.11/site-packages/pan
 <div class="card cell html-fill-item html-fill-container bslib-card" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
 <div class="card-body html-fill-item html-fill-container">
 <div class="cell-output cell-output-display html-fill-item html-fill-container">
-<img src="who_suicide_files/figure-html/cell-33-output-1.png" class="img-fluid quarto-dashboard-img-contain">
+<img src="who_suicide_files/figure-html/cell-32-output-1.png" class="img-fluid quarto-dashboard-img-contain">
 </div>
 </div>
 <bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
@@ -3824,6 +3797,18 @@ Name: Suicide_Rate_N, Length: 93, dtype: bool</code></pre>
 <div class="card cell html-fill-item html-fill-container bslib-card" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
 <div class="card-body html-fill-item html-fill-container">
 <div class="cell-output cell-output-display html-fill-item html-fill-container">
+<img src="who_suicide_files/figure-html/cell-36-output-1.png" class="img-fluid quarto-dashboard-img-contain">
+</div>
+</div>
+<bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
+    <template>Expand</template>
+    <span class="bslib-full-screen-enter badge rounded-pill">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" style="height:1em;width:1em;" aria-hidden="true" role="img"><path d="M20 5C20 4.4 19.6 4 19 4H13C12.4 4 12 3.6 12 3C12 2.4 12.4 2 13 2H21C21.6 2 22 2.4 22 3V11C22 11.6 21.6 12 21 12C20.4 12 20 11.6 20 11V5ZM4 19C4 19.6 4.4 20 5 20H11C11.6 20 12 20.4 12 21C12 21.6 11.6 22 11 22H3C2.4 22 2 21.6 2 21V13C2 12.4 2.4 12 3 12C3.6 12 4 12.4 4 13V19Z"></path></svg>
+    </span>
+</bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div>
+<div class="card cell html-fill-item html-fill-container bslib-card" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
+<div class="card-body html-fill-item html-fill-container">
+<div class="cell-output cell-output-display html-fill-item html-fill-container">
 <img src="who_suicide_files/figure-html/cell-37-output-1.png" class="img-fluid quarto-dashboard-img-contain">
 </div>
 </div>
@@ -3849,18 +3834,6 @@ Name: Suicide_Rate_N, Length: 93, dtype: bool</code></pre>
 <div class="card-body html-fill-item html-fill-container">
 <div class="cell-output cell-output-display html-fill-item html-fill-container">
 <img src="who_suicide_files/figure-html/cell-39-output-1.png" class="img-fluid quarto-dashboard-img-contain">
-</div>
-</div>
-<bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
-    <template>Expand</template>
-    <span class="bslib-full-screen-enter badge rounded-pill">
-        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" style="height:1em;width:1em;" aria-hidden="true" role="img"><path d="M20 5C20 4.4 19.6 4 19 4H13C12.4 4 12 3.6 12 3C12 2.4 12.4 2 13 2H21C21.6 2 22 2.4 22 3V11C22 11.6 21.6 12 21 12C20.4 12 20 11.6 20 11V5ZM4 19C4 19.6 4.4 20 5 20H11C11.6 20 12 20.4 12 21C12 21.6 11.6 22 11 22H3C2.4 22 2 21.6 2 21V13C2 12.4 2.4 12 3 12C3.6 12 4 12.4 4 13V19Z"></path></svg>
-    </span>
-</bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div>
-<div class="card cell html-fill-item html-fill-container bslib-card" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
-<div class="card-body html-fill-item html-fill-container">
-<div class="cell-output cell-output-display html-fill-item html-fill-container">
-<img src="who_suicide_files/figure-html/cell-40-output-1.png" class="img-fluid quarto-dashboard-img-contain">
 </div>
 </div>
 <bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">

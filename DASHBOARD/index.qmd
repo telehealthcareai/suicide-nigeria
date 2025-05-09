@@ -105,12 +105,15 @@ dict(icon="gender-female", color="#FFA725", value=total_female_rate)
 ```{python}
 #| content: valuebox
 
-#| title: "Over all suicide rate"
+#| title: "Average suicide rate from 2000 to 2019"
+
+suicide_rate_for_total_genders = Nigerian_suicide_cases[(Nigerian_suicide_cases["Gender"] == "TOTAL") & (Nigerian_suicide_cases["DIM_AGE"] == "TOTAL")]
+Average_suicide_value = suicide_rate_for_total_genders["Suicide_Rate_N"].mean()
 
 total__rate = male_suicide_rate.loc[mask]
 total_ov_rate = round(overall_suicide_rate["Suicide_Rate_N"].mean(), 2)
 
-dict(icon="people", color="white",value=total_ov_rate)
+dict(icon="people", color="white",value=round(Average_suicide_value, 2))
 ```
 
 
