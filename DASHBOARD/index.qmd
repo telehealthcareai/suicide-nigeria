@@ -96,12 +96,15 @@ value=male_2019
 
 ```{python}
 #| content: valuebox
-#| title: "Female suicide rate per 100,000"
+#| title: "Female suicide rate per 100,000 for year 2019"
+
+female_row = Nigerian_suicide_cases[Nigerian_suicide_cases["Gender"] == "FEMALE"].loc[Nigerian_suicide_cases[Nigerian_suicide_cases["Gender"] == "FEMALE"]["Suicide_Rate_N"].idxmax(), ["DIM_AGE", "Suicide_Rate_N"]]
+female_2019 =  female_row['Suicide_Rate_N']
 
 female_rate = female_suicide_rate.loc[mask]
 total_female_rate = round(female_rate["Suicide_Rate_N"].mean(), 2)
 
-dict(icon="gender-female", color="#FFA725", value=total_female_rate)
+dict(icon="gender-female", color="#FFA725", value=female_2019)
 ```
 
 ```{python}
@@ -120,16 +123,10 @@ dict(icon="people", color="white",value=round(Average_suicide_value, 2))
 
 ## Row {font-size = 1px}
 ```{python}
-#| title: Suicide Rate Comparisons by Gender (2000 - 2019)
+#| title: Suicide Rate Comparisons by Age categories and Gender
 
-sns.barplot(
-    x="Gender",
-    y="Suicide_Rate_N",
-    data=Nigerian_suicide_cases,
-    order=["MALE", "FEMALE"],
-    palette="viridis"
-)
-plt.show()
+Nigerian_suicide_cases.groupby(["DIM_AGE", "Gender"])["Suicide_Rate_N"].mean().unstack().plot(kind="bar")
+
 ```
 ```{python}
 #| echo: false
