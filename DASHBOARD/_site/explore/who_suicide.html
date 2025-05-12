@@ -81,6 +81,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
 
 <script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
+<script src="https://unpkg.com/@jupyter-widgets/html-manager@*/dist/embed-amd.js" crossorigin="anonymous"></script>
 
 
 </head>
@@ -145,7 +146,7 @@ ul.task-list li input[type="checkbox"] {
 <div class="bslib-grid-item html-fill-item tab-content bslib-grid" data-layout="fill" style="display: grid; grid-template-rows: minmax(3em, 1fr) minmax(3em, 1fr) minmax(3em, 1fr) minmax(3em, 1fr) minmax(3em, 1fr) minmax(3em, 1fr) minmax(3em, 1fr) minmax(3em, 1fr) minmax(3em, 1fr) minmax(3em, 1fr) minmax(3em, 1fr) minmax(3em, 1fr) minmax(3em, 1fr) minmax(3em, 1fr); grid-auto-columns: minmax(0, 1fr);">
 <div class="card cell bslib-card html-fill-container" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
 <div class="card-body html-fill-item html-fill-container">
-<div class="cell-output cell-output-display html-fill-item html-fill-container" data-execution_count="48">
+<div class="cell-output cell-output-display html-fill-item html-fill-container" data-execution_count="2">
 <div class="html-fill-item html-fill-container">
 
 
@@ -321,7 +322,7 @@ dtype: int64</code></pre>
 </bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div>
 <div class="card cell bslib-card html-fill-container" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
 <div class="card-body html-fill-item html-fill-container">
-<div class="cell-output cell-output-display html-fill-item html-fill-container" data-execution_count="50">
+<div class="cell-output cell-output-display html-fill-item html-fill-container" data-execution_count="4">
 <div class="html-fill-item html-fill-container">
 
 
@@ -2157,7 +2158,7 @@ dtype: int64</code></pre>
 </bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div>
 <div class="card cell bslib-card html-fill-container" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
 <div class="card-body html-fill-item html-fill-container">
-<div class="cell-output cell-output-display html-fill-item html-fill-container" data-execution_count="8">
+<div class="cell-output cell-output-display html-fill-item html-fill-container" data-execution_count="6">
 <pre><code>IND_ID                     1
 IND_CODE                   1
 IND_UUID                   1
@@ -2185,19 +2186,101 @@ dtype: int64</code></pre>
 </bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div>
 <div class="card cell bslib-card html-fill-container" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
 <div class="card-body html-fill-item html-fill-container">
-<div class="cell-output cell-output-display html-fill-item html-fill-container" data-execution_count="10">
+<div class="cell-output cell-output-display html-fill-item html-fill-container" data-execution_count="6">
 <pre><code>79       2001
 80       2010
 87       2005
 311      2019
 646      2004
-         ... 
+947      2017
+971      2000
+1075     2005
+1107     2011
+1205     2017
+1757     2004
+2081     2012
+2218     2000
+2414     2015
+2415     2011
+2569     2009
+2846     2018
+3097     2007
+3225     2000
+3649     2013
+3813     2010
+3918     2010
+4084     2003
+4156     2006
+4351     2016
+4433     2012
+4542     2009
+4695     2003
+5465     2002
+5720     2016
+6030     2008
+6038     2016
+6045     2007
+6125     2002
+6227     2015
+6641     2001
+7223     2006
+7815     2017
+7850     2008
+8158     2008
+8457     2019
+8725     2019
+9017     2013
+9157     2005
+9310     2007
+9314     2018
+9665     2003
+9776     2018
+9801     2009
+9802     2012
+9910     2013
+9929     2011
+9930     2006
+10029    2014
+10286    2014
+11269    2014
+11354    2004
+11366    2001
+11512    2002
+11545    2015
+11782    2019
+11806    2019
+12039    2019
+12459    2019
+12536    2019
+12696    2019
+12853    2019
+12860    2019
+12934    2019
+13255    2019
+13333    2019
+13620    2019
+14108    2019
+14109    2019
+14248    2019
+14417    2019
+14749    2019
+14809    2019
+14878    2019
+15085    2019
+15101    2019
+15477    2019
+15590    2019
+15646    2019
+15979    2019
+16101    2019
+16165    2019
+16664    2019
 16755    2019
 16972    2019
 17082    2019
 17130    2019
 17251    2019
-Name: Suicide_Year, Length: 93, dtype: int64</code></pre>
+Name: Suicide_Year, dtype: int64</code></pre>
 </div>
 </div>
 <bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
@@ -2208,7 +2291,7 @@ Name: Suicide_Year, Length: 93, dtype: int64</code></pre>
 </bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div>
 <div class="card cell bslib-card html-fill-container" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
 <div class="card-body html-fill-item html-fill-container">
-<div class="cell-output cell-output-display html-fill-item html-fill-container" data-execution_count="11">
+<div class="cell-output cell-output-display html-fill-item html-fill-container" data-execution_count="7">
 <pre><code>Suicide_Year
 2019    36
 2001     3
@@ -2241,7 +2324,7 @@ Name: count, dtype: int64</code></pre>
 </bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div>
 <div class="card cell bslib-card html-fill-container" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
 <div class="card-body html-fill-item html-fill-container">
-<div class="cell-output cell-output-display html-fill-item html-fill-container" data-execution_count="52">
+<div class="cell-output cell-output-display html-fill-item html-fill-container" data-execution_count="8">
 <div class="html-fill-item html-fill-container">
 
 
@@ -2377,7 +2460,7 @@ Name: count, dtype: int64</code></pre>
 </bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div>
 <div class="card cell bslib-card html-fill-container" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
 <div class="card-body html-fill-item html-fill-container">
-<div class="cell-output cell-output-display html-fill-item html-fill-container" data-execution_count="36">
+<div class="cell-output cell-output-display html-fill-item html-fill-container" data-execution_count="9">
 <div class="html-fill-item html-fill-container">
 
 
@@ -2475,7 +2558,7 @@ Name: count, dtype: int64</code></pre>
 </bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div>
 <div class="card cell bslib-card html-fill-container" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
 <div class="card-body html-fill-item html-fill-container">
-<div class="cell-output cell-output-display html-fill-item html-fill-container" data-execution_count="37">
+<div class="cell-output cell-output-display html-fill-item html-fill-container" data-execution_count="10">
 <div class="html-fill-item html-fill-container">
 
 
@@ -3614,25 +3697,25 @@ grid-auto-rows: minmax(0, 1fr);">
 <div class="card cell bslib-card html-fill-container" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
 <div class="card-body html-fill-item html-fill-container">
 <div class="cell-output cell-output-stdout html-fill-item html-fill-container">
-<pre><code>Year: 2000, Suicide Rate: 3.49
-Year: 2001, Suicide Rate: 3.49
-Year: 2002, Suicide Rate: 3.49
-Year: 2003, Suicide Rate: 3.49
-Year: 2004, Suicide Rate: 3.49
-Year: 2005, Suicide Rate: 3.49
-Year: 2006, Suicide Rate: 3.49
-Year: 2007, Suicide Rate: 3.49
-Year: 2008, Suicide Rate: 3.49
-Year: 2009, Suicide Rate: 3.49
-Year: 2010, Suicide Rate: 3.49
-Year: 2011, Suicide Rate: 3.49
-Year: 2012, Suicide Rate: 3.49
-Year: 2013, Suicide Rate: 3.49
-Year: 2014, Suicide Rate: 3.49
-Year: 2015, Suicide Rate: 3.49
-Year: 2016, Suicide Rate: 3.49
-Year: 2017, Suicide Rate: 3.49
-Year: 2018, Suicide Rate: 3.49
+<pre><code>Year: 2000, Suicide Rate: 4.85
+Year: 2001, Suicide Rate: 4.93
+Year: 2002, Suicide Rate: 4.84
+Year: 2003, Suicide Rate: 4.79
+Year: 2004, Suicide Rate: 4.83
+Year: 2005, Suicide Rate: 4.77
+Year: 2006, Suicide Rate: 4.71
+Year: 2007, Suicide Rate: 4.72
+Year: 2008, Suicide Rate: 4.64
+Year: 2009, Suicide Rate: 4.51
+Year: 2010, Suicide Rate: 4.4
+Year: 2011, Suicide Rate: 4.35
+Year: 2012, Suicide Rate: 4.2
+Year: 2013, Suicide Rate: 4.05
+Year: 2014, Suicide Rate: 3.85
+Year: 2015, Suicide Rate: 3.69
+Year: 2016, Suicide Rate: 3.66
+Year: 2017, Suicide Rate: 3.58
+Year: 2018, Suicide Rate: 3.53
 Year: 2019, Suicide Rate: 3.49
 
 Average Suicide Rate from (2000–2019): 4.32</code></pre>
@@ -3701,7 +3784,7 @@ Average Suicide Rate from (2000–2019): 4.32</code></pre>
 </bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div>
 </div>
 <div id="visualizations" class="dashboard-page tab-pane show active html-fill-item html-fill-container" data-orientation="rows" aria-labelledby="tab-visualizations">
-<div class="html-fill-item html-fill-container bslib-grid" style="display: grid; grid-template-rows: minmax(3em, 1fr) minmax(3em, 1fr) minmax(3em, 1fr) minmax(3em, 1fr) minmax(3em, 1fr) minmax(3em, 1fr) minmax(3em, 1fr) minmax(3em, 1fr) minmax(3em, 1fr); grid-auto-columns: minmax(0, 1fr);">
+<div class="html-fill-item html-fill-container bslib-grid" style="display: grid; grid-template-rows: minmax(3em, 1fr) minmax(3em, 1fr) minmax(3em, 1fr) minmax(3em, 1fr) minmax(3em, 1fr) minmax(3em, 1fr) minmax(3em, 1fr) minmax(3em, 1fr) minmax(3em, 1fr) minmax(3em, 1fr); grid-auto-columns: minmax(0, 1fr);">
 <div class="card cell html-fill-item html-fill-container bslib-card" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
 <div class="card-body html-fill-item html-fill-container">
 <div class="cell-output cell-output-display html-fill-item html-fill-container">
@@ -3741,7 +3824,12 @@ if (outputEl) {{
 <div class="card cell html-fill-item html-fill-container bslib-card" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
 <div class="card-body html-fill-item html-fill-container">
 <div class="cell-output cell-output-display html-fill-item html-fill-container">
-<img src="who_suicide_files/figure-html/cell-27-output-1.png" class="img-fluid quarto-dashboard-img-contain">
+<script type="application/vnd.jupyter.widget-view+json">
+{"model_id":"6c2f72ad4b604289bd301cdb5e0fefb8","version_major":2,"version_minor":0,"quarto_mimetype":"application/vnd.jupyter.widget-view+json"}
+</script>
+</div>
+<div class="cell-output cell-output-display html-fill-item html-fill-container" data-execution_count="20">
+<pre><code>&lt;function __main__.update_plots(selected_gender)&gt;</code></pre>
 </div>
 </div>
 <bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
@@ -3753,7 +3841,19 @@ if (outputEl) {{
 <div class="card cell html-fill-item html-fill-container bslib-card" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
 <div class="card-body html-fill-item html-fill-container">
 <div class="cell-output cell-output-display html-fill-item html-fill-container">
-<img src="who_suicide_files/figure-html/cell-30-output-1.png" class="img-fluid quarto-dashboard-img-contain">
+<img src="who_suicide_files/figure-html/cell-28-output-1.png" class="img-fluid quarto-dashboard-img-contain">
+</div>
+</div>
+<bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
+    <template>Expand</template>
+    <span class="bslib-full-screen-enter badge rounded-pill">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" style="height:1em;width:1em;" aria-hidden="true" role="img"><path d="M20 5C20 4.4 19.6 4 19 4H13C12.4 4 12 3.6 12 3C12 2.4 12.4 2 13 2H21C21.6 2 22 2.4 22 3V11C22 11.6 21.6 12 21 12C20.4 12 20 11.6 20 11V5ZM4 19C4 19.6 4.4 20 5 20H11C11.6 20 12 20.4 12 21C12 21.6 11.6 22 11 22H3C2.4 22 2 21.6 2 21V13C2 12.4 2.4 12 3 12C3.6 12 4 12.4 4 13V19Z"></path></svg>
+    </span>
+</bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div>
+<div class="card cell html-fill-item html-fill-container bslib-card" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
+<div class="card-body html-fill-item html-fill-container">
+<div class="cell-output cell-output-display html-fill-item html-fill-container">
+<img src="who_suicide_files/figure-html/cell-32-output-1.png" class="img-fluid quarto-dashboard-img-contain">
 </div>
 </div>
 <bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
@@ -3800,30 +3900,6 @@ Name: Suicide_Rate_N, Length: 93, dtype: bool</code></pre>
 <div class="card cell html-fill-item html-fill-container bslib-card" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
 <div class="card-body html-fill-item html-fill-container">
 <div class="cell-output cell-output-display html-fill-item html-fill-container">
-<img src="who_suicide_files/figure-html/cell-34-output-1.png" class="img-fluid quarto-dashboard-img-contain">
-</div>
-</div>
-<bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
-    <template>Expand</template>
-    <span class="bslib-full-screen-enter badge rounded-pill">
-        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" style="height:1em;width:1em;" aria-hidden="true" role="img"><path d="M20 5C20 4.4 19.6 4 19 4H13C12.4 4 12 3.6 12 3C12 2.4 12.4 2 13 2H21C21.6 2 22 2.4 22 3V11C22 11.6 21.6 12 21 12C20.4 12 20 11.6 20 11V5ZM4 19C4 19.6 4.4 20 5 20H11C11.6 20 12 20.4 12 21C12 21.6 11.6 22 11 22H3C2.4 22 2 21.6 2 21V13C2 12.4 2.4 12 3 12C3.6 12 4 12.4 4 13V19Z"></path></svg>
-    </span>
-</bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div>
-<div class="card cell html-fill-item html-fill-container bslib-card" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
-<div class="card-body html-fill-item html-fill-container">
-<div class="cell-output cell-output-display html-fill-item html-fill-container">
-<img src="who_suicide_files/figure-html/cell-35-output-1.png" class="img-fluid quarto-dashboard-img-contain">
-</div>
-</div>
-<bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
-    <template>Expand</template>
-    <span class="bslib-full-screen-enter badge rounded-pill">
-        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" style="height:1em;width:1em;" aria-hidden="true" role="img"><path d="M20 5C20 4.4 19.6 4 19 4H13C12.4 4 12 3.6 12 3C12 2.4 12.4 2 13 2H21C21.6 2 22 2.4 22 3V11C22 11.6 21.6 12 21 12C20.4 12 20 11.6 20 11V5ZM4 19C4 19.6 4.4 20 5 20H11C11.6 20 12 20.4 12 21C12 21.6 11.6 22 11 22H3C2.4 22 2 21.6 2 21V13C2 12.4 2.4 12 3 12C3.6 12 4 12.4 4 13V19Z"></path></svg>
-    </span>
-</bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div>
-<div class="card cell html-fill-item html-fill-container bslib-card" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
-<div class="card-body html-fill-item html-fill-container">
-<div class="cell-output cell-output-display html-fill-item html-fill-container">
 <img src="who_suicide_files/figure-html/cell-36-output-1.png" class="img-fluid quarto-dashboard-img-contain">
 </div>
 </div>
@@ -3837,6 +3913,30 @@ Name: Suicide_Rate_N, Length: 93, dtype: bool</code></pre>
 <div class="card-body html-fill-item html-fill-container">
 <div class="cell-output cell-output-display html-fill-item html-fill-container">
 <img src="who_suicide_files/figure-html/cell-37-output-1.png" class="img-fluid quarto-dashboard-img-contain">
+</div>
+</div>
+<bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
+    <template>Expand</template>
+    <span class="bslib-full-screen-enter badge rounded-pill">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" style="height:1em;width:1em;" aria-hidden="true" role="img"><path d="M20 5C20 4.4 19.6 4 19 4H13C12.4 4 12 3.6 12 3C12 2.4 12.4 2 13 2H21C21.6 2 22 2.4 22 3V11C22 11.6 21.6 12 21 12C20.4 12 20 11.6 20 11V5ZM4 19C4 19.6 4.4 20 5 20H11C11.6 20 12 20.4 12 21C12 21.6 11.6 22 11 22H3C2.4 22 2 21.6 2 21V13C2 12.4 2.4 12 3 12C3.6 12 4 12.4 4 13V19Z"></path></svg>
+    </span>
+</bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div>
+<div class="card cell html-fill-item html-fill-container bslib-card" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
+<div class="card-body html-fill-item html-fill-container">
+<div class="cell-output cell-output-display html-fill-item html-fill-container">
+<img src="who_suicide_files/figure-html/cell-38-output-1.png" class="img-fluid quarto-dashboard-img-contain">
+</div>
+</div>
+<bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
+    <template>Expand</template>
+    <span class="bslib-full-screen-enter badge rounded-pill">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" style="height:1em;width:1em;" aria-hidden="true" role="img"><path d="M20 5C20 4.4 19.6 4 19 4H13C12.4 4 12 3.6 12 3C12 2.4 12.4 2 13 2H21C21.6 2 22 2.4 22 3V11C22 11.6 21.6 12 21 12C20.4 12 20 11.6 20 11V5ZM4 19C4 19.6 4.4 20 5 20H11C11.6 20 12 20.4 12 21C12 21.6 11.6 22 11 22H3C2.4 22 2 21.6 2 21V13C2 12.4 2.4 12 3 12C3.6 12 4 12.4 4 13V19Z"></path></svg>
+    </span>
+</bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div>
+<div class="card cell html-fill-item html-fill-container bslib-card" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
+<div class="card-body html-fill-item html-fill-container">
+<div class="cell-output cell-output-display html-fill-item html-fill-container">
+<img src="who_suicide_files/figure-html/cell-39-output-1.png" class="img-fluid quarto-dashboard-img-contain">
 </div>
 </div>
 <bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
