@@ -8,6 +8,7 @@ format:
       - icon: file
         title: report
         href: https://docs.google.com/document/d/15hE46jFvj5pnw4lbcJsg3NOOu0spqng-XktD4CuAUO4/edit?usp=sharing
+
 ---
 
 ```{python}
@@ -20,6 +21,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 import plotly.express as px
+from ipywidgets import interact, widgets
 
 ```
 
@@ -121,13 +123,36 @@ total_ov_rate = round(overall_suicide_rate["Suicide_Rate_N"].mean(), 2)
 dict(icon="people", color="white",value=round(Average_suicide_value, 2))
 ```
 
+
+
 ## Row {font-size = 1px}
+
 ```{python}
 #| title: Suicide Rate Comparisons by Age categories and Gender
 
-Nigerian_suicide_cases.groupby(["DIM_AGE", "Gender"])["Suicide_Rate_N"].mean().unstack().plot(kind="bar")
+fig = px.scatter_3d(
+    Nigerian_suicide_cases,
+    x="DIM_AGE",
+    y="Suicide_Rate_N",
+    z="Gender",  # Use Gender as the third axis (categorical)
+    color="Gender",  # Color-code by gender
+    title="Suicide Rate by Age and Gender in Nigeria (3D)",
+    labels={"Suicide_Rate_N": "Suicide Rate (per 100k)", "Age": "Age (Years)"},
+    hover_data={"DIM_AGE": True, "Gender": True, "Suicide_Rate_N": ":.2f"},
+    symbol="Gender",  # Optional: Different symbols for genders
+    opacity=0.8,
+    height=600,
+)
+
+
+# Show the plot
+fig.show()
 
 ```
+
+
+
+### Column {.tabset}
 ```{python}
 #| echo: false
 #| warning: false
@@ -166,6 +191,25 @@ plt.show()
 
 ```
 
+```{python}
+#| title: Suicide Rate by Age and Gender
+def update_plots(selected_gender):
+    filtered_data = data if selected_gender == "All" else Nigerian_suicide_cases[Nigerian_suicide_cases["Gender"] == selected_gender]
+
+    # Scatter plot
+    scatter = px.scatter(
+        filtered_data,
+        x="DIM_AGE",
+        y="Suicide_Rate_N",
+        color="Gender",
+        title="Suicide Rate by Age and Gender"
+    )
+    scatter.show()
+
+# Add a gender dropdown
+interact(update_plots, selected_gender=widgets.Dropdown(options=["TOTAL", "MALE", "FEMALE"]))
+
+```
 
 
 
