@@ -8,15 +8,14 @@ format:
       - icon: file
         title: report
         href: https://docs.google.com/document/d/15hE46jFvj5pnw4lbcJsg3NOOu0spqng-XktD4CuAUO4/edit?usp=sharing
-
+execute:
+  echo: false
+  warning: false
+  message: false
+  results: hide
 ---
 
 ```{python}
-#| echo: false
-#| warning: false
-#| message: false
-#| results: 'hide'
-
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
@@ -26,11 +25,6 @@ from ipywidgets import interact, widgets
 ```
 
 ```{python}
-#| echo: false
-#| warning: false
-#| message: false
-
-
 # Load your data
 suicide_data = pd.read_csv("data/who_suicide_latest.csv")
 poverty_data = pd.read_csv("data/ndp_poverty2004_2010.csv")
@@ -111,7 +105,6 @@ dict(icon="gender-female", color="#FFA725", value=female_2019)
 
 ```{python}
 #| content: valuebox
-
 #| title: "Average suicide rate from 2000 to 2019"
 
 suicide_rate_for_total_genders = Nigerian_suicide_cases[(Nigerian_suicide_cases["Gender"] == "TOTAL") & (Nigerian_suicide_cases["DIM_AGE"] == "TOTAL")]
@@ -154,9 +147,6 @@ fig.show()
 
 ### Column {.tabset}
 ```{python}
-#| echo: false
-#| warning: false
-#| message: false
 #| title: Suicide Mortality Trends in Nigeria (2000-2017)
 
 plt.figure(figsize=(12, 6))
@@ -191,24 +181,8 @@ plt.show()
 
 ```
 
-```{python}
-#| title: Suicide Rate by Age and Gender
-def update_plots(selected_gender):
-    filtered_data = data if selected_gender == "All" else Nigerian_suicide_cases[Nigerian_suicide_cases["Gender"] == selected_gender]
-
-    # Scatter plot
-    scatter = px.scatter(
-        filtered_data,
-        x="DIM_AGE",
-        y="Suicide_Rate_N",
-        color="Gender",
-        title="Suicide Rate by Age and Gender"
-    )
-    scatter.show()
-
-# Add a gender dropdown
-interact(update_plots, selected_gender=widgets.Dropdown(options=["TOTAL", "MALE", "FEMALE"]))
-
+```{=html}
+<iframe src="http://localhost:8050" width="100%" height="600px" style="border:none;"></iframe>
 ```
 
 
@@ -232,10 +206,6 @@ interact(update_plots, selected_gender=widgets.Dropdown(options=["TOTAL", "MALE"
 
 
 ```{python}
-
-#| echo: false
-
-
 merged_sp1.groupby('Date').agg({
     'Value': 'mean',
     'RATE_PER_100000_N': 'mean'

@@ -20,6 +20,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -36,21 +71,10 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-1e438c382a17f6d88d3993662a872df6.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-a37c72dd2dbac68997fcdc15a3622e78.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-a37c72dd2dbac68997fcdc15a3622e78.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-c1fac2584b48ed01fb6e278e36375074.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-c1fac2584b48ed01fb6e278e36375074.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-c1fac2584b48ed01fb6e278e36375074.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
-<script src="../site_libs/quarto-dashboard/quarto-dashboard.js"></script>
-<script src="../site_libs/quarto-dashboard/stickythead.js"></script>
-
-
-
-<script src="../site_libs/quarto-dashboard/web-components.js" type="module"></script>
-<script src="../site_libs/quarto-dashboard/components.js"></script>
-
+<link href="../site_libs/bootstrap/bootstrap-c1fac2584b48ed01fb6e278e36375074.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -84,10 +108,10 @@ ul.task-list li input[type="checkbox"] {
 <script src="https://unpkg.com/@jupyter-widgets/html-manager@*/dist/embed-amd.js" crossorigin="anonymous"></script>
 
 
+<link rel="stylesheet" href="../styles.css">
 </head>
 
-<body class="quarto-dashboard nav-fixed dashboard-fill fullcontent quarto-light">
-
+<body class="nav-fixed quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -118,36 +142,56 @@ ul.task-list li input[type="checkbox"] {
 </div>
       </div> <!-- /container-fluid -->
     </nav>
-<header id="quarto-dashboard-header">
-<nav class="navbar navbar-expand-md slim" data-bs-theme="dark">
-  <div class="navbar-container container-fluid">
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#dashboard-collapse" aria-controls="dashboard-collapse" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>    
-
-
-    <div class="navbar-brand-container">       
-
-      <div class="navbar-title">
-        <div class="navbar-title-text"><a href="#">PREPARE DATA</a></div>
-        
-        
-      </div>
-    </div>
-<div id="dashboard-collapse" class="navbar-collapse collapse"><ul class="navbar-nav navbar-nav-scroll me-auto" role="tablist"><li class="nav-item" role="presentation"><a id="tab-visualizations" class="nav-link active" data-bs-toggle="tab" role="tab" data-bs-target="#visualizations" data-scrolling="false" href="#visualizations" aria-controls="visualizations" aria-selected="true"><span class="nav-link-text">Visualizations</span></a></li></ul></div></div>
-</nav>
-</header></header>
+</header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-layout-custom page-navbar quarto-dashboard-content bslib-gap-spacing html-fill-container bslib-page-fill quarto-dashboard-pages">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#scalar-values" id="toc-scalar-values" class="nav-link active" data-scroll-target="#scalar-values">SCALAR VALUES</a></li>
+  <li><a href="#visualizations" id="toc-visualizations" class="nav-link" data-scroll-target="#visualizations">Visualizations</a></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
+<main class="content" id="quarto-document-content">
 
-<div class="bslib-grid-item html-fill-item tab-content bslib-grid" data-layout="fill" style="display: grid; grid-template-rows: minmax(3em, 1fr) minmax(3em, 1fr) minmax(3em, 1fr) minmax(3em, 1fr) minmax(3em, 1fr) minmax(3em, 1fr) minmax(3em, 1fr) minmax(3em, 1fr) minmax(3em, 1fr) minmax(3em, 1fr) minmax(3em, 1fr) minmax(3em, 1fr); grid-auto-columns: minmax(0, 1fr);">
-<div class="card cell bslib-card html-fill-container" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
-<div class="card-body html-fill-item html-fill-container">
-<div class="cell-output cell-output-display html-fill-item html-fill-container" data-execution_count="5">
-<div class="html-fill-item html-fill-container">
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">PREPARE DATA</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<div id="ed48cab9-82fe-401d-8f69-e9ec1fe09d32" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> plotly.express <span class="im">as</span> px</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> ipywidgets <span class="im">import</span> interact, widgets</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="19af70ba-f7ad-45b6-a30a-d227a40514ef" class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> pd.read_csv(<span class="st">"../data/who_suicide_latest.csv"</span>)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>data.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="3">
+<div>
 
 
 <table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
@@ -274,16 +318,21 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 </div>
-<bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
-    <template>Expand</template>
-    <span class="bslib-full-screen-enter badge rounded-pill">
-        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" style="height:1em;width:1em;" aria-hidden="true" role="img"><path d="M20 5C20 4.4 19.6 4 19 4H13C12.4 4 12 3.6 12 3C12 2.4 12.4 2 13 2H21C21.6 2 22 2.4 22 3V11C22 11.6 21.6 12 21 12C20.4 12 20 11.6 20 11V5ZM4 19C4 19.6 4.4 20 5 20H11C11.6 20 12 20.4 12 21C12 21.6 11.6 22 11 22H3C2.4 22 2 21.6 2 21V13C2 12.4 2.4 12 3 12C3.6 12 4 12.4 4 13V19Z"></path></svg>
-    </span>
-</bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div>
-<div class="card cell bslib-card html-fill-container" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
-<div class="card-body html-fill-item html-fill-container">
-<div class="cell-output cell-output-display html-fill-item html-fill-container" data-execution_count="7">
-<div class="html-fill-item html-fill-container">
+<div id="d0139649-ca56-414a-bfa8-97545ed4bce3" class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>data.nunique()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="9e80f119-17d6-4487-b4d4-f2d5e233baf3" class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>data.shape</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="2ca7640c-dfe4-47b1-8566-01b743eb47e1" class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>pd.set_option(<span class="st">'display.max_columns'</span>, <span class="va">None</span>)  <span class="co"># Show all columns</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>pd.set_option(<span class="st">'display.max_rows'</span>, <span class="va">None</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="ffa15949-221a-4ffd-8363-ac22f16ae36c" class="cell" data-scrolled="true" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>Nigerian_suicide_cases <span class="op">=</span> data[data[<span class="st">"GEO_NAME_SHORT"</span>] <span class="op">==</span> <span class="st">"Nigeria"</span>]</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>Nigerian_suicide_cases</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="5">
+<div>
 
 
 <table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
@@ -2082,15 +2131,9 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 </div>
-<bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
-    <template>Expand</template>
-    <span class="bslib-full-screen-enter badge rounded-pill">
-        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" style="height:1em;width:1em;" aria-hidden="true" role="img"><path d="M20 5C20 4.4 19.6 4 19 4H13C12.4 4 12 3.6 12 3C12 2.4 12.4 2 13 2H21C21.6 2 22 2.4 22 3V11C22 11.6 21.6 12 21 12C20.4 12 20 11.6 20 11V5ZM4 19C4 19.6 4.4 20 5 20H11C11.6 20 12 20.4 12 21C12 21.6 11.6 22 11 22H3C2.4 22 2 21.6 2 21V13C2 12.4 2.4 12 3 12C3.6 12 4 12.4 4 13V19Z"></path></svg>
-    </span>
-</bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div>
-<div class="card cell bslib-card html-fill-container" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
-<div class="card-body html-fill-item html-fill-container">
-<div class="cell-output cell-output-display html-fill-item html-fill-container" data-execution_count="8">
+<div id="730443a6-fcf3-45e6-8c9c-f441bef2e1f4" class="cell" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>Nigerian_suicide_cases.isnull().<span class="bu">sum</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="6">
 <pre><code>IND_ID                     0
 IND_CODE                   0
 IND_UUID                   0
@@ -2110,43 +2153,29 @@ RATE_PER_100000_NU        33
 dtype: int64</code></pre>
 </div>
 </div>
-<bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
-    <template>Expand</template>
-    <span class="bslib-full-screen-enter badge rounded-pill">
-        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" style="height:1em;width:1em;" aria-hidden="true" role="img"><path d="M20 5C20 4.4 19.6 4 19 4H13C12.4 4 12 3.6 12 3C12 2.4 12.4 2 13 2H21C21.6 2 22 2.4 22 3V11C22 11.6 21.6 12 21 12C20.4 12 20 11.6 20 11V5ZM4 19C4 19.6 4.4 20 5 20H11C11.6 20 12 20.4 12 21C12 21.6 11.6 22 11 22H3C2.4 22 2 21.6 2 21V13C2 12.4 2.4 12 3 12C3.6 12 4 12.4 4 13V19Z"></path></svg>
-    </span>
-</bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div>
-<div class="card cell bslib-card html-fill-container" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
-<div class="card-body html-fill-item html-fill-container">
-<div class="cell-output cell-output-display html-fill-item html-fill-container" data-execution_count="9">
-<pre><code>IND_ID                     1
-IND_CODE                   1
-IND_UUID                   1
-IND_PER_CODE               1
-DIM_TIME                  20
-DIM_TIME_TYPE              1
-DIM_GEO_CODE_M49           1
-DIM_GEO_CODE_TYPE          1
-DIM_PUBLISH_STATE_CODE     1
-IND_NAME                   1
-GEO_NAME_SHORT             1
-DIM_SEX                    3
-DIM_AGE                   12
-RATE_PER_100000_N         91
-RATE_PER_100000_NL        52
-RATE_PER_100000_NU        57
-dtype: int64</code></pre>
+<div id="3132c6f8-1cd1-4608-807d-5d668c31da02" class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="bu">len</span>(Nigerian_suicide_cases)</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>Nigerian_suicide_cases.nunique()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="ec85b328-5775-42a9-a704-57a35b9d51d6" class="cell" data-execution_count="7">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>Nigerian_suicide_cases.rename(columns<span class="op">=</span>{</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">"DIM_TIME"</span>: <span class="st">"Suicide_Year"</span>,</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">"DIM_SEX"</span>: <span class="st">"Gender"</span>,</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">"RATE_PER_100000_N"</span>: <span class="st">"Suicide_Rate_N"</span>,</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">"RATE_PER_100000_NL"</span>: <span class="st">"Lower_Rate_NL"</span>,</span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>    <span class="st">"RATE_PER_100000_NU"</span>: <span class="st">"Upper_Rate_NU"</span></span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>}, inplace<span class="op">=</span><span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>/var/folders/dl/jhpsjpfn1_5dp95f954942k80000gn/T/ipykernel_26543/395664634.py:1: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  Nigerian_suicide_cases.rename(columns={</code></pre>
 </div>
 </div>
-<bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
-    <template>Expand</template>
-    <span class="bslib-full-screen-enter badge rounded-pill">
-        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" style="height:1em;width:1em;" aria-hidden="true" role="img"><path d="M20 5C20 4.4 19.6 4 19 4H13C12.4 4 12 3.6 12 3C12 2.4 12.4 2 13 2H21C21.6 2 22 2.4 22 3V11C22 11.6 21.6 12 21 12C20.4 12 20 11.6 20 11V5ZM4 19C4 19.6 4.4 20 5 20H11C11.6 20 12 20.4 12 21C12 21.6 11.6 22 11 22H3C2.4 22 2 21.6 2 21V13C2 12.4 2.4 12 3 12C3.6 12 4 12.4 4 13V19Z"></path></svg>
-    </span>
-</bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div>
-<div class="card cell bslib-card html-fill-container" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
-<div class="card-body html-fill-item html-fill-container">
-<div class="cell-output cell-output-display html-fill-item html-fill-container" data-execution_count="11">
+<div id="c88b4f83-08d0-447c-99ef-76cec63b1f5d" class="cell" data-scrolled="true" data-execution_count="8">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>Nigerian_suicide_cases[<span class="st">"Suicide_Year"</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="8">
 <pre><code>79       2001
 80       2010
 87       2005
@@ -2243,15 +2272,11 @@ dtype: int64</code></pre>
 Name: Suicide_Year, dtype: int64</code></pre>
 </div>
 </div>
-<bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
-    <template>Expand</template>
-    <span class="bslib-full-screen-enter badge rounded-pill">
-        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" style="height:1em;width:1em;" aria-hidden="true" role="img"><path d="M20 5C20 4.4 19.6 4 19 4H13C12.4 4 12 3.6 12 3C12 2.4 12.4 2 13 2H21C21.6 2 22 2.4 22 3V11C22 11.6 21.6 12 21 12C20.4 12 20 11.6 20 11V5ZM4 19C4 19.6 4.4 20 5 20H11C11.6 20 12 20.4 12 21C12 21.6 11.6 22 11 22H3C2.4 22 2 21.6 2 21V13C2 12.4 2.4 12 3 12C3.6 12 4 12.4 4 13V19Z"></path></svg>
-    </span>
-</bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div>
-<div class="card cell bslib-card html-fill-container" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
-<div class="card-body html-fill-item html-fill-container">
-<div class="cell-output cell-output-display html-fill-item html-fill-container" data-execution_count="12">
+<div id="74f6d48f-653f-4248-8fe9-bc799d9ec110" class="cell" data-execution_count="9">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># How many times each suicide_year_value is appearing more than once</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>suicide_year_counts <span class="op">=</span> Nigerian_suicide_cases[<span class="st">"Suicide_Year"</span>].value_counts()</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>suicide_year_counts</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="9">
 <pre><code>Suicide_Year
 2019    36
 2001     3
@@ -2276,16 +2301,11 @@ Name: Suicide_Year, dtype: int64</code></pre>
 Name: count, dtype: int64</code></pre>
 </div>
 </div>
-<bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
-    <template>Expand</template>
-    <span class="bslib-full-screen-enter badge rounded-pill">
-        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" style="height:1em;width:1em;" aria-hidden="true" role="img"><path d="M20 5C20 4.4 19.6 4 19 4H13C12.4 4 12 3.6 12 3C12 2.4 12.4 2 13 2H21C21.6 2 22 2.4 22 3V11C22 11.6 21.6 12 21 12C20.4 12 20 11.6 20 11V5ZM4 19C4 19.6 4.4 20 5 20H11C11.6 20 12 20.4 12 21C12 21.6 11.6 22 11 22H3C2.4 22 2 21.6 2 21V13C2 12.4 2.4 12 3 12C3.6 12 4 12.4 4 13V19Z"></path></svg>
-    </span>
-</bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div>
-<div class="card cell bslib-card html-fill-container" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
-<div class="card-body html-fill-item html-fill-container">
-<div class="cell-output cell-output-display html-fill-item html-fill-container" data-execution_count="13">
-<div class="html-fill-item html-fill-container">
+<div id="e100a1f1-c949-408d-a293-9d1f3d7a64e4" class="cell" data-execution_count="10">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>year_2019 <span class="op">=</span> Nigerian_suicide_cases[Nigerian_suicide_cases[<span class="st">"Suicide_Year"</span>] <span class="op">==</span> <span class="dv">2019</span>]</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>year_2019.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="10">
+<div>
 
 
 <table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
@@ -2412,16 +2432,10 @@ Name: count, dtype: int64</code></pre>
 </div>
 </div>
 </div>
-<bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
-    <template>Expand</template>
-    <span class="bslib-full-screen-enter badge rounded-pill">
-        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" style="height:1em;width:1em;" aria-hidden="true" role="img"><path d="M20 5C20 4.4 19.6 4 19 4H13C12.4 4 12 3.6 12 3C12 2.4 12.4 2 13 2H21C21.6 2 22 2.4 22 3V11C22 11.6 21.6 12 21 12C20.4 12 20 11.6 20 11V5ZM4 19C4 19.6 4.4 20 5 20H11C11.6 20 12 20.4 12 21C12 21.6 11.6 22 11 22H3C2.4 22 2 21.6 2 21V13C2 12.4 2.4 12 3 12C3.6 12 4 12.4 4 13V19Z"></path></svg>
-    </span>
-</bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div>
-<div class="card cell bslib-card html-fill-container" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
-<div class="card-body html-fill-item html-fill-container">
-<div class="cell-output cell-output-display html-fill-item html-fill-container" data-execution_count="14">
-<div class="html-fill-item html-fill-container">
+<div id="d6302703-481b-410f-84f3-2f0b04f87533" class="cell" data-execution_count="11">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>Nigerian_suicide_cases[Nigerian_suicide_cases[<span class="st">"Suicide_Year"</span>] <span class="op">==</span> <span class="dv">2000</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="11">
+<div>
 
 
 <table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
@@ -2510,1153 +2524,36 @@ Name: count, dtype: int64</code></pre>
 </div>
 </div>
 </div>
-<bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
-    <template>Expand</template>
-    <span class="bslib-full-screen-enter badge rounded-pill">
-        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" style="height:1em;width:1em;" aria-hidden="true" role="img"><path d="M20 5C20 4.4 19.6 4 19 4H13C12.4 4 12 3.6 12 3C12 2.4 12.4 2 13 2H21C21.6 2 22 2.4 22 3V11C22 11.6 21.6 12 21 12C20.4 12 20 11.6 20 11V5ZM4 19C4 19.6 4.4 20 5 20H11C11.6 20 12 20.4 12 21C12 21.6 11.6 22 11 22H3C2.4 22 2 21.6 2 21V13C2 12.4 2.4 12 3 12C3.6 12 4 12.4 4 13V19Z"></path></svg>
-    </span>
-</bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div>
-<div class="card cell bslib-card html-fill-container" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
-<div class="card-body html-fill-item html-fill-container">
-<div class="cell-output cell-output-display html-fill-item html-fill-container" data-execution_count="15">
-<div class="html-fill-item html-fill-container">
-
-
-<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
-<thead>
-<tr class="header">
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th">IND_ID</th>
-<th data-quarto-table-cell-role="th">IND_CODE</th>
-<th data-quarto-table-cell-role="th">IND_UUID</th>
-<th data-quarto-table-cell-role="th">IND_PER_CODE</th>
-<th data-quarto-table-cell-role="th">Suicide_Year</th>
-<th data-quarto-table-cell-role="th">DIM_TIME_TYPE</th>
-<th data-quarto-table-cell-role="th">DIM_GEO_CODE_M49</th>
-<th data-quarto-table-cell-role="th">DIM_GEO_CODE_TYPE</th>
-<th data-quarto-table-cell-role="th">DIM_PUBLISH_STATE_CODE</th>
-<th data-quarto-table-cell-role="th">IND_NAME</th>
-<th data-quarto-table-cell-role="th">GEO_NAME_SHORT</th>
-<th data-quarto-table-cell-role="th">Gender</th>
-<th data-quarto-table-cell-role="th">DIM_AGE</th>
-<th data-quarto-table-cell-role="th">Suicide_Rate_N</th>
-<th data-quarto-table-cell-role="th">Lower_Rate_NL</th>
-<th data-quarto-table-cell-role="th">Upper_Rate_NU</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">79</td>
-<td>16BBF41SDGSUICIDE</td>
-<td>SDGSUICIDE</td>
-<td>16BBF41</td>
-<td>SDGSUICIDE</td>
-<td>2001</td>
-<td>YEAR</td>
-<td>566</td>
-<td>COUNTRY</td>
-<td>PUBLISHED</td>
-<td>Suicide deaths</td>
-<td>Nigeria</td>
-<td>MALE</td>
-<td>TOTAL</td>
-<td>6.92</td>
-<td>3.930</td>
-<td>11.3773</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">80</td>
-<td>16BBF41SDGSUICIDE</td>
-<td>SDGSUICIDE</td>
-<td>16BBF41</td>
-<td>SDGSUICIDE</td>
-<td>2010</td>
-<td>YEAR</td>
-<td>566</td>
-<td>COUNTRY</td>
-<td>PUBLISHED</td>
-<td>Suicide deaths</td>
-<td>Nigeria</td>
-<td>MALE</td>
-<td>TOTAL</td>
-<td>6.36</td>
-<td>3.910</td>
-<td>10.1658</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">87</td>
-<td>16BBF41SDGSUICIDE</td>
-<td>SDGSUICIDE</td>
-<td>16BBF41</td>
-<td>SDGSUICIDE</td>
-<td>2005</td>
-<td>YEAR</td>
-<td>566</td>
-<td>COUNTRY</td>
-<td>PUBLISHED</td>
-<td>Suicide deaths</td>
-<td>Nigeria</td>
-<td>MALE</td>
-<td>TOTAL</td>
-<td>6.66</td>
-<td>3.870</td>
-<td>11.1323</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">646</td>
-<td>16BBF41SDGSUICIDE</td>
-<td>SDGSUICIDE</td>
-<td>16BBF41</td>
-<td>SDGSUICIDE</td>
-<td>2004</td>
-<td>YEAR</td>
-<td>566</td>
-<td>COUNTRY</td>
-<td>PUBLISHED</td>
-<td>Suicide deaths</td>
-<td>Nigeria</td>
-<td>FEMALE</td>
-<td>TOTAL</td>
-<td>2.85</td>
-<td>1.520</td>
-<td>4.4600</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">947</td>
-<td>16BBF41SDGSUICIDE</td>
-<td>SDGSUICIDE</td>
-<td>16BBF41</td>
-<td>SDGSUICIDE</td>
-<td>2017</td>
-<td>YEAR</td>
-<td>566</td>
-<td>COUNTRY</td>
-<td>PUBLISHED</td>
-<td>Suicide deaths</td>
-<td>Nigeria</td>
-<td>FEMALE</td>
-<td>TOTAL</td>
-<td>1.97</td>
-<td>0.933</td>
-<td>3.2400</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">971</td>
-<td>16BBF41SDGSUICIDE</td>
-<td>SDGSUICIDE</td>
-<td>16BBF41</td>
-<td>SDGSUICIDE</td>
-<td>2000</td>
-<td>YEAR</td>
-<td>566</td>
-<td>COUNTRY</td>
-<td>PUBLISHED</td>
-<td>Suicide deaths</td>
-<td>Nigeria</td>
-<td>FEMALE</td>
-<td>TOTAL</td>
-<td>2.85</td>
-<td>1.520</td>
-<td>4.5000</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">1075</td>
-<td>16BBF41SDGSUICIDE</td>
-<td>SDGSUICIDE</td>
-<td>16BBF41</td>
-<td>SDGSUICIDE</td>
-<td>2005</td>
-<td>YEAR</td>
-<td>566</td>
-<td>COUNTRY</td>
-<td>PUBLISHED</td>
-<td>Suicide deaths</td>
-<td>Nigeria</td>
-<td>TOTAL</td>
-<td>TOTAL</td>
-<td>4.77</td>
-<td>2.700</td>
-<td>7.8400</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">1107</td>
-<td>16BBF41SDGSUICIDE</td>
-<td>SDGSUICIDE</td>
-<td>16BBF41</td>
-<td>SDGSUICIDE</td>
-<td>2011</td>
-<td>YEAR</td>
-<td>566</td>
-<td>COUNTRY</td>
-<td>PUBLISHED</td>
-<td>Suicide deaths</td>
-<td>Nigeria</td>
-<td>TOTAL</td>
-<td>TOTAL</td>
-<td>4.35</td>
-<td>2.560</td>
-<td>6.9800</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">1205</td>
-<td>16BBF41SDGSUICIDE</td>
-<td>SDGSUICIDE</td>
-<td>16BBF41</td>
-<td>SDGSUICIDE</td>
-<td>2017</td>
-<td>YEAR</td>
-<td>566</td>
-<td>COUNTRY</td>
-<td>PUBLISHED</td>
-<td>Suicide deaths</td>
-<td>Nigeria</td>
-<td>MALE</td>
-<td>TOTAL</td>
-<td>5.16</td>
-<td>3.040</td>
-<td>8.9100</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">1757</td>
-<td>16BBF41SDGSUICIDE</td>
-<td>SDGSUICIDE</td>
-<td>16BBF41</td>
-<td>SDGSUICIDE</td>
-<td>2004</td>
-<td>YEAR</td>
-<td>566</td>
-<td>COUNTRY</td>
-<td>PUBLISHED</td>
-<td>Suicide deaths</td>
-<td>Nigeria</td>
-<td>MALE</td>
-<td>TOTAL</td>
-<td>6.76</td>
-<td>3.890</td>
-<td>11.1935</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">2081</td>
-<td>16BBF41SDGSUICIDE</td>
-<td>SDGSUICIDE</td>
-<td>16BBF41</td>
-<td>SDGSUICIDE</td>
-<td>2012</td>
-<td>YEAR</td>
-<td>566</td>
-<td>COUNTRY</td>
-<td>PUBLISHED</td>
-<td>Suicide deaths</td>
-<td>Nigeria</td>
-<td>MALE</td>
-<td>TOTAL</td>
-<td>6.11</td>
-<td>3.630</td>
-<td>10.0874</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">2218</td>
-<td>16BBF41SDGSUICIDE</td>
-<td>SDGSUICIDE</td>
-<td>16BBF41</td>
-<td>SDGSUICIDE</td>
-<td>2000</td>
-<td>YEAR</td>
-<td>566</td>
-<td>COUNTRY</td>
-<td>PUBLISHED</td>
-<td>Suicide deaths</td>
-<td>Nigeria</td>
-<td>MALE</td>
-<td>TOTAL</td>
-<td>6.81</td>
-<td>3.930</td>
-<td>11.1618</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">2414</td>
-<td>16BBF41SDGSUICIDE</td>
-<td>SDGSUICIDE</td>
-<td>16BBF41</td>
-<td>SDGSUICIDE</td>
-<td>2015</td>
-<td>YEAR</td>
-<td>566</td>
-<td>COUNTRY</td>
-<td>PUBLISHED</td>
-<td>Suicide deaths</td>
-<td>Nigeria</td>
-<td>FEMALE</td>
-<td>TOTAL</td>
-<td>2.02</td>
-<td>0.946</td>
-<td>3.3300</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">2415</td>
-<td>16BBF41SDGSUICIDE</td>
-<td>SDGSUICIDE</td>
-<td>16BBF41</td>
-<td>SDGSUICIDE</td>
-<td>2011</td>
-<td>YEAR</td>
-<td>566</td>
-<td>COUNTRY</td>
-<td>PUBLISHED</td>
-<td>Suicide deaths</td>
-<td>Nigeria</td>
-<td>MALE</td>
-<td>TOTAL</td>
-<td>6.34</td>
-<td>3.850</td>
-<td>10.2627</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">2569</td>
-<td>16BBF41SDGSUICIDE</td>
-<td>SDGSUICIDE</td>
-<td>16BBF41</td>
-<td>SDGSUICIDE</td>
-<td>2009</td>
-<td>YEAR</td>
-<td>566</td>
-<td>COUNTRY</td>
-<td>PUBLISHED</td>
-<td>Suicide deaths</td>
-<td>Nigeria</td>
-<td>MALE</td>
-<td>TOTAL</td>
-<td>6.46</td>
-<td>3.930</td>
-<td>10.4244</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">2846</td>
-<td>16BBF41SDGSUICIDE</td>
-<td>SDGSUICIDE</td>
-<td>16BBF41</td>
-<td>SDGSUICIDE</td>
-<td>2018</td>
-<td>YEAR</td>
-<td>566</td>
-<td>COUNTRY</td>
-<td>PUBLISHED</td>
-<td>Suicide deaths</td>
-<td>Nigeria</td>
-<td>TOTAL</td>
-<td>TOTAL</td>
-<td>3.53</td>
-<td>1.980</td>
-<td>5.9800</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">3097</td>
-<td>16BBF41SDGSUICIDE</td>
-<td>SDGSUICIDE</td>
-<td>16BBF41</td>
-<td>SDGSUICIDE</td>
-<td>2007</td>
-<td>YEAR</td>
-<td>566</td>
-<td>COUNTRY</td>
-<td>PUBLISHED</td>
-<td>Suicide deaths</td>
-<td>Nigeria</td>
-<td>TOTAL</td>
-<td>TOTAL</td>
-<td>4.72</td>
-<td>2.690</td>
-<td>7.6900</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">3225</td>
-<td>16BBF41SDGSUICIDE</td>
-<td>SDGSUICIDE</td>
-<td>16BBF41</td>
-<td>SDGSUICIDE</td>
-<td>2000</td>
-<td>YEAR</td>
-<td>566</td>
-<td>COUNTRY</td>
-<td>PUBLISHED</td>
-<td>Suicide deaths</td>
-<td>Nigeria</td>
-<td>TOTAL</td>
-<td>TOTAL</td>
-<td>4.85</td>
-<td>2.730</td>
-<td>7.8600</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">3649</td>
-<td>16BBF41SDGSUICIDE</td>
-<td>SDGSUICIDE</td>
-<td>16BBF41</td>
-<td>SDGSUICIDE</td>
-<td>2013</td>
-<td>YEAR</td>
-<td>566</td>
-<td>COUNTRY</td>
-<td>PUBLISHED</td>
-<td>Suicide deaths</td>
-<td>Nigeria</td>
-<td>TOTAL</td>
-<td>TOTAL</td>
-<td>4.05</td>
-<td>2.320</td>
-<td>6.7300</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">3813</td>
-<td>16BBF41SDGSUICIDE</td>
-<td>SDGSUICIDE</td>
-<td>16BBF41</td>
-<td>SDGSUICIDE</td>
-<td>2010</td>
-<td>YEAR</td>
-<td>566</td>
-<td>COUNTRY</td>
-<td>PUBLISHED</td>
-<td>Suicide deaths</td>
-<td>Nigeria</td>
-<td>TOTAL</td>
-<td>TOTAL</td>
-<td>4.40</td>
-<td>2.610</td>
-<td>6.9600</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">3918</td>
-<td>16BBF41SDGSUICIDE</td>
-<td>SDGSUICIDE</td>
-<td>16BBF41</td>
-<td>SDGSUICIDE</td>
-<td>2010</td>
-<td>YEAR</td>
-<td>566</td>
-<td>COUNTRY</td>
-<td>PUBLISHED</td>
-<td>Suicide deaths</td>
-<td>Nigeria</td>
-<td>FEMALE</td>
-<td>TOTAL</td>
-<td>2.40</td>
-<td>1.280</td>
-<td>3.6900</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">4084</td>
-<td>16BBF41SDGSUICIDE</td>
-<td>SDGSUICIDE</td>
-<td>16BBF41</td>
-<td>SDGSUICIDE</td>
-<td>2003</td>
-<td>YEAR</td>
-<td>566</td>
-<td>COUNTRY</td>
-<td>PUBLISHED</td>
-<td>Suicide deaths</td>
-<td>Nigeria</td>
-<td>MALE</td>
-<td>TOTAL</td>
-<td>6.72</td>
-<td>3.780</td>
-<td>10.8642</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">4156</td>
-<td>16BBF41SDGSUICIDE</td>
-<td>SDGSUICIDE</td>
-<td>16BBF41</td>
-<td>SDGSUICIDE</td>
-<td>2006</td>
-<td>YEAR</td>
-<td>566</td>
-<td>COUNTRY</td>
-<td>PUBLISHED</td>
-<td>Suicide deaths</td>
-<td>Nigeria</td>
-<td>FEMALE</td>
-<td>TOTAL</td>
-<td>2.76</td>
-<td>1.440</td>
-<td>4.4100</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">4351</td>
-<td>16BBF41SDGSUICIDE</td>
-<td>SDGSUICIDE</td>
-<td>16BBF41</td>
-<td>SDGSUICIDE</td>
-<td>2016</td>
-<td>YEAR</td>
-<td>566</td>
-<td>COUNTRY</td>
-<td>PUBLISHED</td>
-<td>Suicide deaths</td>
-<td>Nigeria</td>
-<td>TOTAL</td>
-<td>TOTAL</td>
-<td>3.66</td>
-<td>2.040</td>
-<td>6.2400</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">4433</td>
-<td>16BBF41SDGSUICIDE</td>
-<td>SDGSUICIDE</td>
-<td>16BBF41</td>
-<td>SDGSUICIDE</td>
-<td>2012</td>
-<td>YEAR</td>
-<td>566</td>
-<td>COUNTRY</td>
-<td>PUBLISHED</td>
-<td>Suicide deaths</td>
-<td>Nigeria</td>
-<td>FEMALE</td>
-<td>TOTAL</td>
-<td>2.24</td>
-<td>1.200</td>
-<td>3.5600</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">4542</td>
-<td>16BBF41SDGSUICIDE</td>
-<td>SDGSUICIDE</td>
-<td>16BBF41</td>
-<td>SDGSUICIDE</td>
-<td>2009</td>
-<td>YEAR</td>
-<td>566</td>
-<td>COUNTRY</td>
-<td>PUBLISHED</td>
-<td>Suicide deaths</td>
-<td>Nigeria</td>
-<td>TOTAL</td>
-<td>TOTAL</td>
-<td>4.51</td>
-<td>2.650</td>
-<td>7.2200</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">4695</td>
-<td>16BBF41SDGSUICIDE</td>
-<td>SDGSUICIDE</td>
-<td>16BBF41</td>
-<td>SDGSUICIDE</td>
-<td>2003</td>
-<td>YEAR</td>
-<td>566</td>
-<td>COUNTRY</td>
-<td>PUBLISHED</td>
-<td>Suicide deaths</td>
-<td>Nigeria</td>
-<td>TOTAL</td>
-<td>TOTAL</td>
-<td>4.79</td>
-<td>2.660</td>
-<td>7.6700</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">5465</td>
-<td>16BBF41SDGSUICIDE</td>
-<td>SDGSUICIDE</td>
-<td>16BBF41</td>
-<td>SDGSUICIDE</td>
-<td>2002</td>
-<td>YEAR</td>
-<td>566</td>
-<td>COUNTRY</td>
-<td>PUBLISHED</td>
-<td>Suicide deaths</td>
-<td>Nigeria</td>
-<td>FEMALE</td>
-<td>TOTAL</td>
-<td>2.87</td>
-<td>1.550</td>
-<td>4.5400</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">5720</td>
-<td>16BBF41SDGSUICIDE</td>
-<td>SDGSUICIDE</td>
-<td>16BBF41</td>
-<td>SDGSUICIDE</td>
-<td>2016</td>
-<td>YEAR</td>
-<td>566</td>
-<td>COUNTRY</td>
-<td>PUBLISHED</td>
-<td>Suicide deaths</td>
-<td>Nigeria</td>
-<td>FEMALE</td>
-<td>TOTAL</td>
-<td>1.99</td>
-<td>0.950</td>
-<td>3.2300</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">6030</td>
-<td>16BBF41SDGSUICIDE</td>
-<td>SDGSUICIDE</td>
-<td>16BBF41</td>
-<td>SDGSUICIDE</td>
-<td>2008</td>
-<td>YEAR</td>
-<td>566</td>
-<td>COUNTRY</td>
-<td>PUBLISHED</td>
-<td>Suicide deaths</td>
-<td>Nigeria</td>
-<td>MALE</td>
-<td>TOTAL</td>
-<td>6.61</td>
-<td>3.900</td>
-<td>10.5037</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">6038</td>
-<td>16BBF41SDGSUICIDE</td>
-<td>SDGSUICIDE</td>
-<td>16BBF41</td>
-<td>SDGSUICIDE</td>
-<td>2016</td>
-<td>YEAR</td>
-<td>566</td>
-<td>COUNTRY</td>
-<td>PUBLISHED</td>
-<td>Suicide deaths</td>
-<td>Nigeria</td>
-<td>MALE</td>
-<td>TOTAL</td>
-<td>5.28</td>
-<td>3.100</td>
-<td>9.1800</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">6045</td>
-<td>16BBF41SDGSUICIDE</td>
-<td>SDGSUICIDE</td>
-<td>16BBF41</td>
-<td>SDGSUICIDE</td>
-<td>2007</td>
-<td>YEAR</td>
-<td>566</td>
-<td>COUNTRY</td>
-<td>PUBLISHED</td>
-<td>Suicide deaths</td>
-<td>Nigeria</td>
-<td>FEMALE</td>
-<td>TOTAL</td>
-<td>2.72</td>
-<td>1.450</td>
-<td>4.2800</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">6125</td>
-<td>16BBF41SDGSUICIDE</td>
-<td>SDGSUICIDE</td>
-<td>16BBF41</td>
-<td>SDGSUICIDE</td>
-<td>2002</td>
-<td>YEAR</td>
-<td>566</td>
-<td>COUNTRY</td>
-<td>PUBLISHED</td>
-<td>Suicide deaths</td>
-<td>Nigeria</td>
-<td>MALE</td>
-<td>TOTAL</td>
-<td>6.77</td>
-<td>3.920</td>
-<td>11.1099</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">6227</td>
-<td>16BBF41SDGSUICIDE</td>
-<td>SDGSUICIDE</td>
-<td>16BBF41</td>
-<td>SDGSUICIDE</td>
-<td>2015</td>
-<td>YEAR</td>
-<td>566</td>
-<td>COUNTRY</td>
-<td>PUBLISHED</td>
-<td>Suicide deaths</td>
-<td>Nigeria</td>
-<td>MALE</td>
-<td>TOTAL</td>
-<td>5.33</td>
-<td>3.090</td>
-<td>9.1200</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">6641</td>
-<td>16BBF41SDGSUICIDE</td>
-<td>SDGSUICIDE</td>
-<td>16BBF41</td>
-<td>SDGSUICIDE</td>
-<td>2001</td>
-<td>YEAR</td>
-<td>566</td>
-<td>COUNTRY</td>
-<td>PUBLISHED</td>
-<td>Suicide deaths</td>
-<td>Nigeria</td>
-<td>FEMALE</td>
-<td>TOTAL</td>
-<td>2.90</td>
-<td>1.530</td>
-<td>4.6300</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">7223</td>
-<td>16BBF41SDGSUICIDE</td>
-<td>SDGSUICIDE</td>
-<td>16BBF41</td>
-<td>SDGSUICIDE</td>
-<td>2006</td>
-<td>YEAR</td>
-<td>566</td>
-<td>COUNTRY</td>
-<td>PUBLISHED</td>
-<td>Suicide deaths</td>
-<td>Nigeria</td>
-<td>MALE</td>
-<td>TOTAL</td>
-<td>6.62</td>
-<td>3.860</td>
-<td>10.7802</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">7815</td>
-<td>16BBF41SDGSUICIDE</td>
-<td>SDGSUICIDE</td>
-<td>16BBF41</td>
-<td>SDGSUICIDE</td>
-<td>2017</td>
-<td>YEAR</td>
-<td>566</td>
-<td>COUNTRY</td>
-<td>PUBLISHED</td>
-<td>Suicide deaths</td>
-<td>Nigeria</td>
-<td>TOTAL</td>
-<td>TOTAL</td>
-<td>3.58</td>
-<td>2.000</td>
-<td>6.1100</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">7850</td>
-<td>16BBF41SDGSUICIDE</td>
-<td>SDGSUICIDE</td>
-<td>16BBF41</td>
-<td>SDGSUICIDE</td>
-<td>2008</td>
-<td>YEAR</td>
-<td>566</td>
-<td>COUNTRY</td>
-<td>PUBLISHED</td>
-<td>Suicide deaths</td>
-<td>Nigeria</td>
-<td>FEMALE</td>
-<td>TOTAL</td>
-<td>2.61</td>
-<td>1.410</td>
-<td>4.1000</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">8158</td>
-<td>16BBF41SDGSUICIDE</td>
-<td>SDGSUICIDE</td>
-<td>16BBF41</td>
-<td>SDGSUICIDE</td>
-<td>2008</td>
-<td>YEAR</td>
-<td>566</td>
-<td>COUNTRY</td>
-<td>PUBLISHED</td>
-<td>Suicide deaths</td>
-<td>Nigeria</td>
-<td>TOTAL</td>
-<td>TOTAL</td>
-<td>4.64</td>
-<td>2.660</td>
-<td>7.3300</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">9017</td>
-<td>16BBF41SDGSUICIDE</td>
-<td>SDGSUICIDE</td>
-<td>16BBF41</td>
-<td>SDGSUICIDE</td>
-<td>2013</td>
-<td>YEAR</td>
-<td>566</td>
-<td>COUNTRY</td>
-<td>PUBLISHED</td>
-<td>Suicide deaths</td>
-<td>Nigeria</td>
-<td>MALE</td>
-<td>TOTAL</td>
-<td>5.88</td>
-<td>3.490</td>
-<td>9.9000</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">9157</td>
-<td>16BBF41SDGSUICIDE</td>
-<td>SDGSUICIDE</td>
-<td>16BBF41</td>
-<td>SDGSUICIDE</td>
-<td>2005</td>
-<td>YEAR</td>
-<td>566</td>
-<td>COUNTRY</td>
-<td>PUBLISHED</td>
-<td>Suicide deaths</td>
-<td>Nigeria</td>
-<td>FEMALE</td>
-<td>TOTAL</td>
-<td>2.84</td>
-<td>1.500</td>
-<td>4.4900</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">9310</td>
-<td>16BBF41SDGSUICIDE</td>
-<td>SDGSUICIDE</td>
-<td>16BBF41</td>
-<td>SDGSUICIDE</td>
-<td>2007</td>
-<td>YEAR</td>
-<td>566</td>
-<td>COUNTRY</td>
-<td>PUBLISHED</td>
-<td>Suicide deaths</td>
-<td>Nigeria</td>
-<td>MALE</td>
-<td>TOTAL</td>
-<td>6.68</td>
-<td>3.900</td>
-<td>11.0279</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">9314</td>
-<td>16BBF41SDGSUICIDE</td>
-<td>SDGSUICIDE</td>
-<td>16BBF41</td>
-<td>SDGSUICIDE</td>
-<td>2018</td>
-<td>YEAR</td>
-<td>566</td>
-<td>COUNTRY</td>
-<td>PUBLISHED</td>
-<td>Suicide deaths</td>
-<td>Nigeria</td>
-<td>MALE</td>
-<td>TOTAL</td>
-<td>5.07</td>
-<td>2.990</td>
-<td>8.7400</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">9665</td>
-<td>16BBF41SDGSUICIDE</td>
-<td>SDGSUICIDE</td>
-<td>16BBF41</td>
-<td>SDGSUICIDE</td>
-<td>2003</td>
-<td>YEAR</td>
-<td>566</td>
-<td>COUNTRY</td>
-<td>PUBLISHED</td>
-<td>Suicide deaths</td>
-<td>Nigeria</td>
-<td>FEMALE</td>
-<td>TOTAL</td>
-<td>2.82</td>
-<td>1.520</td>
-<td>4.4100</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">9776</td>
-<td>16BBF41SDGSUICIDE</td>
-<td>SDGSUICIDE</td>
-<td>16BBF41</td>
-<td>SDGSUICIDE</td>
-<td>2018</td>
-<td>YEAR</td>
-<td>566</td>
-<td>COUNTRY</td>
-<td>PUBLISHED</td>
-<td>Suicide deaths</td>
-<td>Nigeria</td>
-<td>FEMALE</td>
-<td>TOTAL</td>
-<td>1.95</td>
-<td>0.935</td>
-<td>3.1400</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">9801</td>
-<td>16BBF41SDGSUICIDE</td>
-<td>SDGSUICIDE</td>
-<td>16BBF41</td>
-<td>SDGSUICIDE</td>
-<td>2009</td>
-<td>YEAR</td>
-<td>566</td>
-<td>COUNTRY</td>
-<td>PUBLISHED</td>
-<td>Suicide deaths</td>
-<td>Nigeria</td>
-<td>FEMALE</td>
-<td>TOTAL</td>
-<td>2.51</td>
-<td>1.340</td>
-<td>3.9500</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">9802</td>
-<td>16BBF41SDGSUICIDE</td>
-<td>SDGSUICIDE</td>
-<td>16BBF41</td>
-<td>SDGSUICIDE</td>
-<td>2012</td>
-<td>YEAR</td>
-<td>566</td>
-<td>COUNTRY</td>
-<td>PUBLISHED</td>
-<td>Suicide deaths</td>
-<td>Nigeria</td>
-<td>TOTAL</td>
-<td>TOTAL</td>
-<td>4.20</td>
-<td>2.430</td>
-<td>6.8600</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">9910</td>
-<td>16BBF41SDGSUICIDE</td>
-<td>SDGSUICIDE</td>
-<td>16BBF41</td>
-<td>SDGSUICIDE</td>
-<td>2013</td>
-<td>YEAR</td>
-<td>566</td>
-<td>COUNTRY</td>
-<td>PUBLISHED</td>
-<td>Suicide deaths</td>
-<td>Nigeria</td>
-<td>FEMALE</td>
-<td>TOTAL</td>
-<td>2.18</td>
-<td>1.110</td>
-<td>3.4900</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">9929</td>
-<td>16BBF41SDGSUICIDE</td>
-<td>SDGSUICIDE</td>
-<td>16BBF41</td>
-<td>SDGSUICIDE</td>
-<td>2011</td>
-<td>YEAR</td>
-<td>566</td>
-<td>COUNTRY</td>
-<td>PUBLISHED</td>
-<td>Suicide deaths</td>
-<td>Nigeria</td>
-<td>FEMALE</td>
-<td>TOTAL</td>
-<td>2.32</td>
-<td>1.240</td>
-<td>3.6100</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">9930</td>
-<td>16BBF41SDGSUICIDE</td>
-<td>SDGSUICIDE</td>
-<td>16BBF41</td>
-<td>SDGSUICIDE</td>
-<td>2006</td>
-<td>YEAR</td>
-<td>566</td>
-<td>COUNTRY</td>
-<td>PUBLISHED</td>
-<td>Suicide deaths</td>
-<td>Nigeria</td>
-<td>TOTAL</td>
-<td>TOTAL</td>
-<td>4.71</td>
-<td>2.660</td>
-<td>7.6300</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">10029</td>
-<td>16BBF41SDGSUICIDE</td>
-<td>SDGSUICIDE</td>
-<td>16BBF41</td>
-<td>SDGSUICIDE</td>
-<td>2014</td>
-<td>YEAR</td>
-<td>566</td>
-<td>COUNTRY</td>
-<td>PUBLISHED</td>
-<td>Suicide deaths</td>
-<td>Nigeria</td>
-<td>MALE</td>
-<td>TOTAL</td>
-<td>5.55</td>
-<td>3.320</td>
-<td>9.2900</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">10286</td>
-<td>16BBF41SDGSUICIDE</td>
-<td>SDGSUICIDE</td>
-<td>16BBF41</td>
-<td>SDGSUICIDE</td>
-<td>2014</td>
-<td>YEAR</td>
-<td>566</td>
-<td>COUNTRY</td>
-<td>PUBLISHED</td>
-<td>Suicide deaths</td>
-<td>Nigeria</td>
-<td>FEMALE</td>
-<td>TOTAL</td>
-<td>2.09</td>
-<td>0.999</td>
-<td>3.3900</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">11269</td>
-<td>16BBF41SDGSUICIDE</td>
-<td>SDGSUICIDE</td>
-<td>16BBF41</td>
-<td>SDGSUICIDE</td>
-<td>2014</td>
-<td>YEAR</td>
-<td>566</td>
-<td>COUNTRY</td>
-<td>PUBLISHED</td>
-<td>Suicide deaths</td>
-<td>Nigeria</td>
-<td>TOTAL</td>
-<td>TOTAL</td>
-<td>3.85</td>
-<td>2.170</td>
-<td>6.3800</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">11354</td>
-<td>16BBF41SDGSUICIDE</td>
-<td>SDGSUICIDE</td>
-<td>16BBF41</td>
-<td>SDGSUICIDE</td>
-<td>2004</td>
-<td>YEAR</td>
-<td>566</td>
-<td>COUNTRY</td>
-<td>PUBLISHED</td>
-<td>Suicide deaths</td>
-<td>Nigeria</td>
-<td>TOTAL</td>
-<td>TOTAL</td>
-<td>4.83</td>
-<td>2.720</td>
-<td>7.8600</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">11366</td>
-<td>16BBF41SDGSUICIDE</td>
-<td>SDGSUICIDE</td>
-<td>16BBF41</td>
-<td>SDGSUICIDE</td>
-<td>2001</td>
-<td>YEAR</td>
-<td>566</td>
-<td>COUNTRY</td>
-<td>PUBLISHED</td>
-<td>Suicide deaths</td>
-<td>Nigeria</td>
-<td>TOTAL</td>
-<td>TOTAL</td>
-<td>4.93</td>
-<td>2.740</td>
-<td>8.0300</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">11512</td>
-<td>16BBF41SDGSUICIDE</td>
-<td>SDGSUICIDE</td>
-<td>16BBF41</td>
-<td>SDGSUICIDE</td>
-<td>2002</td>
-<td>YEAR</td>
-<td>566</td>
-<td>COUNTRY</td>
-<td>PUBLISHED</td>
-<td>Suicide deaths</td>
-<td>Nigeria</td>
-<td>TOTAL</td>
-<td>TOTAL</td>
-<td>4.84</td>
-<td>2.740</td>
-<td>7.8600</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">11545</td>
-<td>16BBF41SDGSUICIDE</td>
-<td>SDGSUICIDE</td>
-<td>16BBF41</td>
-<td>SDGSUICIDE</td>
-<td>2015</td>
-<td>YEAR</td>
-<td>566</td>
-<td>COUNTRY</td>
-<td>PUBLISHED</td>
-<td>Suicide deaths</td>
-<td>Nigeria</td>
-<td>TOTAL</td>
-<td>TOTAL</td>
-<td>3.69</td>
-<td>2.030</td>
-<td>6.2600</td>
-</tr>
-</tbody>
-</table>
-
+<div id="526d3b0b-0646-4b9c-bd5a-998d53149a66" class="cell" data-scrolled="true">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>years_below_2019 <span class="op">=</span> Nigerian_suicide_cases[Nigerian_suicide_cases[<span class="st">"Suicide_Year"</span>] <span class="op">&lt;=</span> <span class="dv">2018</span>]</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>years_below_2019</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</div>
-</div>
-<bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
-    <template>Expand</template>
-    <span class="bslib-full-screen-enter badge rounded-pill">
-        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" style="height:1em;width:1em;" aria-hidden="true" role="img"><path d="M20 5C20 4.4 19.6 4 19 4H13C12.4 4 12 3.6 12 3C12 2.4 12.4 2 13 2H21C21.6 2 22 2.4 22 3V11C22 11.6 21.6 12 21 12C20.4 12 20 11.6 20 11V5ZM4 19C4 19.6 4.4 20 5 20H11C11.6 20 12 20.4 12 21C12 21.6 11.6 22 11 22H3C2.4 22 2 21.6 2 21V13C2 12.4 2.4 12 3 12C3.6 12 4 12.4 4 13V19Z"></path></svg>
-    </span>
-</bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div>
-<div class="card cell bslib-card html-fill-container" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
-<div class="card-body html-fill-item html-fill-container">
-<div class="cell-output cell-output-display html-fill-item html-fill-container" data-execution_count="16">
+<div id="5d30dc75-ba8e-4ac2-9ea8-ac2950cf8c68" class="cell" data-execution_count="12">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="bu">sorted</span>(Nigerian_suicide_cases[<span class="st">"Suicide_Year"</span>].unique())</span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>Nigerian_suicide_cases[<span class="st">"Suicide_Year"</span>].unique()</span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>Nigerian_suicide_cases[<span class="st">"Suicide_Year"</span>].nunique()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="12">
 <pre><code>20</code></pre>
 </div>
 </div>
-<bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
-    <template>Expand</template>
-    <span class="bslib-full-screen-enter badge rounded-pill">
-        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" style="height:1em;width:1em;" aria-hidden="true" role="img"><path d="M20 5C20 4.4 19.6 4 19 4H13C12.4 4 12 3.6 12 3C12 2.4 12.4 2 13 2H21C21.6 2 22 2.4 22 3V11C22 11.6 21.6 12 21 12C20.4 12 20 11.6 20 11V5ZM4 19C4 19.6 4.4 20 5 20H11C11.6 20 12 20.4 12 21C12 21.6 11.6 22 11 22H3C2.4 22 2 21.6 2 21V13C2 12.4 2.4 12 3 12C3.6 12 4 12.4 4 13V19Z"></path></svg>
-    </span>
-</bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div>
-<div class="bslib-grid" style="display: grid; grid-template-columns: minmax(3em, 1fr) minmax(3em, 1fr) minmax(3em, 1fr) minmax(3em, 1fr) minmax(3em, 1fr);
-grid-auto-rows: minmax(0, 1fr);">
-<div class="card cell bslib-card html-fill-container" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
-<div class="card-body html-fill-item html-fill-container">
-<div class="cell-output cell-output-stdout html-fill-item html-fill-container">
+<div id="2309269f-31e5-455d-b079-6508b5215361" class="cell">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>Nigerian_suicide_cases.to_csv(<span class="st">"../data/nigerian_suicide_cases.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<section id="scalar-values" class="level3">
+<h3 class="anchored" data-anchor-id="scalar-values">SCALAR VALUES</h3>
+<div id="9a299572-b14b-453b-9e14-59e1ec4f8faa" class="cell" data-execution_count="13">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Average suicide rate for both genders from 2000-2019</span></span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>suicide_rate_for_total_genders <span class="op">=</span> Nigerian_suicide_cases[(Nigerian_suicide_cases[<span class="st">"Gender"</span>] <span class="op">==</span> <span class="st">"TOTAL"</span>) <span class="op">&amp;</span> (Nigerian_suicide_cases[<span class="st">"DIM_AGE"</span>] <span class="op">==</span> <span class="st">"TOTAL"</span>)]</span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a><span class="co">#Loop and print suicide value for total gender for each year</span></span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> year <span class="kw">in</span> <span class="bu">sorted</span>(suicide_rate_for_total_genders[<span class="st">"Suicide_Year"</span>].unique()):</span>
+<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a>    suicide_rate <span class="op">=</span> suicide_rate_for_total_genders[suicide_rate_for_total_genders[<span class="st">"Suicide_Year"</span>] <span class="op">==</span> year][<span class="st">"Suicide_Rate_N"</span>].values[<span class="dv">0</span>]</span>
+<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Year: </span><span class="sc">{</span>year<span class="sc">}</span><span class="ss">, Suicide Rate: </span><span class="sc">{</span>suicide_rate<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate average value from 2000-2019</span></span>
+<span id="cb22-10"><a href="#cb22-10" aria-hidden="true" tabindex="-1"></a>Average_suicide_value <span class="op">=</span> suicide_rate_for_total_genders[<span class="st">"Suicide_Rate_N"</span>].mean()</span>
+<span id="cb22-11"><a href="#cb22-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"</span><span class="ch">\n</span><span class="ss">Average Suicide Rate from (2000–2019): </span><span class="sc">{</span>Average_suicide_value<span class="sc">:.2f}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
 <pre><code>Year: 2000, Suicide Rate: 4.85
 Year: 2001, Suicide Rate: 4.93
 Year: 2002, Suicide Rate: 4.84
@@ -3681,65 +2578,74 @@ Year: 2019, Suicide Rate: 3.49
 Average Suicide Rate from (2000–2019): 4.32</code></pre>
 </div>
 </div>
-<bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
-    <template>Expand</template>
-    <span class="bslib-full-screen-enter badge rounded-pill">
-        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" style="height:1em;width:1em;" aria-hidden="true" role="img"><path d="M20 5C20 4.4 19.6 4 19 4H13C12.4 4 12 3.6 12 3C12 2.4 12.4 2 13 2H21C21.6 2 22 2.4 22 3V11C22 11.6 21.6 12 21 12C20.4 12 20 11.6 20 11V5ZM4 19C4 19.6 4.4 20 5 20H11C11.6 20 12 20.4 12 21C12 21.6 11.6 22 11 22H3C2.4 22 2 21.6 2 21V13C2 12.4 2.4 12 3 12C3.6 12 4 12.4 4 13V19Z"></path></svg>
-    </span>
-</bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div><div class="card cell bslib-card html-fill-container" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
-<div class="card-body html-fill-item html-fill-container">
-<div class="cell-output cell-output-stdout html-fill-item html-fill-container">
+<div id="7ccec8ec-2824-4e77-b950-0aef1ead792b" class="cell" data-execution_count="14">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Get National average suicide rate 2019</span></span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>overall_rate <span class="op">=</span> Nigerian_suicide_cases[(Nigerian_suicide_cases[<span class="st">"DIM_AGE"</span>] <span class="op">==</span> <span class="st">"TOTAL"</span>) <span class="op">&amp;</span> (Nigerian_suicide_cases[<span class="st">"Gender"</span>] <span class="op">==</span> <span class="st">"TOTAL"</span>)]</span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>latest_year <span class="op">=</span> overall_rate[<span class="st">"Suicide_Year"</span>].<span class="bu">max</span>()</span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>latest_rate <span class="op">=</span> overall_rate[overall_rate[<span class="st">"Suicide_Year"</span>] <span class="op">==</span> latest_year][<span class="st">"Suicide_Rate_N"</span>].values[<span class="dv">0</span>]</span>
+<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"The National average suicide rate for the year </span><span class="sc">{</span>latest_year<span class="sc">}</span><span class="ss"> is: </span><span class="sc">{</span>latest_rate<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
 <pre><code>The National average suicide rate for the year 2019 is: 3.49</code></pre>
 </div>
 </div>
-<bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
-    <template>Expand</template>
-    <span class="bslib-full-screen-enter badge rounded-pill">
-        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" style="height:1em;width:1em;" aria-hidden="true" role="img"><path d="M20 5C20 4.4 19.6 4 19 4H13C12.4 4 12 3.6 12 3C12 2.4 12.4 2 13 2H21C21.6 2 22 2.4 22 3V11C22 11.6 21.6 12 21 12C20.4 12 20 11.6 20 11V5ZM4 19C4 19.6 4.4 20 5 20H11C11.6 20 12 20.4 12 21C12 21.6 11.6 22 11 22H3C2.4 22 2 21.6 2 21V13C2 12.4 2.4 12 3 12C3.6 12 4 12.4 4 13V19Z"></path></svg>
-    </span>
-</bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div><div class="card cell bslib-card html-fill-container" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
-<div class="card-body html-fill-item html-fill-container">
-<div class="cell-output cell-output-stdout html-fill-item html-fill-container">
-<pre><code>Age group: Y_GE85, Gender: MALE, Rate: 330.86 for the year 2019</code></pre>
+<div id="8e1d4a84-fb01-4447-af20-21b7c7917912" class="cell">
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Age group and gender with the most alarming (highest) suicide rate</span></span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>row <span class="op">=</span> Nigerian_suicide_cases.loc[Nigerian_suicide_cases[<span class="st">"Suicide_Rate_N"</span>].idxmax(), [<span class="st">"DIM_AGE"</span>, <span class="st">"Gender"</span>, <span class="st">"Suicide_Rate_N"</span>]]</span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Age group: </span><span class="sc">{</span>row[<span class="st">'DIM_AGE'</span>]<span class="sc">}</span><span class="ss">, Gender: </span><span class="sc">{</span>row[<span class="st">'Gender'</span>]<span class="sc">}</span><span class="ss">, Rate: </span><span class="sc">{</span>row[<span class="st">'Suicide_Rate_N'</span>]<span class="sc">}</span><span class="ss"> for the year 2019"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</div>
-<bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
-    <template>Expand</template>
-    <span class="bslib-full-screen-enter badge rounded-pill">
-        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" style="height:1em;width:1em;" aria-hidden="true" role="img"><path d="M20 5C20 4.4 19.6 4 19 4H13C12.4 4 12 3.6 12 3C12 2.4 12.4 2 13 2H21C21.6 2 22 2.4 22 3V11C22 11.6 21.6 12 21 12C20.4 12 20 11.6 20 11V5ZM4 19C4 19.6 4.4 20 5 20H11C11.6 20 12 20.4 12 21C12 21.6 11.6 22 11 22H3C2.4 22 2 21.6 2 21V13C2 12.4 2.4 12 3 12C3.6 12 4 12.4 4 13V19Z"></path></svg>
-    </span>
-</bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div><div class="card cell bslib-card html-fill-container" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
-<div class="card-body html-fill-item html-fill-container">
-<div class="cell-output cell-output-stdout html-fill-item html-fill-container">
+<div id="385e29be-2784-43f4-aedb-a1885b579dab" class="cell" data-execution_count="15">
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Age group and Female gender suicide rate</span></span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>female_row <span class="op">=</span> year_2019[year_2019[<span class="st">"Gender"</span>] <span class="op">==</span> <span class="st">"FEMALE"</span>].loc[year_2019[year_2019[<span class="st">"Gender"</span>] <span class="op">==</span> <span class="st">"FEMALE"</span>][<span class="st">"Suicide_Rate_N"</span>].idxmax(), [<span class="st">"DIM_AGE"</span>, <span class="st">"Suicide_Rate_N"</span>]]</span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Female — Age group: </span><span class="sc">{</span>female_row[<span class="st">'DIM_AGE'</span>]<span class="sc">}</span><span class="ss">, Rate: </span><span class="sc">{</span>female_row[<span class="st">'Suicide_Rate_N'</span>]<span class="sc">}</span><span class="ss"> for the year 2019"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
 <pre><code>Female — Age group: Y_GE85, Rate: 93.9 for the year 2019</code></pre>
 </div>
 </div>
-<bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
-    <template>Expand</template>
-    <span class="bslib-full-screen-enter badge rounded-pill">
-        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" style="height:1em;width:1em;" aria-hidden="true" role="img"><path d="M20 5C20 4.4 19.6 4 19 4H13C12.4 4 12 3.6 12 3C12 2.4 12.4 2 13 2H21C21.6 2 22 2.4 22 3V11C22 11.6 21.6 12 21 12C20.4 12 20 11.6 20 11V5ZM4 19C4 19.6 4.4 20 5 20H11C11.6 20 12 20.4 12 21C12 21.6 11.6 22 11 22H3C2.4 22 2 21.6 2 21V13C2 12.4 2.4 12 3 12C3.6 12 4 12.4 4 13V19Z"></path></svg>
-    </span>
-</bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div><div class="card cell bslib-card html-fill-container" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
-<div class="card-body html-fill-item html-fill-container">
-<div class="cell-output cell-output-stdout html-fill-item html-fill-container">
+<div id="e8934f63-670e-4dae-acb2-ef20bc8e951c" class="cell">
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="bu">len</span>(overall_rate)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="6e56520f-f6cc-499d-9139-8db25eaa8092" class="cell" data-execution_count="16">
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="co"># # Get National average suicide rate 2010</span></span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>latest_rate <span class="op">=</span> overall_rate[overall_rate[<span class="st">"Suicide_Year"</span>] <span class="op">==</span> <span class="dv">2010</span>][<span class="st">"Suicide_Rate_N"</span>].values[<span class="dv">0</span>]</span>
+<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"The National average suicide rate for the year </span><span class="sc">{</span><span class="dv">2010</span><span class="sc">}</span><span class="ss"> is: </span><span class="sc">{</span>latest_rate<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
 <pre><code>The National average suicide rate for the year 2010 is: 4.4</code></pre>
 </div>
 </div>
-<bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
-    <template>Expand</template>
-    <span class="bslib-full-screen-enter badge rounded-pill">
-        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" style="height:1em;width:1em;" aria-hidden="true" role="img"><path d="M20 5C20 4.4 19.6 4 19 4H13C12.4 4 12 3.6 12 3C12 2.4 12.4 2 13 2H21C21.6 2 22 2.4 22 3V11C22 11.6 21.6 12 21 12C20.4 12 20 11.6 20 11V5ZM4 19C4 19.6 4.4 20 5 20H11C11.6 20 12 20.4 12 21C12 21.6 11.6 22 11 22H3C2.4 22 2 21.6 2 21V13C2 12.4 2.4 12 3 12C3.6 12 4 12.4 4 13V19Z"></path></svg>
-    </span>
-</bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div>
-</div>
-<div id="visualizations" class="dashboard-page tab-pane show active html-fill-item html-fill-container" data-orientation="rows" aria-labelledby="tab-visualizations">
-<div class="html-fill-item html-fill-container bslib-grid" style="display: grid; grid-template-rows: minmax(3em, 1fr) minmax(3em, 1fr); grid-auto-columns: minmax(0, 1fr);">
-<div class="card cell html-fill-item html-fill-container bslib-card" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
-<div class="card-body html-fill-item html-fill-container">
-<div class="cell-output cell-output-display html-fill-item html-fill-container">
-<div class="html-fill-item html-fill-container">                            <div id="8b322fcc-cbbb-4c9e-9aa4-3777fa4b61aa" class="plotly-graph-div html-fill-item html-fill-container" style="height:600px; width:100%;"></div>            <script type="text/javascript">                require(["plotly"], function(Plotly) {                    window.PLOTLYENV=window.PLOTLYENV || {};                                    if (document.getElementById("8b322fcc-cbbb-4c9e-9aa4-3777fa4b61aa")) {                    Plotly.newPlot(                        "8b322fcc-cbbb-4c9e-9aa4-3777fa4b61aa",                        [{"hovertemplate":"Gender=%{z}<br>DIM_AGE=%{x}<br>Suicide Rate (per 100k)=%{y:.2f}<extra></extra>","legendgroup":"MALE","marker":{"color":"#636efa","opacity":0.8,"symbol":"circle"},"mode":"markers","name":"MALE","scene":"scene","showlegend":true,"x":["TOTAL","TOTAL","TOTAL","TOTAL","TOTAL","TOTAL","TOTAL","TOTAL","TOTAL","TOTAL","TOTAL","TOTAL","TOTAL","TOTAL","TOTAL","TOTAL","TOTAL","TOTAL","TOTAL","TOTAL","Y_GE85","Y15T19","Y15T24","Y15T29","Y25T34","Y30T49","Y35T44","Y45T54","Y55T64","Y65T74","Y75T84"],"y":[6.92,6.36,6.66,5.16,6.76,6.11,6.81,6.34,6.46,6.72,6.61,5.28,6.77,5.33,6.62,5.02,5.88,6.68,5.07,5.55,330.86,2.0,2.79,3.43,5.33,6.67,6.9,9.2,19.62,41.78,76.47],"z":["MALE","MALE","MALE","MALE","MALE","MALE","MALE","MALE","MALE","MALE","MALE","MALE","MALE","MALE","MALE","MALE","MALE","MALE","MALE","MALE","MALE","MALE","MALE","MALE","MALE","MALE","MALE","MALE","MALE","MALE","MALE"],"type":"scatter3d"},{"hovertemplate":"Gender=%{z}<br>DIM_AGE=%{x}<br>Suicide Rate (per 100k)=%{y:.2f}<extra></extra>","legendgroup":"TOTAL","marker":{"color":"#EF553B","opacity":0.8,"symbol":"diamond"},"mode":"markers","name":"TOTAL","scene":"scene","showlegend":true,"x":["TOTAL","TOTAL","TOTAL","TOTAL","TOTAL","TOTAL","TOTAL","TOTAL","TOTAL","TOTAL","TOTAL","TOTAL","TOTAL","TOTAL","TOTAL","TOTAL","TOTAL","TOTAL","TOTAL","TOTAL","Y_GE85","Y15T19","Y15T24","Y15T29","Y25T34","Y30T49","Y35T44","Y45T54","Y55T64","Y65T74","Y75T84"],"y":[3.49,4.77,4.35,3.53,4.72,4.85,4.05,4.4,3.66,4.51,4.79,3.58,4.64,4.2,4.71,3.85,4.83,4.93,4.84,3.69,201.08,1.39,1.83,2.14,3.16,4.3,4.33,6.84,14.65,29.62,49.62],"z":["TOTAL","TOTAL","TOTAL","TOTAL","TOTAL","TOTAL","TOTAL","TOTAL","TOTAL","TOTAL","TOTAL","TOTAL","TOTAL","TOTAL","TOTAL","TOTAL","TOTAL","TOTAL","TOTAL","TOTAL","TOTAL","TOTAL","TOTAL","TOTAL","TOTAL","TOTAL","TOTAL","TOTAL","TOTAL","TOTAL","TOTAL"],"type":"scatter3d"},{"hovertemplate":"Gender=%{z}<br>DIM_AGE=%{x}<br>Suicide Rate (per 100k)=%{y:.2f}<extra></extra>","legendgroup":"FEMALE","marker":{"color":"#00cc96","opacity":0.8,"symbol":"square"},"mode":"markers","name":"FEMALE","scene":"scene","showlegend":true,"x":["TOTAL","TOTAL","TOTAL","TOTAL","TOTAL","TOTAL","TOTAL","TOTAL","TOTAL","TOTAL","TOTAL","TOTAL","TOTAL","TOTAL","TOTAL","TOTAL","TOTAL","TOTAL","TOTAL","TOTAL","Y_GE85","Y15T19","Y15T24","Y15T29","Y25T34","Y30T49","Y35T44","Y45T54","Y55T64","Y65T74","Y75T84"],"y":[2.85,1.97,2.85,2.02,2.4,2.76,2.24,2.87,1.99,2.72,2.9,2.61,1.93,2.84,2.82,1.95,2.51,2.18,2.32,2.09,93.9,0.76,0.85,0.81,0.93,1.87,1.69,4.49,9.94,18.61,25.97],"z":["FEMALE","FEMALE","FEMALE","FEMALE","FEMALE","FEMALE","FEMALE","FEMALE","FEMALE","FEMALE","FEMALE","FEMALE","FEMALE","FEMALE","FEMALE","FEMALE","FEMALE","FEMALE","FEMALE","FEMALE","FEMALE","FEMALE","FEMALE","FEMALE","FEMALE","FEMALE","FEMALE","FEMALE","FEMALE","FEMALE","FEMALE"],"type":"scatter3d"}],                        {"template":{"data":{"histogram2dcontour":[{"type":"histogram2dcontour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"choropleth":[{"type":"choropleth","colorbar":{"outlinewidth":0,"ticks":""}}],"histogram2d":[{"type":"histogram2d","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmap":[{"type":"heatmap","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmapgl":[{"type":"heatmapgl","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"contourcarpet":[{"type":"contourcarpet","colorbar":{"outlinewidth":0,"ticks":""}}],"contour":[{"type":"contour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"surface":[{"type":"surface","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"mesh3d":[{"type":"mesh3d","colorbar":{"outlinewidth":0,"ticks":""}}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"parcoords":[{"type":"parcoords","line":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolargl":[{"type":"scatterpolargl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"scattergeo":[{"type":"scattergeo","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolar":[{"type":"scatterpolar","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"scattergl":[{"type":"scattergl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatter3d":[{"type":"scatter3d","line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermapbox":[{"type":"scattermapbox","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterternary":[{"type":"scatterternary","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattercarpet":[{"type":"scattercarpet","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"type":"carpet"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}],"barpolar":[{"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"pie":[{"automargin":true,"type":"pie"}]},"layout":{"autotypenumbers":"strict","colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"hovermode":"closest","hoverlabel":{"align":"left"},"paper_bgcolor":"white","plot_bgcolor":"#E5ECF6","polar":{"bgcolor":"#E5ECF6","angularaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"radialaxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"ternary":{"bgcolor":"#E5ECF6","aaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"baxis":{"gridcolor":"white","linecolor":"white","ticks":""},"caxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]]},"xaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"yaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"scene":{"xaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"yaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"zaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"geo":{"bgcolor":"white","landcolor":"#E5ECF6","subunitcolor":"white","showland":true,"showlakes":true,"lakecolor":"white"},"title":{"x":0.05},"mapbox":{"style":"light"}}},"scene":{"domain":{"x":[0.0,1.0],"y":[0.0,1.0]},"xaxis":{"title":{"text":"DIM_AGE"}},"yaxis":{"title":{"text":"Suicide_Rate_N"}},"zaxis":{"title":{"text":"Gender"},"categoryorder":"array","categoryarray":["MALE","TOTAL","FEMALE"]}},"legend":{"title":{"text":"Gender"},"tracegroupgap":0},"title":{"text":"Suicide Rate by Age and Gender in Nigeria (3D)"},"height":600,"margin":{"l":0,"r":0,"b":0,"t":30}},                        {"responsive": true}                    ).then(function(){
+</section>
+<section id="visualizations" class="level1">
+<h1>Visualizations</h1>
+<div id="6f5e5b1d-ea12-44b4-b3b2-8f9fa65afcb6" class="cell" data-execution_count="18">
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 3D scatter plot</span></span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>fig <span class="op">=</span> px.scatter_3d(</span>
+<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>    Nigerian_suicide_cases,</span>
+<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a>    x<span class="op">=</span><span class="st">"DIM_AGE"</span>,</span>
+<span id="cb32-5"><a href="#cb32-5" aria-hidden="true" tabindex="-1"></a>    y<span class="op">=</span><span class="st">"Suicide_Rate_N"</span>,</span>
+<span id="cb32-6"><a href="#cb32-6" aria-hidden="true" tabindex="-1"></a>    z<span class="op">=</span><span class="st">"Gender"</span>,  <span class="co"># Use Gender as the third axis (categorical)</span></span>
+<span id="cb32-7"><a href="#cb32-7" aria-hidden="true" tabindex="-1"></a>    color<span class="op">=</span><span class="st">"Gender"</span>,  <span class="co"># Color-code by gender</span></span>
+<span id="cb32-8"><a href="#cb32-8" aria-hidden="true" tabindex="-1"></a>    title<span class="op">=</span><span class="st">"Suicide Rate by Age and Gender in Nigeria (3D)"</span>,</span>
+<span id="cb32-9"><a href="#cb32-9" aria-hidden="true" tabindex="-1"></a>    labels<span class="op">=</span>{<span class="st">"Suicide_Rate_N"</span>: <span class="st">"Suicide Rate (per 100k)"</span>, <span class="st">"Age"</span>: <span class="st">"Age (Years)"</span>},</span>
+<span id="cb32-10"><a href="#cb32-10" aria-hidden="true" tabindex="-1"></a>    hover_data<span class="op">=</span>{<span class="st">"DIM_AGE"</span>: <span class="va">True</span>, <span class="st">"Gender"</span>: <span class="va">True</span>, <span class="st">"Suicide_Rate_N"</span>: <span class="st">":.2f"</span>},</span>
+<span id="cb32-11"><a href="#cb32-11" aria-hidden="true" tabindex="-1"></a>    symbol<span class="op">=</span><span class="st">"Gender"</span>,  <span class="co"># Optional: Different symbols for genders</span></span>
+<span id="cb32-12"><a href="#cb32-12" aria-hidden="true" tabindex="-1"></a>    opacity<span class="op">=</span><span class="fl">0.8</span>,</span>
+<span id="cb32-13"><a href="#cb32-13" aria-hidden="true" tabindex="-1"></a>    height<span class="op">=</span><span class="dv">600</span>,</span>
+<span id="cb32-14"><a href="#cb32-14" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb32-15"><a href="#cb32-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-16"><a href="#cb32-16" aria-hidden="true" tabindex="-1"></a>fig.update_layout(</span>
+<span id="cb32-17"><a href="#cb32-17" aria-hidden="true" tabindex="-1"></a>    scene<span class="op">=</span><span class="bu">dict</span>(</span>
+<span id="cb32-18"><a href="#cb32-18" aria-hidden="true" tabindex="-1"></a>        xaxis_title<span class="op">=</span><span class="st">"DIM_AGE"</span>,</span>
+<span id="cb32-19"><a href="#cb32-19" aria-hidden="true" tabindex="-1"></a>        yaxis_title<span class="op">=</span><span class="st">"Suicide_Rate_N"</span>,</span>
+<span id="cb32-20"><a href="#cb32-20" aria-hidden="true" tabindex="-1"></a>        zaxis_title<span class="op">=</span><span class="st">"Gender"</span>,</span>
+<span id="cb32-21"><a href="#cb32-21" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb32-22"><a href="#cb32-22" aria-hidden="true" tabindex="-1"></a>    margin<span class="op">=</span><span class="bu">dict</span>(l<span class="op">=</span><span class="dv">0</span>, r<span class="op">=</span><span class="dv">0</span>, b<span class="op">=</span><span class="dv">0</span>, t<span class="op">=</span><span class="dv">30</span>),</span>
+<span id="cb32-23"><a href="#cb32-23" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb32-24"><a href="#cb32-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-25"><a href="#cb32-25" aria-hidden="true" tabindex="-1"></a><span class="co"># Show the plot</span></span>
+<span id="cb32-26"><a href="#cb32-26" aria-hidden="true" tabindex="-1"></a>fig.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>                            <div id="bf2a6249-567c-41d4-9782-a4fd42caa1f6" class="plotly-graph-div" style="height:600px; width:100%;"></div>            <script type="text/javascript">                require(["plotly"], function(Plotly) {                    window.PLOTLYENV=window.PLOTLYENV || {};                                    if (document.getElementById("bf2a6249-567c-41d4-9782-a4fd42caa1f6")) {                    Plotly.newPlot(                        "bf2a6249-567c-41d4-9782-a4fd42caa1f6",                        [{"hovertemplate":"Gender=%{z}\u003cbr\u003eDIM_AGE=%{x}\u003cbr\u003eSuicide Rate (per 100k)=%{y:.2f}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"MALE","marker":{"color":"#636efa","opacity":0.8,"symbol":"circle"},"mode":"markers","name":"MALE","scene":"scene","showlegend":true,"x":["TOTAL","TOTAL","TOTAL","TOTAL","TOTAL","TOTAL","TOTAL","TOTAL","TOTAL","TOTAL","TOTAL","TOTAL","TOTAL","TOTAL","TOTAL","TOTAL","TOTAL","TOTAL","TOTAL","TOTAL","Y_GE85","Y15T19","Y15T24","Y15T29","Y25T34","Y30T49","Y35T44","Y45T54","Y55T64","Y65T74","Y75T84"],"y":[6.92,6.36,6.66,5.16,6.76,6.11,6.81,6.34,6.46,6.72,6.61,5.28,6.77,5.33,6.62,5.02,5.88,6.68,5.07,5.55,330.86,2.0,2.79,3.43,5.33,6.67,6.9,9.2,19.62,41.78,76.47],"z":["MALE","MALE","MALE","MALE","MALE","MALE","MALE","MALE","MALE","MALE","MALE","MALE","MALE","MALE","MALE","MALE","MALE","MALE","MALE","MALE","MALE","MALE","MALE","MALE","MALE","MALE","MALE","MALE","MALE","MALE","MALE"],"type":"scatter3d"},{"hovertemplate":"Gender=%{z}\u003cbr\u003eDIM_AGE=%{x}\u003cbr\u003eSuicide Rate (per 100k)=%{y:.2f}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"TOTAL","marker":{"color":"#EF553B","opacity":0.8,"symbol":"diamond"},"mode":"markers","name":"TOTAL","scene":"scene","showlegend":true,"x":["TOTAL","TOTAL","TOTAL","TOTAL","TOTAL","TOTAL","TOTAL","TOTAL","TOTAL","TOTAL","TOTAL","TOTAL","TOTAL","TOTAL","TOTAL","TOTAL","TOTAL","TOTAL","TOTAL","TOTAL","Y_GE85","Y15T19","Y15T24","Y15T29","Y25T34","Y30T49","Y35T44","Y45T54","Y55T64","Y65T74","Y75T84"],"y":[3.49,4.77,4.35,3.53,4.72,4.85,4.05,4.4,3.66,4.51,4.79,3.58,4.64,4.2,4.71,3.85,4.83,4.93,4.84,3.69,201.08,1.39,1.83,2.14,3.16,4.3,4.33,6.84,14.65,29.62,49.62],"z":["TOTAL","TOTAL","TOTAL","TOTAL","TOTAL","TOTAL","TOTAL","TOTAL","TOTAL","TOTAL","TOTAL","TOTAL","TOTAL","TOTAL","TOTAL","TOTAL","TOTAL","TOTAL","TOTAL","TOTAL","TOTAL","TOTAL","TOTAL","TOTAL","TOTAL","TOTAL","TOTAL","TOTAL","TOTAL","TOTAL","TOTAL"],"type":"scatter3d"},{"hovertemplate":"Gender=%{z}\u003cbr\u003eDIM_AGE=%{x}\u003cbr\u003eSuicide Rate (per 100k)=%{y:.2f}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"FEMALE","marker":{"color":"#00cc96","opacity":0.8,"symbol":"square"},"mode":"markers","name":"FEMALE","scene":"scene","showlegend":true,"x":["TOTAL","TOTAL","TOTAL","TOTAL","TOTAL","TOTAL","TOTAL","TOTAL","TOTAL","TOTAL","TOTAL","TOTAL","TOTAL","TOTAL","TOTAL","TOTAL","TOTAL","TOTAL","TOTAL","TOTAL","Y_GE85","Y15T19","Y15T24","Y15T29","Y25T34","Y30T49","Y35T44","Y45T54","Y55T64","Y65T74","Y75T84"],"y":[2.85,1.97,2.85,2.02,2.4,2.76,2.24,2.87,1.99,2.72,2.9,2.61,1.93,2.84,2.82,1.95,2.51,2.18,2.32,2.09,93.9,0.76,0.85,0.81,0.93,1.87,1.69,4.49,9.94,18.61,25.97],"z":["FEMALE","FEMALE","FEMALE","FEMALE","FEMALE","FEMALE","FEMALE","FEMALE","FEMALE","FEMALE","FEMALE","FEMALE","FEMALE","FEMALE","FEMALE","FEMALE","FEMALE","FEMALE","FEMALE","FEMALE","FEMALE","FEMALE","FEMALE","FEMALE","FEMALE","FEMALE","FEMALE","FEMALE","FEMALE","FEMALE","FEMALE"],"type":"scatter3d"}],                        {"template":{"data":{"histogram2dcontour":[{"type":"histogram2dcontour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"choropleth":[{"type":"choropleth","colorbar":{"outlinewidth":0,"ticks":""}}],"histogram2d":[{"type":"histogram2d","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmap":[{"type":"heatmap","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmapgl":[{"type":"heatmapgl","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"contourcarpet":[{"type":"contourcarpet","colorbar":{"outlinewidth":0,"ticks":""}}],"contour":[{"type":"contour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"surface":[{"type":"surface","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"mesh3d":[{"type":"mesh3d","colorbar":{"outlinewidth":0,"ticks":""}}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"parcoords":[{"type":"parcoords","line":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolargl":[{"type":"scatterpolargl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"scattergeo":[{"type":"scattergeo","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolar":[{"type":"scatterpolar","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"scattergl":[{"type":"scattergl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatter3d":[{"type":"scatter3d","line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermapbox":[{"type":"scattermapbox","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterternary":[{"type":"scatterternary","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattercarpet":[{"type":"scattercarpet","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"type":"carpet"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}],"barpolar":[{"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"pie":[{"automargin":true,"type":"pie"}]},"layout":{"autotypenumbers":"strict","colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"hovermode":"closest","hoverlabel":{"align":"left"},"paper_bgcolor":"white","plot_bgcolor":"#E5ECF6","polar":{"bgcolor":"#E5ECF6","angularaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"radialaxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"ternary":{"bgcolor":"#E5ECF6","aaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"baxis":{"gridcolor":"white","linecolor":"white","ticks":""},"caxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]]},"xaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"yaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"scene":{"xaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"yaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"zaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"geo":{"bgcolor":"white","landcolor":"#E5ECF6","subunitcolor":"white","showland":true,"showlakes":true,"lakecolor":"white"},"title":{"x":0.05},"mapbox":{"style":"light"}}},"scene":{"domain":{"x":[0.0,1.0],"y":[0.0,1.0]},"xaxis":{"title":{"text":"DIM_AGE"}},"yaxis":{"title":{"text":"Suicide_Rate_N"}},"zaxis":{"title":{"text":"Gender"},"categoryorder":"array","categoryarray":["MALE","TOTAL","FEMALE"]}},"legend":{"title":{"text":"Gender"},"tracegroupgap":0},"title":{"text":"Suicide Rate by Age and Gender in Nigeria (3D)"},"height":600,"margin":{"l":0,"r":0,"b":0,"t":30}},                        {"responsive": true}                    ).then(function(){
                             
-var gd = document.getElementById('8b322fcc-cbbb-4c9e-9aa4-3777fa4b61aa');
+var gd = document.getElementById('bf2a6249-567c-41d4-9782-a4fd42caa1f6');
 var x = new MutationObserver(function (mutations, observer) {{
         var display = window.getComputedStyle(gd).display;
         if (!display || display === 'none') {{
@@ -3764,39 +2670,154 @@ if (outputEl) {{
                         })                };                });            </script>        </div>
 </div>
 </div>
-<bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
-    <template>Expand</template>
-    <span class="bslib-full-screen-enter badge rounded-pill">
-        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" style="height:1em;width:1em;" aria-hidden="true" role="img"><path d="M20 5C20 4.4 19.6 4 19 4H13C12.4 4 12 3.6 12 3C12 2.4 12.4 2 13 2H21C21.6 2 22 2.4 22 3V11C22 11.6 21.6 12 21 12C20.4 12 20 11.6 20 11V5ZM4 19C4 19.6 4.4 20 5 20H11C11.6 20 12 20.4 12 21C12 21.6 11.6 22 11 22H3C2.4 22 2 21.6 2 21V13C2 12.4 2.4 12 3 12C3.6 12 4 12.4 4 13V19Z"></path></svg>
-    </span>
-</bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div>
-<div class="card cell html-fill-item html-fill-container bslib-card" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
-<div class="card-body html-fill-item html-fill-container">
-<div class="cell-output cell-output-display html-fill-item html-fill-container">
+<div id="bb9d0582-c07b-40b9-b758-6e1243a9f96a" class="cell" data-execution_count="19">
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> update_plots(selected_gender):</span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>    filtered_data <span class="op">=</span> data <span class="cf">if</span> selected_gender <span class="op">==</span> <span class="st">"All"</span> <span class="cf">else</span> Nigerian_suicide_cases[Nigerian_suicide_cases[<span class="st">"Gender"</span>] <span class="op">==</span> selected_gender]</span>
+<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Scatter plot</span></span>
+<span id="cb33-5"><a href="#cb33-5" aria-hidden="true" tabindex="-1"></a>    scatter <span class="op">=</span> px.scatter(</span>
+<span id="cb33-6"><a href="#cb33-6" aria-hidden="true" tabindex="-1"></a>        filtered_data, </span>
+<span id="cb33-7"><a href="#cb33-7" aria-hidden="true" tabindex="-1"></a>        x<span class="op">=</span><span class="st">"DIM_AGE"</span>, </span>
+<span id="cb33-8"><a href="#cb33-8" aria-hidden="true" tabindex="-1"></a>        y<span class="op">=</span><span class="st">"Suicide_Rate_N"</span>, </span>
+<span id="cb33-9"><a href="#cb33-9" aria-hidden="true" tabindex="-1"></a>        color<span class="op">=</span><span class="st">"Gender"</span>,</span>
+<span id="cb33-10"><a href="#cb33-10" aria-hidden="true" tabindex="-1"></a>        title<span class="op">=</span><span class="st">"Suicide Rate by Age and Gender"</span></span>
+<span id="cb33-11"><a href="#cb33-11" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb33-12"><a href="#cb33-12" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb33-13"><a href="#cb33-13" aria-hidden="true" tabindex="-1"></a>    scatter.show()</span>
+<span id="cb33-14"><a href="#cb33-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-15"><a href="#cb33-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Add a gender dropdown</span></span>
+<span id="cb33-16"><a href="#cb33-16" aria-hidden="true" tabindex="-1"></a>interact(update_plots, selected_gender<span class="op">=</span>widgets.Dropdown(options<span class="op">=</span>[<span class="st">"TOTAL"</span>, <span class="st">"MALE"</span>, <span class="st">"FEMALE"</span>]))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
 <script type="application/vnd.jupyter.widget-view+json">
-{"model_id":"4cf6edc0bad34448864a184b10fa4ae9","version_major":2,"version_minor":0,"quarto_mimetype":"application/vnd.jupyter.widget-view+json"}
+{"model_id":"65edaef2894945d0902058f44772e120","version_major":2,"version_minor":0,"quarto_mimetype":"application/vnd.jupyter.widget-view+json"}
 </script>
 </div>
-<div class="cell-output cell-output-display html-fill-item html-fill-container" data-execution_count="26">
+<div class="cell-output cell-output-display" data-execution_count="19">
 <pre><code>&lt;function __main__.update_plots(selected_gender)&gt;</code></pre>
 </div>
 </div>
-<bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
-    <template>Expand</template>
-    <span class="bslib-full-screen-enter badge rounded-pill">
-        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" style="height:1em;width:1em;" aria-hidden="true" role="img"><path d="M20 5C20 4.4 19.6 4 19 4H13C12.4 4 12 3.6 12 3C12 2.4 12.4 2 13 2H21C21.6 2 22 2.4 22 3V11C22 11.6 21.6 12 21 12C20.4 12 20 11.6 20 11V5ZM4 19C4 19.6 4.4 20 5 20H11C11.6 20 12 20.4 12 21C12 21.6 11.6 22 11 22H3C2.4 22 2 21.6 2 21V13C2 12.4 2.4 12 3 12C3.6 12 4 12.4 4 13V19Z"></path></svg>
-    </span>
-</bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div>
-
-
-<div id="3ade8a4a-fb1d-4a6c-8409-ac45482d5fc9" class="hidden html-fill-item html-fill-container">
-
+<div id="ae7ad48a-d355-4fb1-af1c-659c90ae3832" class="cell">
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>Nigerian_suicide_cases.groupby([<span class="st">"DIM_AGE"</span>, <span class="st">"Gender"</span>])[<span class="st">"Suicide_Rate_N"</span>].mean().unstack().plot(kind<span class="op">=</span><span class="st">"bar"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<div id="ed30f6cc-f063-41b5-96f8-da2e81251ceb" class="cell">
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> ipywidgets <span class="im">import</span> interact, widgets</span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> IPython.display <span class="im">import</span> display</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<div id="a8ff2cc5-bb8c-4782-b112-b0fa75406be6" class="cell">
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Line plot to show suicide mortality rate for relevant years</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<div id="3c2a4ca2-d14f-4f5f-a630-730c137718e1" class="cell">
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>male <span class="op">=</span> Nigerian_suicide_cases[Nigerian_suicide_cases[<span class="st">"Gender"</span>] <span class="op">==</span> <span class="st">"MALE"</span>]</span>
+<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a>female <span class="op">=</span> Nigerian_suicide_cases[Nigerian_suicide_cases[<span class="st">"Gender"</span>] <span class="op">==</span> <span class="st">"FEMALE"</span>]</span>
+<span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a>total <span class="op">=</span> Nigerian_suicide_cases[Nigerian_suicide_cases[<span class="st">"Gender"</span>] <span class="op">==</span> <span class="st">"TOTAL"</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="a399bd56-991f-4334-a8bb-ca88cee3f1b7" class="cell">
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">12</span>, <span class="dv">6</span>))</span>
+<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a>sns.lineplot(</span>
+<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a>    data<span class="op">=</span>male,</span>
+<span id="cb39-4"><a href="#cb39-4" aria-hidden="true" tabindex="-1"></a>    x<span class="op">=</span><span class="st">"Suicide_Year"</span>, y<span class="op">=</span><span class="st">"Suicide_Rate_N"</span>,</span>
+<span id="cb39-5"><a href="#cb39-5" aria-hidden="true" tabindex="-1"></a>    marker<span class="op">=</span><span class="st">"o"</span>, label<span class="op">=</span><span class="st">"Male"</span>, color<span class="op">=</span><span class="st">"#1f77b4"</span></span>
+<span id="cb39-6"><a href="#cb39-6" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb39-7"><a href="#cb39-7" aria-hidden="true" tabindex="-1"></a>sns.lineplot(</span>
+<span id="cb39-8"><a href="#cb39-8" aria-hidden="true" tabindex="-1"></a>    data<span class="op">=</span>female,</span>
+<span id="cb39-9"><a href="#cb39-9" aria-hidden="true" tabindex="-1"></a>    x<span class="op">=</span><span class="st">"Suicide_Year"</span>, y<span class="op">=</span><span class="st">"Suicide_Rate_N"</span>,</span>
+<span id="cb39-10"><a href="#cb39-10" aria-hidden="true" tabindex="-1"></a>    marker<span class="op">=</span><span class="st">"o"</span>, label<span class="op">=</span><span class="st">"Female"</span>, color<span class="op">=</span><span class="st">"#ff7f0e"</span></span>
+<span id="cb39-11"><a href="#cb39-11" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb39-12"><a href="#cb39-12" aria-hidden="true" tabindex="-1"></a>sns.lineplot(</span>
+<span id="cb39-13"><a href="#cb39-13" aria-hidden="true" tabindex="-1"></a>    data<span class="op">=</span>total,</span>
+<span id="cb39-14"><a href="#cb39-14" aria-hidden="true" tabindex="-1"></a>    x<span class="op">=</span><span class="st">"Suicide_Year"</span>, y<span class="op">=</span><span class="st">"Suicide_Rate_N"</span>,</span>
+<span id="cb39-15"><a href="#cb39-15" aria-hidden="true" tabindex="-1"></a>    marker<span class="op">=</span><span class="st">"o"</span>, label<span class="op">=</span><span class="st">"Total"</span>, color<span class="op">=</span><span class="st">"#2ca02c"</span></span>
+<span id="cb39-16"><a href="#cb39-16" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb39-17"><a href="#cb39-17" aria-hidden="true" tabindex="-1"></a>plt.fill_between(</span>
+<span id="cb39-18"><a href="#cb39-18" aria-hidden="true" tabindex="-1"></a>    male[<span class="st">"Suicide_Year"</span>], male[<span class="st">"Lower_Rate_NL"</span>], male[<span class="st">"Upper_Rate_NU"</span>],</span>
+<span id="cb39-19"><a href="#cb39-19" aria-hidden="true" tabindex="-1"></a>    alpha<span class="op">=</span><span class="fl">0.2</span>, color<span class="op">=</span><span class="st">"#1f77b4"</span></span>
+<span id="cb39-20"><a href="#cb39-20" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb39-21"><a href="#cb39-21" aria-hidden="true" tabindex="-1"></a>plt.fill_between(</span>
+<span id="cb39-22"><a href="#cb39-22" aria-hidden="true" tabindex="-1"></a>    female[<span class="st">"Suicide_Year"</span>], female[<span class="st">"Lower_Rate_NL"</span>], female[<span class="st">"Upper_Rate_NU"</span>],</span>
+<span id="cb39-23"><a href="#cb39-23" aria-hidden="true" tabindex="-1"></a>    alpha<span class="op">=</span><span class="fl">0.2</span>, color<span class="op">=</span><span class="st">"#ff7f0e"</span></span>
+<span id="cb39-24"><a href="#cb39-24" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb39-25"><a href="#cb39-25" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">"Suicide Mortality Rates in Nigeria (2000–2017)"</span>)</span>
+<span id="cb39-26"><a href="#cb39-26" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">"Year"</span>)</span>
+<span id="cb39-27"><a href="#cb39-27" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">"Rate per 100,000"</span>)</span>
+<span id="cb39-28"><a href="#cb39-28" aria-hidden="true" tabindex="-1"></a>plt.ylim(<span class="dv">0</span>, <span class="dv">12</span>)</span>
+<span id="cb39-29"><a href="#cb39-29" aria-hidden="true" tabindex="-1"></a>plt.grid(alpha<span class="op">=</span><span class="fl">0.3</span>)</span>
+<span id="cb39-30"><a href="#cb39-30" aria-hidden="true" tabindex="-1"></a>plt.legend()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="0aa5b7d5-3067-4687-bf91-3b2019319484" class="cell">
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a>overall_rate <span class="op">=</span> Nigerian_suicide_cases[<span class="st">'Suicide_Rate_N'</span>].mean()</span>
+<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Overall suicide rate (per 100,000): </span><span class="sc">{</span>overall_rate<span class="sc">:.2f}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="fbaf8c02-7322-404a-a3df-98d3e3fcc281" class="cell">
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a>Nigerian_suicide_cases[<span class="st">'Suicide_Rate_N'</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="fcd3f482-85f8-4d81-bcd0-0bd7303a0478" class="cell">
+<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Bar chart to show which gender committed more suicide</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="2a59149a-a68a-4e69-87d3-60e71669c5dc" class="cell">
+<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a>plt.bar(Nigerian_suicide_cases[<span class="st">'Gender'</span>], Nigerian_suicide_cases[<span class="st">'Suicide_Rate_N'</span>])</span>
+<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Count by Gender 2000 - 2019'</span>)</span>
+<span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Gender'</span>)</span>
+<span id="cb43-4"><a href="#cb43-4" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Suicide Rate per 100,000 People'</span>)</span>
+<span id="cb43-5"><a href="#cb43-5" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb43-6"><a href="#cb43-6" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="fcffc28e-10c6-4c9e-820b-77d62db0fd39" class="cell">
+<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Analysis by Age Group</span></span>
+<span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a>age_data <span class="op">=</span> Nigerian_suicide_cases[Nigerian_suicide_cases[<span class="st">"DIM_AGE"</span>].notna()]</span>
+<span id="cb44-3"><a href="#cb44-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb44-4"><a href="#cb44-4" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">12</span>, <span class="dv">6</span>))</span>
+<span id="cb44-5"><a href="#cb44-5" aria-hidden="true" tabindex="-1"></a>sns.boxplot(</span>
+<span id="cb44-6"><a href="#cb44-6" aria-hidden="true" tabindex="-1"></a>    x<span class="op">=</span><span class="st">"DIM_AGE"</span>,</span>
+<span id="cb44-7"><a href="#cb44-7" aria-hidden="true" tabindex="-1"></a>    y<span class="op">=</span><span class="st">"Suicide_Rate_N"</span>,</span>
+<span id="cb44-8"><a href="#cb44-8" aria-hidden="true" tabindex="-1"></a>    data<span class="op">=</span>age_data,</span>
+<span id="cb44-9"><a href="#cb44-9" aria-hidden="true" tabindex="-1"></a>    palette<span class="op">=</span><span class="st">"Set2"</span></span>
+<span id="cb44-10"><a href="#cb44-10" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb44-11"><a href="#cb44-11" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">"Suicide Rates by Age Group"</span>)</span>
+<span id="cb44-12"><a href="#cb44-12" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">"Age Group"</span>)</span>
+<span id="cb44-13"><a href="#cb44-13" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">"Rate per 100,000"</span>)</span>
+<span id="cb44-14"><a href="#cb44-14" aria-hidden="true" tabindex="-1"></a>plt.xticks(rotation<span class="op">=</span><span class="dv">45</span>)</span>
+<span id="cb44-15"><a href="#cb44-15" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="77f745b5-ccb7-488e-9ba3-735353789575" class="cell">
+<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Error Bar</span></span>
+<span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a>Nigerian_suicide_cases <span class="op">=</span> Nigerian_suicide_cases.sort_values(<span class="st">'Suicide_Year'</span>)</span>
+<span id="cb45-3"><a href="#cb45-3" aria-hidden="true" tabindex="-1"></a>lower_errors <span class="op">=</span> Nigerian_suicide_cases[<span class="st">'Suicide_Rate_N'</span>] <span class="op">-</span> Nigerian_suicide_cases[<span class="st">'Lower_Rate_NL'</span>]</span>
+<span id="cb45-4"><a href="#cb45-4" aria-hidden="true" tabindex="-1"></a>upper_errors <span class="op">=</span> Nigerian_suicide_cases[<span class="st">'Upper_Rate_NU'</span>] <span class="op">-</span> Nigerian_suicide_cases[<span class="st">'Suicide_Rate_N'</span>]</span>
+<span id="cb45-5"><a href="#cb45-5" aria-hidden="true" tabindex="-1"></a>error <span class="op">=</span> [lower_errors, upper_errors]</span>
+<span id="cb45-6"><a href="#cb45-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-7"><a href="#cb45-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Create the error bar plot</span></span>
+<span id="cb45-8"><a href="#cb45-8" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">6</span>))</span>
+<span id="cb45-9"><a href="#cb45-9" aria-hidden="true" tabindex="-1"></a>plt.errorbar(</span>
+<span id="cb45-10"><a href="#cb45-10" aria-hidden="true" tabindex="-1"></a>    Nigerian_suicide_cases[<span class="st">'Suicide_Year'</span>],</span>
+<span id="cb45-11"><a href="#cb45-11" aria-hidden="true" tabindex="-1"></a>    Nigerian_suicide_cases[<span class="st">'Suicide_Rate_N'</span>],</span>
+<span id="cb45-12"><a href="#cb45-12" aria-hidden="true" tabindex="-1"></a>    yerr<span class="op">=</span>error,</span>
+<span id="cb45-13"><a href="#cb45-13" aria-hidden="true" tabindex="-1"></a>    fmt<span class="op">=</span><span class="st">'o-'</span>,  <span class="co"># 'o' for marker, '-' for line</span></span>
+<span id="cb45-14"><a href="#cb45-14" aria-hidden="true" tabindex="-1"></a>    ecolor<span class="op">=</span><span class="st">'gray'</span>,</span>
+<span id="cb45-15"><a href="#cb45-15" aria-hidden="true" tabindex="-1"></a>    capsize<span class="op">=</span><span class="dv">4</span>,</span>
+<span id="cb45-16"><a href="#cb45-16" aria-hidden="true" tabindex="-1"></a>    label<span class="op">=</span><span class="st">'Suicide Rate with Uncertainty'</span></span>
+<span id="cb45-17"><a href="#cb45-17" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb45-18"><a href="#cb45-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-19"><a href="#cb45-19" aria-hidden="true" tabindex="-1"></a><span class="co"># Labeling</span></span>
+<span id="cb45-20"><a href="#cb45-20" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Suicide Rate in Nigeria (with Uncertainty)'</span>)</span>
+<span id="cb45-21"><a href="#cb45-21" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Suicide Year'</span>)</span>
+<span id="cb45-22"><a href="#cb45-22" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Suicide Rate per 100,000'</span>)</span>
+<span id="cb45-23"><a href="#cb45-23" aria-hidden="true" tabindex="-1"></a>plt.grid(<span class="va">True</span>)</span>
+<span id="cb45-24"><a href="#cb45-24" aria-hidden="true" tabindex="-1"></a>plt.legend()</span>
+<span id="cb45-25"><a href="#cb45-25" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb45-26"><a href="#cb45-26" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="dc78221c-4640-4521-94e5-46e671daa92d" class="cell">
+<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a>Nigerian_suicide_cases.groupby(<span class="st">'Suicide_Year'</span>)[<span class="st">'Suicide_Rate_N'</span>].mean().plot(kind<span class="op">=</span><span class="st">'line'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="2c061f6a-2aee-4789-8d60-f302ee355020" class="cell">
+<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 
 
+</section>
+
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
@@ -4198,14 +3219,6 @@ if (outputEl) {{
   </script>
 </div> <!-- /content -->
 
-<script type="application/javascript">
-window.document.addEventListener("DOMContentLoaded", function (_event) {
-  if (window.bslib.Card) {
-    window.bslib.Card.initializeAllCards();
-  }
-}); 
-</script>
-  
 
 
 
