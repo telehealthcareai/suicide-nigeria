@@ -182,6 +182,7 @@ plt.show()
 ```
 
 ```{=html}
+
 <iframe src="http://localhost:8050" width="100%" height="600px" style="border:none;"></iframe>
 ```
 

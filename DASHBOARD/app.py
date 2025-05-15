@@ -20,7 +20,6 @@ app.title = "Suicide Rate Interactive Plot"
 
 # Layout
 app.layout = html.Div([
-    html.H1("Suicide Rate by Age and Gender", style={"textAlign": "center"}),
 
     dcc.Dropdown(
         id="gender-dropdown",
@@ -53,7 +52,6 @@ def update_plot(selected_gender):
         x="DIM_AGE",
         y="Suicide_Rate_N",
         color="Gender",
-        title=f"Suicide Rate by Age for Gender: {selected_gender}",
         labels={"DIM_AGE": "Age Group", "Suicide_Rate_N": "Suicide Rate per 100k"},
     )
     return fig
