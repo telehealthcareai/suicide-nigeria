@@ -146,6 +146,20 @@ fig.show()
 
 
 ### Column {.tabset}
+
+```{python}
+#| title: Summary of all suicide rate
+filtered_df = Nigerian_suicide_cases[Nigerian_suicide_cases['Gender'].isin(['MALE', 'FEMALE'])]
+
+# Group by Gender and sum Suicide_Rate_N
+gender_totals = filtered_df.groupby('Gender')['Suicide_Rate_N'].sum()
+
+# Plot
+gender_totals.plot(kind='bar', figsize=(6, 4))
+plt.tight_layout()
+plt.show()
+
+```
 ```{python}
 #| title: Suicide Mortality Trends in Nigeria (2000-2017)
 
@@ -182,7 +196,6 @@ plt.show()
 ```
 
 ```{=html}
-
 <iframe src="http://localhost:8050" width="100%" height="600px" style="border:none;"></iframe>
 ```
 
