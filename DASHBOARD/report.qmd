@@ -1,0 +1,44 @@
+---
+title: "Report"
+format:
+  html:
+    theme:
+      - cosmo
+      - style.css
+    include-in-header:
+      - text:
+          <link rel="preconnect" href="https://fonts.googleapis.com">
+          <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+          <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    page-layout: custom
+---
+<div class="container">
+  <div class="img-con">
+  <img src="assets/images/rope.jpg" alt="suicide_rope" class="side-image" />
+  </div>
+  <div>
+This dashboard report is based on datasets obtained from the World Health Organization (WHO) and the National Bureau of Statistics (NBS), analyzing suicide cases from 2000 to 2019. It provides insights into the prevalence and patterns of suicide across different genders, with the aim of informing effective prevention strategies.
+
+KEY FINDINGS:
+Insights derived from the analysis shows that the average suicide rate per was 4.32 percent with a population of 100,000 per year
+Suicide Trends: There was a consistent and gradual decline in the suicide rate, dropping from 4.85 in 2000 to 3.49 in 2019. The highest rate was recorded in 2001 at 4.93, after which the trend generally moved downward, with more noticeable decreases occurring from 2010 onward. This steady reduction may reflect improvements in mental health awareness, access to support services, or broader socio-economic developments during the period.
+Gender Disparity: Males accounted for 6.16% of total suicide cases, compared to 2.44% for females, highlighting a significant gender gap in suicide prevalence.
+
+METHODOLOGY OVERVIEW:
+The datasets were analyzed using Python, Jupyter Notebook, Quarto, Quarto live, leveraging libraries such as Pandas, Matplotlib, Seaborn, and Plotly for data visualization. The analysis incorporated socioeconomic indicators—specifically poverty and unemployment rates—to explore their potential relationship with suicide trends.
+
+INSIGHTS:
+The analysis revealed a concerning trend of higher suicide rates among males, with a significant correlation between socioeconomic factors and suicide incidence. Poverty and unemployment rates were strongly associated with increased suicide cases, emphasizing the need for targeted interventions that address these underlying issues. Additionally, the findings indicate that individuals aged 85 and above recorded the highest suicide rates, underscoring the importance of age-specific strategies for prevention and support.
+
+RECOMMENDATIONS:
+The findings of this analysis have significant implications for policy and practice. The strong association between poverty, unemployment, and suicide rates highlights the need for a multifaceted approach to address these underlying issues. Recommendations include:
+Improved access to mental health services and counselling
+Economic empowerment programs and job creation initiatives to address unemployment
+
+CONCLUSION:
+The insights from this analysis underscore the importance of addressing the root causes of suicide rather than merely its symptoms. Tackling poverty and unemployment, alongside ensuring access to comprehensive mental health support, is essential for fostering a safer and more supportive environment that promotes the well-being of all individuals.
+
+
+  </div>
+
+<div>
