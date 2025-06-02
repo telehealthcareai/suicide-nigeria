@@ -1,0 +1,7 @@
+quarto-cli
+pandas
+matplotlib
+seaborn
+plotly
+ipywidgets
+makim
