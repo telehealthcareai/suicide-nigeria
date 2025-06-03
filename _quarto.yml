@@ -26,5 +26,5 @@ format:
     theme:
       - cosmo
       - brand
-    css: dashboard/assets/css/styles.css
+    css: dashboard/assets/css/styles.scss
     toc: true
