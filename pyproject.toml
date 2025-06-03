@@ -1,0 +1,80 @@
+[project]
+name = "suicide-nigeria"
+version = "0.1.0"  # semantic-release
+description = "Dashboard about Suicide in Nigeria"
+readme = "README.md"
+authors = [
+  {name = "Gift David", email = "giftdavid101@gmail.com"},
+  {name = "Ivan Ogasawara", email = "ivan.ogasawara@gmail.com"}
+]
+license = "BSD 3 Clause"
+requires-python = ">=3.9,<3.13"
+
+[build-system]
+requires = ["poetry-core>=2", "poetry>=2"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry]
+package-mode = false
+exclude = [
+  ".git/*",
+  ".env*",
+]
+
+[tool.bandit]
+exclude_dirs = ["tests"]
+targets = "./"
+
+[tool.mypy]
+python_version = "3.9"
+check_untyped_defs = true
+strict = true
+ignore_missing_imports = true
+warn_unused_ignores = true
+warn_redundant_casts = true
+warn_unused_configs = true
+exclude = ["scripts/"]
+
+[tool.pytest.ini_options]
+testpaths = [
+    "tests",
+]
+
+[tool.ruff]
+line-length = 79
+force-exclude = true
+src = ["./"]
+exclude = [
+  'docs',
+]
+
+[tool.ruff.lint]
+select = [
+  "E",   # pycodestyle
+  "F",   # pyflakes
+  "D",   # pydocstyle
+  "YTT", # flake8-2020
+  "RUF", # Ruff-specific rules
+  "I001",  # isort
+]
+fixable = ["I001"]
+
+[tool.ruff.lint.pydocstyle]
+convention = "numpy"
+
+[tool.ruff.lint.isort]
+# Use a single line between direct and from import
+lines-between-types = 1
+
+[tool.ruff.format]
+quote-style = "single"
+
+[tool.vulture]
+exclude = ["tests"]
+ignore_decorators = []
+ignore_names = []
+make_whitelist = true
+min_confidence = 80
+paths = ["./"]
+sort_by_size = true
+verbose = false

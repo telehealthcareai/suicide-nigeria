@@ -1,0 +1,15 @@
+# Ref: https://help.github.com/en/github/building-a-strong-community/configuring-issue-templates-for-your-repository#configuring-the-template-chooser
+blank_issues_enabled: true
+contact_links:
+  - name: 🙋  Usage Questions
+    url: https://github.com/suicide-nigeria/suicide-nigeria/discussions
+    about: |
+      Use suicide-nigeria's GitHub Discussions to ask "How do I do X with suicide-nigeria?".
+  - name: 📖  Tutorial
+    url: https://github.com/suicide-nigeria/suicide-nigeria
+    about: |
+      The suicide-nigeria tutorial is continually updated and provides an in depth walkthrough
+      of how to use the latest release of suicide-nigeria.
+  - name: 📝  suicide-nigeria Code of Conduct
+    url: https://github.com/suicide-nigeria/suicide-nigeria/coc/CODE_OF_CONDUCT.md
+    about: Expectations for how people will interact with each other on suicide-nigeria's GitHub.
