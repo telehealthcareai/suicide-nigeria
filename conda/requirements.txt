@@ -5,3 +5,8 @@ seaborn
 plotly
 ipywidgets
 makim
+pre-commit
+ruff
+bandit
+mypy
+vulture

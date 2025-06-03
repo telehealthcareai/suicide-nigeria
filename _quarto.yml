@@ -11,7 +11,7 @@ engines: ['jupyter']
 
 website:
   title: "Data Analysis of Suicide in Nigeria"
-  search: 
+  search:
     location: navbar
     type: overlay
   navbar:
