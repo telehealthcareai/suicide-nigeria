@@ -1,0 +1,30 @@
+project:
+  type: website
+
+  render:
+    - "!dashboard/explore/"
+    - "dashboard/*.qmd"
+
+  output-dir: build
+
+engines: ['jupyter']
+
+website:
+  title: "Data Analysis of Suicide in Nigeria"
+  search: 
+    location: navbar
+    type: overlay
+  navbar:
+    left:
+      - href: dashboard/index.qmd
+        text: Home
+      - href: dashboard/report.qmd
+        text: Report
+
+format:
+  dashboard:
+    theme:
+      - cosmo
+      - brand
+    css: dashboard/assets/css/styles.css
+    toc: true

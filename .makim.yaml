@@ -24,16 +24,13 @@ groups:
     tasks:
       build:
         help: Build documentation
-        dir: dashboard
         run: |
-          quarto render index.qmd report.qmd
+          quarto render . --log-level info --verbose
 
       preview:
         help: Preview documentation page locally
-        dir: dashboard
         run: |
-          quarto preview index.qmd
-
+          quarto preview
   tests:
     tasks:
       linter:
