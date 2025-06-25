@@ -222,8 +222,9 @@ fig.update_layout(
 ```{python}
 #| title: Suicide Mortality Trends in Nigeria (2000-2017)
 
-male_suicide_rate.sort_values("Suicide_Year", inplace=True)
-female_suicide_rate.sort_values("Suicide_Year", inplace=True)
+male_suicide_rate["Suicide_Year"] = male_suicide_rate["Suicide_Year"].astype(int)
+female_suicide_rate["Suicide_Year"] = female_suicide_rate["Suicide_Year"].astype(int)
+
 
 plt.figure(figsize=(12, 6))
 sns.lineplot(
@@ -259,7 +260,7 @@ plt.fill_between(
     alpha=0.2, color="#ff7f0e"
 )
 
-plt.xticks(male_suicide_rate["Suicide_Year"].unique())
+
 plt.ylim(0, 12)
 plt.grid(alpha=0.3)
 plt.legend()
