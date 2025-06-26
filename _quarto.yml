@@ -7,7 +7,7 @@ project:
 
   output-dir: build
 
-engines: ['jupyter']
+engines: ["jupyter"]
 
 website:
   title: "Data Analysis of Suicide in Nigeria"
