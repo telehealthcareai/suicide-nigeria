@@ -22,6 +22,8 @@ import seaborn as sns
 import plotly.express as px
 from IPython.display import display
 from ipywidgets import interact, widgets
+from matplotlib.ticker import FormatStrFormatter
+
 
 ```
 
@@ -46,11 +48,12 @@ merged_sp1 = pov_mask.merge(sui_mask, on='Date', how='inner')
 
 ```{python}
 nigerian_suicide_cases.rename(columns={
-    "DIM_TIME": "Suicide_Year",
+    "DIM_TIME": "Suicide Year",
     "DIM_SEX": "Gender",
     "RATE_PER_100000_N": "Suicide Rate",
     "RATE_PER_100000_NL": "Lower_Rate_NL",
-    "RATE_PER_100000_NU": "Upper_Rate_NU"
+    "RATE_PER_100000_NU": "Upper_Rate_NU",
+    "DIM_AGE": "Age",
 }, inplace=True)
 
 total_unemployed.rename(columns={
@@ -65,7 +68,7 @@ poverty_data.rename(columns={
 male_suicide_rate = nigerian_suicide_cases[nigerian_suicide_cases["Gender"] == "MALE"]
 female_suicide_rate = nigerian_suicide_cases[nigerian_suicide_cases["Gender"] == "FEMALE"]
 overall_suicide_rate = nigerian_suicide_cases[nigerian_suicide_cases["Gender"] == "TOTAL"]
-mask = (nigerian_suicide_cases["Suicide_Year"] >= 2000) & (nigerian_suicide_cases["Suicide_Year"] <= 2019)
+mask = (nigerian_suicide_cases["Suicide Year"] >= 2000) & (nigerian_suicide_cases["Suicide Year"] <= 2019)
 
 ```
 
@@ -75,7 +78,7 @@ mask = (nigerian_suicide_cases["Suicide_Year"] >= 2000) & (nigerian_suicide_case
 #| content: valuebox
 #| title: "Male suicide rate per 100,000 from 2000-2019"
 
-male_data = nigerian_suicide_cases[(nigerian_suicide_cases["Gender"] == "MALE") & (nigerian_suicide_cases["DIM_AGE"] == "TOTAL") & (nigerian_suicide_cases["Suicide_Year"].between(2000, 2019))]
+male_data = nigerian_suicide_cases[(nigerian_suicide_cases["Gender"] == "MALE") & (nigerian_suicide_cases["Age"] == "TOTAL") & (nigerian_suicide_cases["Suicide Year"].between(2000, 2019))]
 # Calculate average rate
 average_male_rate = male_data["Suicide Rate"].mean()
 
@@ -90,7 +93,7 @@ dict(
 #| content: valuebox
 #| title: "Female suicide rate per 100,000 from 2000-2019"
 
-female_data = nigerian_suicide_cases[(nigerian_suicide_cases["Gender"] == "FEMALE") & (nigerian_suicide_cases["DIM_AGE"] == "TOTAL") & (nigerian_suicide_cases["Suicide_Year"].between(2000, 2019))]
+female_data = nigerian_suicide_cases[(nigerian_suicide_cases["Gender"] == "FEMALE") & (nigerian_suicide_cases["Age"] == "TOTAL") & (nigerian_suicide_cases["Suicide Year"].between(2000, 2019))]
 # Calculate average rate
 average_female_rate = female_data["Suicide Rate"].mean()
 
@@ -101,7 +104,7 @@ dict(icon="gender-female", color="#FFA725", value=f"{average_female_rate:.1f}%")
 #| content: valuebox
 #| title: "Average suicide rate from 2000 to 2019"
 
-suicide_rate_for_total_genders = nigerian_suicide_cases[(nigerian_suicide_cases["Gender"] == "TOTAL") & (nigerian_suicide_cases["DIM_AGE"] == "TOTAL")]
+suicide_rate_for_total_genders = nigerian_suicide_cases[(nigerian_suicide_cases["Gender"] == "TOTAL") & (nigerian_suicide_cases["Age"] == "TOTAL")]
 average_suicide_value = suicide_rate_for_total_genders["Suicide Rate"].mean()
 
 total__rate = male_suicide_rate.loc[mask]
@@ -120,11 +123,11 @@ dict(
 
 ```{python}
 #| title: Yearly Average Suicide Rate
-yearly_avg = nigerian_suicide_cases.groupby('Suicide_Year')['Suicide Rate'].mean().reset_index()
-full_years = pd.DataFrame({'Suicide_Year': range(2000, 2020)})
-yearly_avg = pd.merge(full_years, yearly_avg, on='Suicide_Year', how='left')
-yearly_avg_full = pd.merge(full_years, yearly_avg, on='Suicide_Year', how='left')
-fig = px.line(yearly_avg, x='Suicide_Year', y='Suicide Rate',
+yearly_avg = nigerian_suicide_cases.groupby('Suicide Year')['Suicide Rate'].mean().reset_index()
+full_years = pd.DataFrame({'Suicide Year': range(2000, 2020)})
+yearly_avg = pd.merge(full_years, yearly_avg, on='Suicide Year', how='left')
+yearly_avg_full = pd.merge(full_years, yearly_avg, on='Suicide Year', how='left')
+fig = px.line(yearly_avg, x='Suicide Year', y='Suicide Rate',
               title="Average Suicide Rate for year (2000-2019)",
               markers=True, color_discrete_sequence=['#e74c3c'])
 
@@ -148,14 +151,14 @@ fig.update_layout(
 
 fig = px.bar(
     nigerian_suicide_cases[nigerian_suicide_cases.Gender != 'Total'],
-    x='DIM_AGE',
+    x='Age',
     y='Suicide Rate',
     color='Gender',
     barmode='group',   # This makes it grouped (side-by-side)
     color_discrete_map={'MALE': '#e74c3c', 'FEMALE': '#3498db'},
     title='Suicide Rates in Nigeria by Age and Gender',
     labels={
-        'DIM_AGE': 'Age Group',
+        'Age': 'Age Group',
         'Suicide Rate': 'Number of Suicides',
         'Gender': 'Gender'
     }
@@ -176,13 +179,13 @@ fig.update_layout(
 
 fig = px.scatter_3d(
     nigerian_suicide_cases,
-    x="DIM_AGE",
+    x="Age",
     y="Suicide Rate",
     z="Gender",  # Use Gender as the third axis (categorical)
     color="Gender",  # Color-code by gender
     title="Suicide Rate variation by Age and Gender(3D)",
     labels={"Suicide Rate": "Suicide Rate (per 100k)", "Age": "Age (Years)"},
-    hover_data={"DIM_AGE": True, "Gender": True, "Suicide Rate": ":.2f"},
+    hover_data={"Age": True, "Gender": True, "Suicide Rate": ":.2f"},
     symbol="Gender",  # Optional: Different symbols for genders
     opacity=0.8,
     height=600,
@@ -221,51 +224,52 @@ fig.update_layout(
 
 ```{python}
 #| title: Suicide Mortality Trends in Nigeria (2000-2017)
-male_suicide_rate = male_suicide_rate.sort_values("Suicide_Year").reset_index(drop=True)
-male_suicide_rate["Suicide_Year"] = male_suicide_rate["Suicide_Year"].astype(int)
+male_suicide_rate = male_suicide_rate.sort_values("Suicide Year").reset_index(drop=True)
+male_suicide_rate["Suicide Year"] = male_suicide_rate["Suicide Year"].astype(int);
 
-female_suicide_rate = female_suicide_rate.sort_values("Suicide_Year").reset_index(drop=True)
-female_suicide_rate["Suicide_Year"] = female_suicide_rate["Suicide_Year"].astype(int)
+female_suicide_rate = female_suicide_rate.sort_values("Suicide Year").reset_index(drop=True)
+female_suicide_rate["Suicide Year"] = female_suicide_rate["Suicide Year"].astype(int)
 
 plt.figure(figsize=(12, 6))
 sns.lineplot(
     data=male_suicide_rate,
-    x="Suicide_Year", y="Suicide Rate",
+    x="Suicide Year", y="Suicide Rate",
     marker="o",
     label="Male",
     color="#1f77b4"
 )
 sns.lineplot(
     data=female_suicide_rate,
-    x="Suicide_Year", y="Suicide Rate",
+    x="Suicide Year", y="Suicide Rate",
     marker="o", label="Female", color="#ff7f0e"
 )
 sns.lineplot(
     data=overall_suicide_rate,
-    x="Suicide_Year", y="Suicide Rate",
+    x="Suicide Year", y="Suicide Rate",
     marker="o",
-    label="overall_suicide_rate",
+    label="overall suicide rate",
     color="#2ca02c"
 )
 
 plt.fill_between(
-    male_suicide_rate["Suicide_Year"],
+    male_suicide_rate["Suicide Year"],
     male_suicide_rate["Lower_Rate_NL"],
     male_suicide_rate["Upper_Rate_NU"],
     alpha=0.2, color="#1f77b4"
 )
 plt.fill_between(
-    female_suicide_rate["Suicide_Year"],
+    female_suicide_rate["Suicide Year"],
     female_suicide_rate["Lower_Rate_NL"],
     female_suicide_rate["Upper_Rate_NU"],
     alpha=0.2, color="#ff7f0e"
 )
 
-
 plt.ylim(0, 12)
 plt.grid(alpha=0.3)
+plt.title("Suicide Mortality Trends in Nigeria (2000-2017)");
 plt.legend()
-plt.show()
+plt.gca().xaxis.set_major_formatter(FormatStrFormatter('%.0f'));
+plt.show();
 
 ```
 
@@ -303,35 +307,41 @@ dict(
 ```
 
 ```{python}
-#| title: Poverty vs. Suicide Rate (Nigeria, 2004 & 2010)
+#| title: Suicide Rate for year 2010
 
-suicide_2010 = nigerian_suicide_cases[nigerian_suicide_cases["Suicide_Year"] == 2010]
+suicide_2010 = nigerian_suicide_cases[nigerian_suicide_cases["Suicide Year"] == 2010]
 sns.barplot(data=suicide_2010, x="Gender", y="Suicide Rate")
+plt.title("Suicide Rate by Gender in Nigeria (2010)");
 ```
 
 ## Row {.tabset}
 ```{python}
-# | title: "Poverty Data for Year (2010)"
+#| title: "Poverty Data for Year (2010)"
 
 nigerian_suicide = (
-    nigerian_suicide_cases.groupby("Suicide_Year")["Suicide Rate"]
+    nigerian_suicide_cases.groupby("Suicide Year")["Suicide Rate"]
     .mean()
     .reset_index()
-)
+    .astype(int)
+);
 
 # Plot trends
 plt.figure(figsize=(12, 6))
-sns.lineplot(data=nigerian_suicide, x="Suicide_Year", y="Suicide Rate", marker="o")
+sns.lineplot(data=nigerian_suicide, x="Suicide Year", y="Suicide Rate", marker="o")
 plt.axvline(2010, color="red", linestyle="--", label="Poverty Data Year (2010)")
 plt.legend()
+plt.gca().xaxis.set_major_formatter(FormatStrFormatter('%.0f'));
 plt.show()
 ```
 
 ```{python}
 #| title: "Gender comparison for year 2010"
-suicide_2010 = nigerian_suicide_cases[nigerian_suicide_cases["Suicide_Year"] == 2010]
+
+suicide_2010 = nigerian_suicide_cases[nigerian_suicide_cases["Suicide Year"] == 2010]
 sns.barplot(data=suicide_2010, x="Gender", y="Suicide Rate")
 
+plt.title("Suicide Rate by Gender in Nigeria (2010)")
+plt.show();
 ```
 
 ```{python}
@@ -344,14 +354,20 @@ summary = merged_sp1.groupby('Date').agg({
 
 plt.bar(summary['Date'], summary['Poverty Rate'], label='Poverty')
 plt.plot(summary['Date'], summary['Suicide Rate'], color='red', marker='o', label='Suicide Rate')
-plt.show()
+plt.title("Poverty vs. Suicide Rate (2004 vs 2010)");
+plt.xlabel("Year");
+plt.ylabel("Poverty Rate (%)");
+plt.show();
 ```
 
 ```{python}
-#| title: suicide rates by age group for the year 2010 in Nigeria
+#| title: "Suicide rates by age group for the year 2010 in Nigeria"
 
-suicide_2010 = nigerian_suicide_cases[nigerian_suicide_cases["Suicide_Year"] == 2010]
-sns.boxplot(data=suicide_2010, x="DIM_AGE", y="Suicide Rate")
+suicide_2010 = nigerian_suicide_cases[nigerian_suicide_cases["Suicide Year"] == 2010]
+sns.boxplot(data=suicide_2010, x="Age", y="Suicide Rate")
+
+plt.title("Poverty vs. Suicide Rate (2004 vs 2010)")
+plt.show();
 ```
 
 # Socio-Economics Indicator (Unemployment)
@@ -370,28 +386,36 @@ sui_mask.loc[:, 'Date'] = sui_mask['Date'].astype(str)
 merged_su1 = unemployment_data.merge(sui_mask, on='Date', how='inner')
 
 ```
+```{python}
+merged_su1.rename(columns={
+    "Value": "Unemployment Value",
+    "RATE_PER_100000_N": "Suicide Rate",
+    "DIM_SEX": "Gender",
+    "Date": "Year",
+}, inplace=True)
+```
 
 ```{python}
 #| title: Unemployment Trend
 
 df_total = unemployment_data[unemployment_data['indicator'] == 'Total Unemployed'].copy()
+
+# Extract Year
 df_total['Year'] = df_total['Date'].str.extract(r'(\d{4})').astype(int)
 
-fig = px.line(
-    df_total,
+sns.set_theme()
+plt.figure(figsize=(14,8))
+sns.lineplot(
+    data=df_total,
     x='Year',
     y='Value',
-    title='Total Unemployment Trend'
+    #hue='group',
+    #marker='o'
 )
+plt.title("Total Unemployed in Nigeria by Group");
+plt.ylabel("Number of Unemployed");
 
-fig.update_layout(
-    title_font_size=20,
-    title_x=0.5,
-    xaxis_title='Year',
-    yaxis_title='Number of Unemployed',
-    plot_bgcolor='rgba(0,0,0,0)',
-    paper_bgcolor='rgba(0,0,0,0)'
-)
+plt.show();
 
 ```
 
@@ -400,16 +424,16 @@ fig.update_layout(
 plt.figure(figsize=(12, 6))
 
 # Aggregate data by Date (year)
-trends = merged_su1.groupby('Date').agg({
-    'Value': 'mean',               # Mean unemployment
-    'RATE_PER_100000_N': 'mean'    # Mean suicide rate
+trends = merged_su1.groupby('Year').agg({
+    'Unemployment Value': 'mean',               # Mean unemployment
+    'Suicide Rate': 'mean'    # Mean suicide rate
 }).reset_index()
 
 # Plot unemployment trend
 sns.lineplot(
     data=trends,
-    x='Date',
-    y='Value',
+    x='Year',
+    y='Unemployment Value',
     marker='o',
     label='Unemployment Rate',
     color='blue'
@@ -419,12 +443,14 @@ sns.lineplot(
 plt.twinx()
 sns.lineplot(
     data=trends,
-    x='Date',
-    y='RATE_PER_100000_N',
+    x='Year',
+    y='Suicide Rate',
     marker='s',
     label='Suicide Rate',
     color='red'
 )
+plt.title("Unemployment vs Suicide");
+plt.show();
 ```
 
 ## Row
@@ -438,25 +464,27 @@ fig, axes = plt.subplots(1, 2, figsize=(14, 6), sharex=True)
 # Unemployment
 sns.barplot(
     data=merged_su1,
-    x='DIM_SEX',
-    y='Value',
-    hue='Date',
+    x='Gender',
+    y='Unemployment Value',
+    hue='Year',
     palette='Blues',
     alpha=0.7,
     ax=axes[0]
 )
+axes[0].set_title("Unemployment vs Gender")
 
 # Suicide Rate
 sns.barplot(
     data=merged_su1,
-    x='DIM_SEX',
-    y='RATE_PER_100000_N',
-    hue='Date',
+    x='Gender',
+    y='Suicide Rate',
+    hue='Year',
     palette='Reds',
     alpha=0.7,
     ax=axes[1]
 )
-
+plt.title("Suicide vs Gender");
+plt.show();
 ```
 
 ```{python}
@@ -464,11 +492,11 @@ sns.barplot(
 
 # Unemployment distribution
 plt.subplot(1, 2, 1)
-sns.boxplot(data=merged_su1, x='Date', y='Value', palette='Blues')
+sns.boxplot(data=merged_su1, x='Year', y='Unemployment Value', palette='Blues')
 
 # Suicide rate distribution
 plt.subplot(1, 2, 2)
-sns.boxplot(data=merged_su1, x='Date', y='RATE_PER_100000_N', palette='Reds')
+sns.boxplot(data=merged_su1, x='Year', y='Suicide Rate', palette='Reds')
 ```
 
 ### Column {.tabset}
@@ -477,10 +505,10 @@ sns.boxplot(data=merged_su1, x='Date', y='RATE_PER_100000_N', palette='Reds')
 #| title: Unemployment vs Gender
 fig = px.scatter(
     merged_su1,
-    x='Value',  # Unemployment
-    y='RATE_PER_100000_N',  # Suicide Rate
-    color='DIM_SEX',        # Color by Gender
-    facet_col='DIM_SEX',    # Separate plots (facets) by Gender
+    x='Unemployment Value',  # Unemployment
+    y='Suicide Rate',  # Suicide Rate
+    color='Gender',        # Color by Gender
+    facet_col='Gender',    # Separate plots (facets) by Gender
     trendline='ols',        # Adds linear regression line (like lmplot)
     title='Unemployment vs. Suicide Rates by Gender',
 )
@@ -490,5 +518,4 @@ fig.update_layout(
     plot_bgcolor='rgba(0,0,0,0)',
     paper_bgcolor='rgba(0,0,0,0)'
 )
-
 ```
